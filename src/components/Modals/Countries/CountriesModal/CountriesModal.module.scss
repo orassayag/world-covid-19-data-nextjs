@@ -1,0 +1,264 @@
+.countries_container {
+    width: 100%;
+    height: 440px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .countries_actions {
+        width: 95%;
+        margin-bottom: 5px;
+        display: flex;
+        flex-direction: row;
+
+        .icons {
+            width: 33%;
+            padding-top: 10px;
+
+            i {
+                font-size: 15px;
+                cursor: pointer;
+                margin-right: 8px;
+
+                &:hover {
+                    -webkit-transform: scale(1.03);
+                    transform: scale(1.03);
+                    color: #00b9ff;
+                }
+            }
+        }
+    }
+
+    .search_country {
+        display: flex;
+        flex-direction: row;
+
+        .search_country_container {
+            input {
+                width: 150px;
+                height: 20px;
+                margin-top: 8px;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                outline: 0;
+                box-shadow: none;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                background: #2c3e50;
+                background-image: none;
+                color: #ffffff;
+                padding: 2px;
+            }
+        }
+    }
+
+    .search_button {
+        margin-left: 4px;
+        margin-top: 8px;
+        border: 0px;
+        cursor: pointer;
+
+        button {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: #2c3e50;
+            padding: 7px;
+            cursor: pointer;
+            padding-top: 5px;
+            padding-bottom: 4px;
+
+            i {
+                color: #ffffff;
+                font-size: 12px;
+            }
+
+            &:hover {
+                background: #000000;
+            }
+        }
+    }
+
+    .selector {
+        margin-right: 20px;
+        margin-left: 4px;
+        margin-top: 8px;
+
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -ms-appearance: none;
+            appearance: none;
+            outline: 0;
+            box-shadow: none;
+            border: 0 !important;
+            background: #2c3e50;
+            background-image: none;
+        }
+
+        select::-ms-expand {
+            display: none;
+        }
+
+        .select {
+            position: relative;
+            display: flex;
+            width: 100px;
+            height: 24px;
+            background: #2c3e50;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+
+            select {
+                flex: 1;
+                padding-left: 5px;
+                color: #ffffff;
+                cursor: pointer;
+                font-size: 12px;
+                line-height: 1;
+                text-align-last: center;
+            }
+        }
+    }
+
+    .countries_list {
+        width: 90%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        color: #ffffff;
+        font-weight: 300;
+        font-size: 11px;
+        padding: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        overflow-y: scroll;
+
+        // Width.
+        &::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        // Track.
+        &::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        // Handle.
+        &::-webkit-scrollbar-thumb {
+            background: #2c3e50;
+        }
+
+        // Handle on hover.
+        &::-webkit-scrollbar-thumb:hover {
+            background: #2c3e50;
+        }
+
+        .country {
+            width: 50px;
+            height: 50px;
+            margin: 4px;
+            box-sizing: border-box;
+            line-height: 1;
+            text-align: left;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 1px 7px 22px -6px rgba(0, 0, 0, 0.53);
+            outline: 1px solid rgba(255, 255, 255, 0.4);
+            transition: transform 100ms ease-out;
+            transform: translateZ(0);
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
+            cursor: pointer;
+
+            &:hover,
+            &:focus {
+                -webkit-transform: scale(1.03);
+                transform: scale(1.03);
+                background-color: rgba(255, 255, 255, 0.2);
+            }
+
+            &.active {
+                box-shadow: 0px 4px 15px rgba(0, 0, 0, 1);
+                border-color: #4ed237;
+                background-color: rgba(78, 211, 50, 0.5);
+
+            }
+
+            .image {
+                height: 32px;
+                margin-left: 5px;
+
+                i {
+                    display: inline-block;
+                    width: 32px;
+
+                    &.flag {
+                        height: 32px;
+                        margin-left: 3px;
+                    }
+
+                    &.flag_extra {
+                        height: 18px;
+                        position: relative;
+                        top: 6px;
+                        left: 1px;
+                        border: 1.5px solid rgba(255, 255, 255, 0.1);
+                    }
+                }
+            }
+
+            .code {
+                text-align: center;
+            }
+        }
+    }
+
+    .actions {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+
+        .confirm_container {
+            width: 17%;
+            align-items: center;
+            text-align: center;
+
+            button {
+                width: 50px;
+                height: 25px;
+                margin-top: 5px;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                outline: 0;
+                box-shadow: none;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                background: #2c3e50;
+                background-image: none;
+                cursor: pointer;
+                color: #ffffff;
+
+                &:hover {
+                    background: #000000;
+                }
+            }
+        }
+
+        .current_country {
+            width: 53%;
+            font-size: 12px;
+            background: #15202e;
+            font-weight: 400;
+            text-align: center;
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.2);
+            margin-top: 7px;
+            padding: 6px;
+        }
+    }
+}

@@ -1,0 +1,41 @@
+.source_item {
+    margin-top: 2px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    .source_case {
+        width: 15%;
+        color: #00b9ff;
+    }
+
+    .source_death {
+        width: 15%;
+        color: #d22c32;
+    }
+
+    .source_recover {
+        width: 15%;
+        color: #4ed237;
+    }
+
+    .source_update {
+        width: 15%;
+        color: #b97d00;
+    }
+
+    .source_last_update {
+        width: 25%;
+    }
+
+    &.total {
+        margin-left: 11%;
+    }
+}
+
+.delimiter {
+    margin-bottom: 1px;
+    padding-top: 4px;
+    border-bottom: 1px #000000 solid;
+    width: 92%;
+}

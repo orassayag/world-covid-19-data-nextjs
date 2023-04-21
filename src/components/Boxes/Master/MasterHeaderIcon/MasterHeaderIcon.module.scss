@@ -1,0 +1,49 @@
+@keyframes color-change {
+    0% {
+        color: #d22c32;
+    }
+
+    50% {
+        color: #ffef00;
+    }
+
+    100% {
+        color: #d22c32;
+    }
+}
+
+
+.item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2px;
+    margin-right: 2px;
+
+    .icon {
+        margin-right: 2px;
+
+        i {
+            font-size: 12px;
+
+            &:hover {
+                -webkit-transform: scale(1.03);
+                transform: scale(1.03);
+                color: #00b9ff;
+            }
+        }
+    }
+
+    .value {
+        font-size: 12px;
+
+        &.source {
+            color: #ffef00;
+
+            &.alert {
+                animation: color-change 1s infinite;
+            }
+        }
+    }
+}

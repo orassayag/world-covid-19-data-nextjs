@@ -1,0 +1,116 @@
+.leading_box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 20px;
+    text-align: center;
+    align-self: center;
+    background-color: #000000;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 1px 7px 22px -6px rgba(0, 0, 0, 0.53);
+    outline: 1px solid rgba(255, 255, 255, 0.4);
+
+    .icon {
+        margin-right: 2px;
+    }
+
+    .icon,
+    .number {
+        font-size: 15px;
+        position: relative;
+        top: -1px;
+    }
+
+    .number {
+        &.no-data {
+            letter-spacing: 3px;
+        }
+    }
+
+    .name {
+        font-size: 15px;
+
+        &.long {
+            font-size: 14px;
+        }
+
+        &.extra {
+            font-size: 13px;
+        }
+
+        &.mega {
+            font-size: 11px;
+        }
+    }
+
+    .lastUpdateTime,
+    .addTime {
+        font-size: 14px;
+    }
+
+    .case,
+    .casePerMillion,
+    .death,
+    .deathPerMillion,
+    .recover,
+    .recoverPerMillion,
+    .code,
+    .continent,
+    .population,
+    .updatesCount {
+        font-size: 15px;
+    }
+
+    &.case,
+    &.casePerMillion {
+        border-color: #00b9ff;
+        outline: none;
+
+        .icon {
+            i {
+                color: #00b9ff;
+            }
+        }
+
+        .case,
+        .casePerMillion {
+            color: #00b9ff;
+        }
+    }
+
+    &.death,
+    &.deathPerMillion {
+        border-color: #d22c32;
+        outline: none;
+
+        .icon {
+            i {
+                color: #d22c32;
+            }
+        }
+
+        .death,
+        .deathPerMillion {
+            color: #d22c32;
+        }
+    }
+
+    &.recover,
+    &.recoverPerMillion {
+        border-color: #4ed237;
+        outline: none;
+
+        .icon {
+            i {
+                color: #4ed237;
+            }
+        }
+
+        .recover,
+        .recoverPerMillion {
+            color: #4ed237;
+        }
+    }
+}

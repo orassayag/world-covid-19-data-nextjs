@@ -1,0 +1,10 @@
+.items {
+    &.no-data {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        letter-spacing: 10px;
+    }
+}

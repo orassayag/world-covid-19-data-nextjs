@@ -1,0 +1,29 @@
+.country_data {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+    width: 97.5%;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    margin-bottom: 1.4rem;
+    margin-right: -5px;
+
+    &.no_data {
+        width: 100%;
+    }
+
+    .live_data {
+        position: relative;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+}
+
+@media (min-width: 319px) and (max-width: 800px) {
+    .country-data {
+        width: 95.5%;
+        margin: auto;
+    }
+}

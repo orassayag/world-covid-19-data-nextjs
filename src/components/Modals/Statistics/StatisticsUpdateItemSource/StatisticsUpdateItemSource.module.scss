@@ -1,0 +1,332 @@
+@-webkit-keyframes alert-all {
+    0% {
+        background: rgba(255, 239, 0, 0);
+    }
+
+    50% {
+        background: rgba(255, 239, 0, 0.4);
+    }
+
+    100% {
+        background: rgba(255, 239, 0, 0);
+    }
+}
+
+@keyframes alert-all {
+    0% {
+        background: rgba(255, 239, 0, 0);
+    }
+
+    50% {
+        background: rgba(255, 239, 0, 0.4);
+    }
+
+    100% {
+        background: rgba(255, 239, 0, 0);
+    }
+}
+
+@-webkit-keyframes alert-death {
+    0% {
+        background: rgba(210, 44, 50, 0);
+    }
+
+    50% {
+        background: rgba(210, 44, 50, 0.5);
+    }
+
+    100% {
+        background: rgba(210, 44, 50, 0);
+    }
+}
+
+@keyframes alert-death {
+    0% {
+        background: rgba(210, 44, 50, 0);
+    }
+
+    50% {
+        background: rgba(210, 44, 50, 0.5);
+    }
+
+    100% {
+        background: rgba(210, 44, 50, 0);
+    }
+}
+
+@-webkit-keyframes alert-recover {
+    0% {
+        background: rgba(78, 211, 50, 0);
+    }
+
+    50% {
+        background: rgba(78, 211, 50, 0.5);
+    }
+
+    100% {
+        background: rgba(78, 211, 50, 0);
+    }
+}
+
+@keyframes alert-recover {
+    0% {
+        background: rgba(78, 211, 50, 0);
+    }
+
+    50% {
+        background: rgba(78, 211, 50, 0.5);
+    }
+
+    100% {
+        background: rgba(78, 211, 50, 0);
+    }
+}
+
+@-webkit-keyframes alert-case {
+    0% {
+        background: rgba(0, 184, 255, 0);
+    }
+
+    50% {
+        background: rgba(0, 184, 255, 0.5);
+    }
+
+    100% {
+        background: rgba(0, 184, 255, 0);
+    }
+}
+
+@keyframes alert-case {
+    0% {
+        background: rgba(0, 184, 255, 0);
+    }
+
+    50% {
+        background: rgba(0, 184, 255, 0.5);
+    }
+
+    100% {
+        background: rgba(0, 184, 255, 0);
+    }
+}
+
+@-webkit-keyframes shake {
+    0% {
+        -webkit-transform: rotate(-12deg);
+        transform: rotate(-12deg);
+    }
+
+    8% {
+        -webkit-transform: rotate(12deg);
+        transform: rotate(12deg);
+    }
+
+    10% {
+        -webkit-transform: rotate(24deg);
+        transform: rotate(24deg);
+    }
+
+    18% {
+        -webkit-transform: rotate(-24deg);
+        transform: rotate(-24deg);
+    }
+
+    20% {
+        -webkit-transform: rotate(-24deg);
+        transform: rotate(-24deg);
+    }
+
+    28% {
+        -webkit-transform: rotate(24deg);
+        transform: rotate(24deg);
+    }
+
+    30% {
+        -webkit-transform: rotate(24deg);
+        transform: rotate(24deg);
+    }
+
+    38% {
+        -webkit-transform: rotate(-24deg);
+        transform: rotate(-24deg);
+    }
+
+    40% {
+        -webkit-transform: rotate(-24deg);
+        transform: rotate(-24deg);
+    }
+
+    48% {
+        -webkit-transform: rotate(24deg);
+        transform: rotate(24deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(24deg);
+        transform: rotate(24deg);
+    }
+
+    58% {
+        -webkit-transform: rotate(-24deg);
+        transform: rotate(-24deg);
+    }
+
+    60% {
+        -webkit-transform: rotate(-24deg);
+        transform: rotate(-24deg);
+    }
+
+    68% {
+        -webkit-transform: rotate(24deg);
+        transform: rotate(24deg);
+    }
+
+    75% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes shake {
+    0% {
+        -webkit-transform: rotate(-12deg);
+        -ms-transform: rotate(-12deg);
+        transform: rotate(-12deg);
+    }
+
+    8% {
+        -webkit-transform: rotate(12deg);
+        -ms-transform: rotate(12deg);
+        transform: rotate(12deg);
+    }
+
+    10% {
+        -webkit-transform: rotate(24deg);
+        -ms-transform: rotate(24deg);
+        transform: rotate(24deg);
+    }
+
+    18% {
+        -webkit-transform: rotate(-24deg);
+        -ms-transform: rotate(-24deg);
+        transform: rotate(-24deg);
+    }
+
+    20% {
+        -webkit-transform: rotate(-24deg);
+        -ms-transform: rotate(-24deg);
+        transform: rotate(-24deg);
+    }
+
+    28% {
+        -webkit-transform: rotate(24deg);
+        -ms-transform: rotate(24deg);
+        transform: rotate(24deg);
+    }
+
+    30% {
+        -webkit-transform: rotate(24deg);
+        -ms-transform: rotate(24deg);
+        transform: rotate(24deg);
+    }
+
+    38% {
+        -webkit-transform: rotate(-24deg);
+        -ms-transform: rotate(-24deg);
+        transform: rotate(-24deg);
+    }
+
+    40% {
+        -webkit-transform: rotate(-24deg);
+        -ms-transform: rotate(-24deg);
+        transform: rotate(-24deg);
+    }
+
+    48% {
+        -webkit-transform: rotate(24deg);
+        -ms-transform: rotate(24deg);
+        transform: rotate(24deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(24deg);
+        -ms-transform: rotate(24deg);
+        transform: rotate(24deg);
+    }
+
+    58% {
+        -webkit-transform: rotate(-24deg);
+        -ms-transform: rotate(-24deg);
+        transform: rotate(-24deg);
+    }
+
+    60% {
+        -webkit-transform: rotate(-24deg);
+        -ms-transform: rotate(-24deg);
+        transform: rotate(-24deg);
+    }
+
+    68% {
+        -webkit-transform: rotate(24deg);
+        -ms-transform: rotate(24deg);
+        transform: rotate(24deg);
+    }
+
+    75% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+}
+
+.case {
+    width: 70px;
+    color: #00b9ff;
+    margin-left: 3px;
+    margin-top: 2px;
+}
+
+.death {
+    width: 70px;
+    color: #d22c32;
+    margin-top: 2px;
+}
+
+.recover {
+    width: 70px;
+    color: #4ed237;
+    margin-top: 2px;
+}
+
+.alert {
+    &.all {
+        -webkit-animation: alert-all 2s ease-in-out infinite;
+        animation: alert-all 2s ease-in-out infinite;
+    }
+
+    &.death {
+        -webkit-animation: alert-death 2s ease-in-out infinite;
+        animation: alert-death 2s ease-in-out infinite;
+    }
+
+    &.recover {
+        -webkit-animation: alert-recover 2s ease-in-out infinite;
+        animation: alert-recover 2s ease-in-out infinite;
+    }
+
+    &.case {
+        -webkit-animation: alert-case 2s ease-in-out infinite;
+        animation: alert-case 2s ease-in-out infinite;
+    }
+
+    &.death,
+    &.case,
+    &.recover {
+        i {
+            animation: shake 2s 0s infinite;
+            -moz-animation: shake 2s 0s infinite;
+            -webkit-animation: shake 2s 0s infinite;
+            -o-animation: shake 2s 0s infinite;
+        }
+    }
+}

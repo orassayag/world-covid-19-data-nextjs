@@ -1,0 +1,39 @@
+.source_case {
+    width: 15%;
+    color: #00b9ff;
+}
+
+.source_death {
+    width: 15%;
+    color: #d22c32;
+}
+
+.source_recover {
+    width: 15%;
+    color: #4ed237;
+}
+
+.source_update {
+    width: 15%;
+    color: #b97d00;
+}
+
+.source_last_update {
+    width: 25%;
+}
+
+/*     &.alert {
+
+        .source-case,
+        .source-death,
+        .source-recover,
+        .source-update,
+        .source-last_time {
+            text-decoration: blink;
+            -webkit-animation-name: blink;
+            -webkit-animation-duration: 1s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-timing-function: ease-in-out;
+            -webkit-animation-direction: alternate;
+        }
+    } */

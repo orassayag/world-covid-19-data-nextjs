@@ -1,0 +1,32 @@
+.data {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    height: 100%;
+    width: 95%;
+    font-size: 11px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.2);
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    // Width.
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    // Track.
+    &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    // Handle.
+    &::-webkit-scrollbar-thumb {
+        background: #2c3e50;
+    }
+
+    // Handle on hover.
+    &::-webkit-scrollbar-thumb:hover {
+        background: #2c3e50;
+    }
+}

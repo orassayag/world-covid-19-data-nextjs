@@ -1,0 +1,23 @@
+.source {
+    display: flex;
+    flex-direction: row;
+    height: 12px;
+
+    .items {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &.not_active {
+        opacity: 0.5;
+    }
+}
+
+@media (min-width: 319px) and (max-width: 499px) {
+    .source {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}

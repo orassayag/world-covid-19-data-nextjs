@@ -1,0 +1,11 @@
+.statistic_item {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    width: 100%;
+
+    .name {
+        padding-right: 10px;
+        text-align: right;
+    }
+}

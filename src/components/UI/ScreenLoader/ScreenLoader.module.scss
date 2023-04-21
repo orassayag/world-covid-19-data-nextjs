@@ -1,0 +1,257 @@
+@-webkit-keyframes blink {
+    50% {
+        visibility: hidden;
+    }
+}
+
+@keyframes blink {
+    50% {
+        visibility: hidden;
+    }
+}
+
+@keyframes blink {
+    50% {
+        color: transparent;
+    }
+}
+
+@keyframes hideAnimation {
+    to {
+        visibility: hide;
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes hideAnimation {
+    to {
+        visibility: hide;
+        opacity: 0;
+    }
+}
+
+.loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    background: #1d1d1d;
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.5s ease;
+
+    &.hide {
+        -moz-animation: hideAnimation 0.5s ease-in 0s forwards;
+        -webkit-animation: hideAnimation 0.5s ease-in 0s forwards; // Firefox.
+        -o-animation: hideAnimation 0.5s ease-in 0s forwards; // Safari and Chrome.
+        animation: hideAnimation 0.5s ease-in 0s forwards; // Opera.
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        .title {
+            margin-top: 1em;
+            margin-bottom: 1em;
+            font-size: 1.5em;
+            color: #f7f9f7;
+
+            .loader__dot {
+                animation: 1s blink infinite;
+            }
+
+            .loader__dot:nth-child(2) {
+                animation-delay: 250ms;
+            }
+
+            .loader__dot:nth-child(3) {
+                animation-delay: 500ms;
+            }
+        }
+
+        .flex_wrapper {
+            display: flex;
+            flex-flow: row nowrap;
+
+            .single_chart {
+                width: 33%;
+                justify-content: space-around;
+
+                .circular_chart {
+                    display: block;
+                    margin: 10px auto;
+                    width: 10rem;
+                    height: 10rem;
+
+                    .circle_bg {
+                        fill: none;
+                        stroke: #f7f9f7;
+                        stroke-width: 3.8;
+                    }
+
+                    .circle {
+                        fill: none;
+                        stroke-width: 2.8;
+                        stroke-linecap: round;
+                        animation: progress 1s ease-out forwards;
+                        stroke: rgba(0, 0, 0, 0.53);
+                    }
+
+                    @keyframes progress {
+                        0% {
+                            stroke-dasharray: 0 100;
+                        }
+                    }
+
+                    .percentage {
+                        fill: #f7f9f7;
+                        font-family: sans-serif;
+                        font-size: 0.5em;
+                        text-anchor: middle;
+                    }
+                }
+            }
+        }
+
+        .text {
+            margin-top: 20px;
+            width: 30em;
+            height: 2em;
+            text-align: center;
+            font-weight: 300;
+            color: #f7f9f7;
+            font-size: 1em;
+
+            a {
+                color: #f7f9f7;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                    color: #00b9ff;
+                }
+            }
+        }
+
+        .quote {
+            width: 70%;
+            text-align: center;
+
+            blockquote {
+                font-family: 'PT Serif', Cambria, 'Hoefler Text', Utopia, 'Liberation Serif',
+                    'Nimbus Roman No9 L Regular', Times, 'Times New Roman', serif;
+                font-size: 1.7em;
+                text-align: left;
+                width: fit-content;
+                margin: 10px auto;
+                font-style: italic;
+                color: #f7f9f7;
+                padding: 0.5em 0.5em 0.5em 1.8em;
+                border-left: 8px solid #f7f9f7;
+                line-height: 1.6;
+                position: relative;
+                background-color: rgba(255, 255, 255, 0.1);
+                box-shadow: 1px 7px 22px -6px rgba(0, 0, 0, 0.53);
+                outline: 1px solid rgba(255, 255, 255, 0.4);
+
+                &:before {
+                    content: "\201C";
+                    color: #f7f9f7;
+                    font-size: 4em;
+                    position: absolute;
+                    left: 1px;
+                    top: -41px;
+                }
+
+                &:after {
+                    content: close-quote;
+                }
+
+                .person {
+                    font-family: "Fira Sans", "Source Sans Pro", "Open Sans", Roboto, HelveticaNeue-Light, "Helvetica Neue Light",
+                        "Helvetica Neue", "Myriad Pro", "Segoe UI", Myriad, Helvetica,
+                        "Lucida Grande", "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, Arial, sans-serif;
+                    display: block;
+                    margin-right: 0.5em;
+                    text-align: left;
+                    padding: 0;
+                    width: 70%;
+                    color: #f7f9f7;
+
+                    .name {
+                        a {
+                            color: #f7f9f7;
+                            text-decoration: none;
+                            font-size: 0.8em;
+
+                            &:hover {
+                                text-decoration: underline;
+                                color: #00b9ff;
+                            }
+                        }
+                    }
+                }
+
+                .bottom_quote {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    font-size: 0.8em;
+
+                    .icon_container {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: left;
+                        font-size: 14px;
+                        font-style: normal;
+                        font-family: Arial, Helvetica, sans-serif !important;
+                        vertical-align: bottom;
+                        margin-top: 3.5em;
+
+                        .icon_image {
+                            margin-right: 5px;
+                        }
+
+                        .icon_name {
+                            margin-left: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 319px) and (max-width: 800px) {
+    .loader {
+        .container {
+            .quote {
+                blockquote {
+                    font-size: 1.2em;
+                    padding: 0.5em 0.5em 0.2em 1.8em;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 8;
+                    -webkit-box-orient: vertical;
+
+                    &:before {
+                        top: -25px;
+                    }
+                }
+            }
+        }
+    }
+}

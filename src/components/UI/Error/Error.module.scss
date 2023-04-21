@@ -1,0 +1,41 @@
+.error_container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    background: #1d1d1d;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease;
+    z-index: 99999999999999;
+    text-align: center;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .error_content {
+        width: 100%;
+        height: 2em;
+        position: absolute;
+        top: -2em;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        font-weight: 300;
+        color: #f7f9f7;
+        font-size: 1em;
+        text-align: center;
+
+        i {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+    }
+}

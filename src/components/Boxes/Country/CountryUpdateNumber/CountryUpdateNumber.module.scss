@@ -1,0 +1,31 @@
+.cases,
+.deaths,
+.recovers {
+    width: 45px;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+    top: -1px;
+
+    &.hide {
+        visibility: hidden;
+    }
+}
+
+.cases {
+    color: #00b9ff;
+    right: 13px;
+    text-align: left;
+}
+
+.deaths {
+    color: #d22c32;
+    left: 12px;
+    text-align: left;
+}
+
+.recovers {
+    color: #4ed237;
+    left: 41px;
+    text-align: left;
+}

@@ -1,0 +1,39 @@
+.data_item {
+    display: flex;
+    flex-direction: row;
+
+    &.not_active {
+        opacity: 0.5;
+    }
+
+    .name {
+        width: 23px;
+        margin-right: 5px;
+
+        &.active {
+            color: #f3df00;
+        }
+    }
+}
+
+.items {
+    display: flex;
+    flex-direction: row;
+}
+
+@media (min-width: 319px) and (max-width: 800px) {
+    .data_item {
+        flex-direction: column;
+
+        .name {
+            width: 100%;
+            margin-right: 5px;
+            text-align: center;
+            font-size: 13px;
+        }
+    }
+
+    .items {
+        margin: auto;
+    }
+}

@@ -1,0 +1,49 @@
+.update_item {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2px;
+    padding-left: 0px;
+    padding-right: 0px;
+    cursor: pointer;
+
+    .source {
+        width: 30px;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-top: 2px;
+    }
+
+    .country {
+        width: 20px;
+
+        i {
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+            position: relative;
+            top: 2px;
+
+            &.world {
+                position: relative;
+                top: 1px;
+                background-image: url('../../../../assert/images/world16.png');
+                background-repeat: no-repeat;
+                background-size: auto;
+            }
+        }
+    }
+
+    .country_name {
+        width: 180px;
+        text-align: left;
+        padding-top: 3px;
+    }
+
+    .time {
+        width: 112px;
+        margin-top: 2px;
+    }
+}

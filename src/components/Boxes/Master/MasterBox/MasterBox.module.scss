@@ -1,0 +1,59 @@
+.box {
+    width: 254px;
+    margin: 6px;
+    box-sizing: border-box;
+    line-height: 1;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 1px 7px 22px -6px rgba(0, 0, 0, 0.53);
+    outline: 1px solid rgba(255, 255, 255, 0.4);
+    -webkit-transition: -webkit-transform 100ms ease-out;
+    transition: -webkit-transform 100ms ease-out;
+    transition: transform 100ms ease-out;
+    transition: transform 100ms ease-out, -webkit-transform 100ms ease-out;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    z-index: 1;
+
+    &:hover,
+    &:focus {
+        -webkit-transform: scale(1.03);
+        transform: scale(1.03);
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    &.master {
+        height: 180px;
+        order: -1 !important;
+
+        .settings {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            justify-content: left;
+            margin: 5px;
+            margin-top: 1px;
+        }
+    }
+}
+
+@media (min-width: 319px) and (max-width: 499px) {
+    .box {
+        width: 100%;
+
+        &.master {
+            .settings {
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}

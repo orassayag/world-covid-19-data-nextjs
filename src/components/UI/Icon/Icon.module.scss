@@ -1,0 +1,140 @@
+.sorts {
+
+    .icon {
+        font-size: 12px;
+        cursor: pointer;
+        margin-right: 4px;
+
+        &.on,
+        &:hover {
+            -webkit-transform: scale(1.03);
+            transform: scale(1.03);
+
+            &.fa-virus,
+            &.fa-viruses {
+                color: #00b9ff;
+            }
+
+            &.fa-skull-crossbones,
+            &.fa-skull {
+                color: #d22c32;
+            }
+
+            &.fa-heart,
+            &.fa-shield-virus {
+                color: #4ed237;
+            }
+
+            &.fa-adjust {
+                color: #ffef00;
+            }
+
+            &.fa-users {
+                color: #b97d00;
+            }
+
+            &.fa-sync-alt {
+                color: #e000d0;
+            }
+
+            &.fa-hourglass-half,
+            &.fa-font,
+            &.fa-trademark {
+                color: #59ddf1;
+            }
+
+            &.fa-images {
+                color: #cedb12;
+            }
+        }
+    }
+}
+
+.statistics {
+    .icon {
+        &.fa-check-circle {
+            color: #4ed237;
+        }
+
+        &.fa-times-circle {
+            color: #d22c32;
+        }
+
+        &.fa-exclamation-circle {
+            color: #ffb400;
+        }
+
+        &.fa-dot-circle {
+            color: #00b9ff;
+        }
+
+        &.fa-stream {
+            color: #e000d0;
+        }
+
+        &.fa-tools {
+            color: #ffef00;
+        }
+    }
+}
+
+.actions {
+
+    .icon {
+        font-size: 13px;
+        cursor: pointer;
+        margin-right: 5px;
+
+        &:hover {
+            -webkit-transform: scale(1.03);
+            transform: scale(1.03);
+            color: #00b9ff;
+        }
+
+        &.on {
+            color: #00b9ff;
+        }
+
+        &.fa-tools {
+            cursor: default;
+
+            &:hover {
+                -webkit-transform: none;
+                transform: none;
+                color: #ffffff;
+            }
+
+            &.on {
+                color: #ffef00;
+            }
+        }
+
+        &.fa-power-off {
+            &.on {
+                color: #4ed237;
+            }
+
+            &.off {
+                color: #d22c32;
+            }
+        }
+    }
+}
+
+.views {
+    .icon {
+        font-size: 13px;
+        cursor: pointer;
+        width: 20px;
+
+        &:hover {
+            -webkit-transform: scale(1.03);
+            transform: scale(1.03);
+            color: #00b9ff;
+        }
+
+        &.on {
+            color: #00b9ff;
+        }
+    }
+}

@@ -1,0 +1,104 @@
+.leading {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: left;
+    margin-left: 5px;
+
+    .location-container {
+        a {
+            width: 32px;
+            height: 32px;
+        }
+
+        i,
+        .location,
+        .location-empty {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            margin-right: 5px;
+        }
+
+        i {
+            color: #ffffff;
+            font-size: 22px;
+            position: relative;
+            top: 5px;
+            left: 3px;
+            display: table-caption;
+            width: 37px;
+
+            &:hover {
+                color: #00b9ff;
+            }
+        }
+    }
+
+    .inner {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 70%;
+        height: 20px;
+        text-align: center;
+        align-self: center;
+        background-color: #000000;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 1px 7px 22px -6px rgba(0, 0, 0, 0.53);
+        outline: 1px solid rgba(255, 255, 255, 0.4);
+
+        .icon {
+            margin-right: 2px;
+        }
+
+        .icon,
+        .number {
+            font-size: 15px;
+            position: relative;
+            top: -1px;
+        }
+
+        .number {
+            &.no-data {
+                letter-spacing: 3px;
+            }
+        }
+
+        .name {
+            font-size: 15px;
+
+            &.long {
+                font-size: 14px;
+            }
+
+            &.extra {
+                font-size: 13px;
+            }
+
+            &.mega {
+                font-size: 11px;
+            }
+        }
+
+        &.death {
+            color: #d22c32;
+            border-color: #d22c32;
+            outline: none;
+        }
+
+        &.recover {
+            color: #4ed237;
+            border-color: #4ed237;
+            outline: none;
+        }
+
+        &.case {
+            color: #00b9ff;
+            border-color: #00b9ff;
+            outline: none;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+.source_name {
+    width: 10%;
+    margin-right: 5px;
+    margin-top: 1px;
+
+    &.alert {
+        text-decoration: blink;
+        -webkit-animation-name: blink;
+        -webkit-animation-duration: 1s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: ease-in-out;
+        -webkit-animation-direction: alternate;
+    }
+}

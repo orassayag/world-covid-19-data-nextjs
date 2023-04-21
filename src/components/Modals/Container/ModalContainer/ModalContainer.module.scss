@@ -1,0 +1,115 @@
+@keyframes modal-show {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.modal {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(246, 246, 244, 1);
+    opacity: 0;
+    animation: modal-show 0.5s 1 forwards;
+    z-index: 100;
+
+    .modal_content {
+        position: relative;
+        width: 420px;
+        background-color: #15202e;
+        border-radius: 10px;
+
+        &.countries {
+            height: 475px;
+        }
+
+        &.country {
+            width: 600px;
+            height: 615px;
+
+            &.no-data {
+                height: 200px;
+            }
+        }
+
+        &.credits {
+            width: 400px;
+            height: 440px;
+        }
+
+        &.sources {
+            width: 470px;
+            height: 440px;
+        }
+
+        &.statistics {
+            width: 590px;
+            height: 610px;
+        }
+
+        .content {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: column;
+            align-items: flex-end;
+            margin-top: 7px;
+            color: #ffffff;
+
+            .exit {
+                position: relative;
+                top: 1px;
+                right: 9px;
+                cursor: pointer;
+                background-color: #000000;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                line-height: 1;
+                height: 9px;
+                padding: 2px;
+                width: 12px;
+                z-index: 3;
+                color: #ffffff;
+                outline: 0;
+
+                i {
+                    position: relative;
+                    top: -3px;
+                    font-size: 15px;
+
+                    &:hover {
+                        color: #d22c32;
+                        -webkit-transform: scale(1.03);
+                        transform: scale(1.03);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 319px) and (max-width: 800px) {
+    .modal {
+        .modal_content {
+            width: 90%;
+            height: 100%;
+
+            &.countries,
+            &.country,
+            &.credits,
+            &.sources,
+            &.statistics {
+                width: 90%;
+                height: 100%;
+            }
+        }
+    }
+}

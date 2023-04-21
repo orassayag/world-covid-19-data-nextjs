@@ -1,0 +1,13 @@
+.info {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    margin-left: 5px;
+    width: 74%;
+}
+
+@media (min-width: 319px) and (max-width: 499px) {
+    .info {
+        width: 86%;
+    }
+}

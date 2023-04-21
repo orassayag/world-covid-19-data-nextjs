@@ -1,0 +1,57 @@
+.actions {
+    width: 100%;
+    border-top: 2px #15202e solid;
+    display: flex;
+    flex-direction: row;
+    padding-top: 10px;
+
+    button,
+    a {
+        background-color: transparent;
+        color: #ffffff;
+        border: 0;
+        outline: 0;
+        font-size: 13px;
+
+        i {
+            font-size: 13px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+    }
+
+    a {
+        position: relative;
+        top: -4px;
+    }
+
+    button {
+        position: relative;
+        top: -9px;
+    }
+
+    .mode {
+        width: 27%;
+        height: 23px;
+        border-left: 2px #15202e solid;
+        position: relative;
+        top: -8px;
+        left: -1px;
+        line-height: 2;
+        padding-left: 3px;
+        padding-right: 2px;
+    }
+
+    .contact {
+        width: 34%;
+        text-align: right;
+        margin-right: 0px;
+        border-left: 2px #15202e solid;
+        position: relative;
+        top: -8px;
+        left: 0px;
+        line-height: 2;
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+}

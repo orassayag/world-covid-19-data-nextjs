@@ -1,0 +1,17 @@
+.main {
+    .modal {
+        .modal-content {
+            &.country {
+                .content {
+                    .country-identity {
+                        .identity-details {
+                            .title {
+                                font-size: 1.2em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

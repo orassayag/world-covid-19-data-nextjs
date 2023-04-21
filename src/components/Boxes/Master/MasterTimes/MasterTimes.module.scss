@@ -1,0 +1,15 @@
+.times_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+
+    .times {
+        margin-top: 4px;
+        width: 200px;
+    }
+
+    .update-loader-container {
+        width: 30px;
+    }
+}

@@ -1,0 +1,28 @@
+.name {
+    div {
+        font-size: 12px;
+        font-weight: bold;
+        text-decoration: none;
+        cursor: pointer;
+        color: #ffffff;
+
+        &:hover {
+            text-decoration: underline;
+            color: #00b9ff;
+        }
+    }
+
+    &.long {
+        div {
+            font-size: 11px;
+            font-weight: normal;
+        }
+    }
+
+    &.extra {
+        div {
+            font-size: 10px;
+            font-weight: normal;
+        }
+    }
+}

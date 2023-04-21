@@ -1,0 +1,22 @@
+.remove {
+    position: relative;
+    top: 5px;
+    cursor: pointer;
+    background-color: #000000;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    line-height: 1;
+    height: 9px;
+    padding: 2px;
+
+    i {
+        position: relative;
+        top: -3px;
+        font-size: 15px;
+
+        &:hover {
+            color: #d22c32;
+            -webkit-transform: scale(1.03);
+            transform: scale(1.03);
+        }
+    }
+}

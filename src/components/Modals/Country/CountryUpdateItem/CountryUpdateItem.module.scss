@@ -1,0 +1,15 @@
+.update_item {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2px;
+    padding-left: 0px;
+    padding-right: 0px;
+
+    .source {
+        width: 10%;
+        text-align: center;
+    }
+}

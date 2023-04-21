@@ -1,0 +1,47 @@
+.view {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &.views {
+        width: 30px;
+    }
+
+    &.colors {
+        width: 45px;
+    }
+
+    &.directions {
+        width: 45px;
+    }
+
+    .title {
+        font-size: 11px;
+    }
+
+    .icon {
+        margin-top: 3px;
+
+        button {
+            background-color: transparent;
+            color: #ffffff;
+            border: 0;
+            outline: 0;
+
+            i {
+                font-size: 13px;
+                cursor: pointer;
+                width: 20px;
+            }
+        }
+    }
+}
+
+@media (max-width: 548px) {
+    .view {
+        &:nth-of-type(3) {
+            display: none;
+        }
+    }
+}

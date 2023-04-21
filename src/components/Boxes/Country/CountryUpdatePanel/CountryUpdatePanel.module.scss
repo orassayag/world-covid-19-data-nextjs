@@ -1,0 +1,71 @@
+.update_panel {
+    height: 12px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 99;
+
+    &.cac {
+        top: 80px;
+    }
+
+    &.cln {
+        top: 92px;
+    }
+
+    &.coa {
+        top: 104px;
+    }
+
+    &.cva {
+        top: 116px;
+    }
+
+    &.cvs {
+        top: 128px;
+    }
+
+    &.goo {
+        top: 140px;
+    }
+
+    &.wik {
+        top: 152px;
+    }
+
+    &.wod {
+        top: 165px;
+    }
+
+    .inner {
+        width: 96%;
+        height: 12px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        align-self: center;
+        background-color: #000000;
+        border-radius: 5px;
+        border: 1px #000000 solid;
+        position: relative;
+        top: -2px;
+
+        .changes {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+}
+
+@media (min-width: 319px) and (max-width: 499px) {
+    .update_panel {
+        .inner {
+            margin-right: -13px;
+            width: 52%;
+        }
+    }
+}

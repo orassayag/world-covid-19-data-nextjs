@@ -1,0 +1,27 @@
+.current_item {
+    display: flex;
+    flex-direction: row;
+    font-size: 10px;
+    height: 12px;
+
+    .icon {
+        margin-right: 3px;
+
+        [data-tip-top]:before,
+        [data-tip-top]:after {
+            top: -250%;
+        }
+    }
+
+    .time {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        letter-spacing: 0.2px;
+
+        .current_time {
+            letter-spacing: 1px;
+        }
+    }
+}

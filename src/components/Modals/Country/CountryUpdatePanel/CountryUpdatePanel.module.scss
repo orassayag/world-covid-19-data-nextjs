@@ -1,0 +1,71 @@
+.update_panel {
+    height: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 99;
+    right: 2%;
+    font-size: 0.65em;
+
+    &.cac {
+        top: 35px;
+    }
+
+    &.cln {
+        top: 46px;
+    }
+
+    &.coa {
+        top: 57px;
+    }
+
+    &.cva {
+        top: 68px;
+    }
+
+    &.cvs {
+        top: 79px;
+    }
+
+    &.goo {
+        top: 90px;
+    }
+
+    &.wik {
+        top: 101px;
+    }
+
+    &.wod {
+        top: 113px;
+    }
+
+    .inner {
+        width: 100%;
+        height: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        align-self: center;
+        background-color: #000000;
+        border-radius: 5px;
+        border: 1px #000000 solid;
+        position: relative;
+        top: -1px;
+
+        .changes {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
+    }
+}
+
+@media (min-width: 319px) and (max-width: 800px) {
+    .update_panel {
+        display: none;
+    }
+}

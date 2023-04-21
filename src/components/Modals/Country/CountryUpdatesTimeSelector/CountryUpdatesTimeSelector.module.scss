@@ -1,0 +1,31 @@
+.time_selector {
+    display: flex;
+    width: 50px;
+    height: 16px;
+    background: #2c3e50;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        appearance: none;
+        outline: 0;
+        box-shadow: none;
+        border: 0 !important;
+        background: #2c3e50;
+        background-image: none;
+        flex: 1;
+        padding-left: 5px;
+        color: #ffffff;
+        cursor: pointer;
+        font-size: 10px;
+        line-height: 1;
+        text-align: center;
+
+        &::-ms-expand {
+            display: none;
+        }
+    }
+}

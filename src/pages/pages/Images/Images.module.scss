@@ -1,0 +1,122 @@
+.container {
+    width: 100%;
+    height: 100%;
+
+    .countries {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+
+        .country {
+            width: 99%;
+            height: 100px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px #ffffff solid;
+            padding: 2px;
+
+            &:nth-of-type(1) {
+                border-top: 1px #ffffff solid;
+            }
+
+            .name {
+                font-size: 14px;
+                width: 300px;
+                color: #ffffff;
+            }
+
+            .flag32 {
+                width: 50px;
+
+                i {
+                    display: inline-block;
+                    width: 32px;
+
+                    &.flag {
+                        height: 32px;
+                        margin-left: 3px;
+
+                        &.world {
+                            position: relative;
+                            top: 3px;
+                            background-image: url('../../../assert/images/world32.png');
+                            background-repeat: no-repeat;
+                            background-size: auto;
+                        }
+                    }
+
+                    &.flag-extra {
+                        height: 32px;
+                        position: relative;
+                        left: 1px;
+                    }
+                }
+            }
+
+            .flag16 {
+                width: 35px;
+
+                i {
+                    display: inline-block;
+                    width: 16px;
+
+                    &.flag {
+                        height: 16px;
+                        margin-left: 3px;
+
+                        &.world {
+                            position: relative;
+                            top: 1px;
+                            background-image: url('../../../assert/images/world16.png');
+                            background-repeat: no-repeat;
+                            background-size: auto;
+                        }
+                    }
+
+                    &.flag-extra {
+                        height: 16px;
+                        position: relative;
+                        left: 5px;
+                    }
+                }
+            }
+        }
+
+        .locations {
+            width: 50px;
+
+            i,
+            .location {
+                display: inline-block;
+                width: 32px;
+                height: 32px;
+                margin-right: 5px;
+            }
+
+            i {
+                color: #ffffff;
+                font-size: 22px;
+                position: relative;
+                top: 5px;
+                left: 3px;
+                display: table-caption;
+                width: 37px;
+
+                &:hover {
+                    color: #00b9ff;
+                }
+            }
+        }
+
+        .big_flag,
+        .coat {
+            margin-right: 1em;
+            margin-left: 1em;
+        }
+    }
+}

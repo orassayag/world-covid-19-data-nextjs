@@ -1,0 +1,13 @@
+.source_status {
+    margin-right: 5px;
+}
+
+.source_name {
+    width: 30px;
+    margin-right: 5px;
+    margin-top: 1px;
+
+    &.empty {
+        width: 520px;
+    }
+}

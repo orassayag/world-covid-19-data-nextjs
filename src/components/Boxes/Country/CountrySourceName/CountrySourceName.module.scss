@@ -1,0 +1,9 @@
+.name {
+    width: 23px;
+    margin-right: 5px;
+    margin-left: 0px;
+
+    &.active {
+        color: #f3df00;
+    }
+}
