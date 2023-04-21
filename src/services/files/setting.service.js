@@ -18,7 +18,7 @@ class SettingService {
       intervalSeconds: 5,
       viewType: ViewTypeEnum.HORIZONTAL,
       colorType: ColorTypeEnum.NIGHT,
-      sortType: sortService.sortsList[CountrySortTypeEnum.CASE],
+      sortType: sortService.sortsList[CountrySortTypeEnum.LAST_UPDATE_TIME],
     });
   }
 
