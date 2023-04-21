@@ -13,3 +13,16 @@
         width: 30px;
     }
 }
+
+@media (min-width: 319px) and (max-width: 499px) {
+    .times_container {
+        width: 64%;
+
+        .times {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+}

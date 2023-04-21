@@ -55,3 +55,14 @@
         padding-right: 3px;
     }
 }
+
+@media (min-width: 319px) and (max-width: 499px) {
+    .actions {
+        justify-content: center;
+
+        .mode,
+        .contact {
+            width: auto;
+        }
+    }
+}

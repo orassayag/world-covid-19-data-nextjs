@@ -8,14 +8,16 @@ class SourceService {
   }
 
   initiateSourcesList() {
-    // ToDo: Check the query parameters here if relevant.
     const sourcesList = this.getSourcesList(null, {
       filterOptions: null,
       sortType: SourceSortTypeEnum.ORDER,
       isReturnArray: false,
     });
     const sourcesListValues = Object.values(sourcesList);
-    for (let i = 0; i < sourcesListValues.length; i += 1) {
+    /* ToDo: For now, skip on the population sources, since it's always local
+       - by settings index to start with 2 instead of 0. Add an option to load
+       the sources without the population */
+    for (let i = 2; i < sourcesListValues.length; i += 1) {
       this.sourcesKeysList.push(sourcesListValues[i].lowerName);
     }
     return sourcesList;
