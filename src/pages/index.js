@@ -7,7 +7,6 @@ import store from '../store/store';
 import { timeUtils } from '../utils';
 
 export default function Home() {
-  debugger;
   const router = useRouter();
   const { COMPONENT_MODE } = settings;
   settings.ENVIRONMENT_MODE = process.env.NODE_ENV;
