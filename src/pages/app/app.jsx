@@ -2,16 +2,16 @@ import {
   useRef, useEffect, useCallback, createRef,
 } from 'react';
 import { useDispatch, useSelector, batch } from 'react-redux';
-import styles from './App.module.scss';
+import styles from './app.module.scss';
 import {
   CountryBox, Error, Footer, MasterBox, ModalContainer, ScreenLoader,
-} from '../../../components';
+} from '../../components';
 import {
   dataSlices, settingsSlices, statisticsSlices, statisticsUpdatesSlices,
-} from '../../../store/slices';
-import { ModalNameEnum } from '../../../core/enums';
-import { engineService } from '../../../services';
-import { coreUtils, validationUtils } from '../../../utils';
+} from '../../store/slices';
+import { ModalNameEnum } from '../../core/enums';
+import { engineService } from '../../services';
+import { coreUtils, validationUtils } from '../../utils';
 
 export default function App({ mode, int }) {
   const dispatch = useDispatch();

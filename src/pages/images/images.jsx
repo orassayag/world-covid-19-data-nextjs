@@ -1,7 +1,7 @@
-import styles from './Images.module.scss';
-import { Footer } from '../../../components';
-import { CountrySortTypeEnum } from '../../../core/enums';
-import { countryService, sortService } from '../../../services';
+import styles from './images.module.scss';
+import { Footer } from '../../components';
+import { CountrySortTypeEnum } from '../../core/enums';
+import { countryService, sortService } from '../../services';
 
 export default function Images() {
   const countriesList = countryService.getCountriesList(null, {

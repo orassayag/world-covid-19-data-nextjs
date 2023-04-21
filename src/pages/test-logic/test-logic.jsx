@@ -1,4 +1,4 @@
-import styles from './TestLogic.module.scss';
+import styles from './test-logic.module.scss';
 
 export default function TestLogic() {
   return (

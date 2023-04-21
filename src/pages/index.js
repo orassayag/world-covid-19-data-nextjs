@@ -4,16 +4,17 @@ import dynamic from 'next/dynamic';
 import { Provider } from 'react-redux';
 import settings from '../settings/settings';
 import store from '../store/store';
-import { textUtils, timeUtils } from '../utils';
+import { timeUtils } from '../utils';
 
 export default function Home() {
+  debugger;
   const router = useRouter();
   const { COMPONENT_MODE } = settings;
   settings.ENVIRONMENT_MODE = process.env.NODE_ENV;
   const mode = router?.query?.mode || 'local';
   const int = router?.query?.int || '5';
-  const componentName = textUtils.upperCaseFirstLetter(COMPONENT_MODE);
-  const App = dynamic(() => import(`./pages/${componentName}/${componentName}`), {
+  const componentName = COMPONENT_MODE.toLowerCase();
+  const App = dynamic(() => import(`./${componentName}/${componentName}`), {
     ssr: false,
   });
   const component = (
@@ -55,7 +56,7 @@ export default function Home() {
         <meta data-rh="true" property="og:image" content="/images/android-chrome-512x512.png" />
         <meta data-rh="true" name="twitter:image:src" content="/images/android-chrome-512x512.png" />
         <meta data-rh="true" name="twitter:card" content="summary_large_image" />
-        <meta data-rh="true" property="article:author" content="https://github.com/orassayag/world-covid-19-data-nextjs" />
+        <meta data-rh="true" property="article:author" content="https://github.com/orassayag/world-covid-19-data" />
         <meta data-rh="true" name="twitter:creator" content="Or Assayag" />
         <meta data-rh="true" name="author" content="Or Assayag" />
         <meta data-rh="true" name="robots" content="index,follow,max-image-preview:large" />
@@ -69,7 +70,7 @@ export default function Home() {
         <link data-rh="true" rel="apple-touch-icon" sizes="32x32" href="/images/favicon32x32.png" />
         <link data-rh="true" rel="apple-touch-icon" sizes="16x16" href="/images/favicon16x16.png" />
         <link data-rh="true" rel="mask-icon" href="/images/image2vector.svg" color="#ffffff" />
-        <link data-rh="true" rel="author" href="https://github.com/orassayag/world-covid-19-data-nextjs" />
+        <link data-rh="true" rel="author" href="https://github.com/orassayag/world-covid-19-data" />
         <link data-rh="true" rel="canonical" href="https://world-covid-19-data.herokuapp.com" />
         <link data-rh="true" rel="alternate" href="https://world-covid-19-data.herokuapp.com" />
       </Head>

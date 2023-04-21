@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import styles from './Icons.module.scss';
-import { Footer, Icon } from '../../../components';
-import { quoteService } from '../../../services';
-import { validationUtils } from '../../../utils';
+import styles from './icons.module.scss';
+import { Footer, Icon } from '../../components';
+import { quoteService } from '../../services';
+import { validationUtils } from '../../utils';
 
 function IconBox({ icon }) {
   const { iconType, iconName } = quoteService.getIconType(icon);
