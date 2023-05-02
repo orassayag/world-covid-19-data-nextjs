@@ -2,14 +2,15 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic';
 import settings from '../settings/settings';
+import { DataModeEnum } from '../core/enums';
 import { timeUtils } from '../utils';
 
 export default function Home() {
   const router = useRouter();
   const { COMPONENT_MODE } = settings;
   settings.ENVIRONMENT_MODE = process.env.NODE_ENV;
-  const mode = router?.query?.mode || 'local';
-  const int = router?.query?.int || '5';
+  const mode = router?.query?.mode || DataModeEnum.LOCAL;
+  const int = router?.query?.int || settings.LOCAL_DELAY_BETWEEN_SOURCES_FETCH.toString();
   const componentName = COMPONENT_MODE.toLowerCase();
   const App = dynamic(() => import(`./${componentName}/${componentName}`), {
     ssr: false,

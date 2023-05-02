@@ -54,7 +54,7 @@ class EngineService {
     // Loader interval.
     this.loader = null;
     // Local flags.
-    this.mode = 'local';
+    this.mode = DataModeEnum.LOCAL;
     this.isInitiateComplete = false;
     // Sources list recover.
     this.recoverUpdatesCount = TRY_RECOVER_SOURCES_UPDATES_COUNT;
@@ -74,8 +74,8 @@ class EngineService {
     // Interval.
     if (interval) {
       let int = +interval;
-      if (isNaN(int) || int < 5 || int > 99) {
-        int = 5;
+      if (isNaN(int) || int < settings.LOCAL_DELAY_BETWEEN_SOURCES_FETCH || int > 99) {
+        int = settings.LOCAL_DELAY_BETWEEN_SOURCES_FETCH;
       }
       // Local delay time after finish loading.
       this.settingsList.intervalSeconds = int;
@@ -312,7 +312,7 @@ class EngineService {
           isLastUpdateChanges: fetchDataResults.updateCountryType === UpdateCountryTypeEnum.DATA,
           totalUpdatesCount: this.statisticsList.totalUpdatesCount + 1,
           totalUpdateCyclesCount: this.sourcesIndex === 0
-          && this.statisticsList.totalUpdatesCount > 1
+            && this.statisticsList.totalUpdatesCount > 1
             ? this.statisticsList.totalUpdateCyclesCount + 1
             : this.statisticsList.totalUpdateCyclesCount,
         };
@@ -455,7 +455,7 @@ class EngineService {
     }
     if (source.isError
       && (this.isInitiateComplete
-         && !this.settingsList.isRefreshMode && this.tryRecoverRounds === 0)) {
+        && !this.settingsList.isRefreshMode && this.tryRecoverRounds === 0)) {
       return false;
     }
     return true;
@@ -464,7 +464,7 @@ class EngineService {
   finalizeStandardData() {
     this.isInitiateComplete = true;
     this.liveStandardDelayTime = settings.LIVE_DELAY_BETWEEN_SOURCES_FETCH;
-    this.localStandardDelayTime = settings.LOCAL_DELAY_BETWEEN_SOURCES_FETCH;
+    this.localStandardDelayTime = settings.LOCAL_DELAY_BETWEEN_SOURCES_FETCH * 1000;
     // Random a leading source if not exists.
     if (!this.settingsList.leadingSource) {
       this.settingsList.leadingSource = sourceService.getRandomSource(this.sourcesList);

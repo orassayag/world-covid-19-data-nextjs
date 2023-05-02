@@ -26,8 +26,8 @@ const settings = {
   // ===TIME=== //
   // Number. Milliseconds. The delay time between fetching different sources data in live mode.
   LIVE_DELAY_BETWEEN_SOURCES_FETCH: 30000,
-  // Number. Milliseconds. The delay time between fetches different sources data in local mode.
-  LOCAL_DELAY_BETWEEN_SOURCES_FETCH: 5000,
+  // Number. Seconds. The delay time between fetches different sources data in local mode.
+  LOCAL_DELAY_BETWEEN_SOURCES_FETCH: 5,
   FETCH_DATA_TIMEOUT: 30000, // Number. Milliseconds. The timeout to fetch data via axios.
   // ===COUNTER=== //
   // Number. The number of updates to reach until it tries to fetch data from an error source.
@@ -37,9 +37,9 @@ const settings = {
   // ===LOCAL=== //
   // Number. Determine the percentage of true/false chances to simulate the process of updating
   // covid data. Example: 0.8 - true 80%/false 20%.
-  SIMULATE_LOCAL_UPDATE_PERCENTAGE: 0.9,
+  SIMULATE_LOCAL_UPDATE_PERCENTAGE: 1,
   // Number. Determine the maximum number of countries to update per round.
-  SIMULATE_LOCAL_MAXIMUM_COUNTRIES_PER_ROUND: 5,
+  SIMULATE_LOCAL_MAXIMUM_COUNTRIES_PER_ROUND: 20,
   // Number. Determine the maximum number of each value to be random.
   // Example: 323 cases, 12 deaths, 899 recovers.
   SIMULATE_LOCAL_MAXIMUM_NUMBER_PER_VALUE: 1000,

@@ -15,7 +15,7 @@ class SettingService {
     this.settingsList = new SettingsListModel({
       isActive: true,
       isLiveMode: false,
-      intervalSeconds: 5,
+      intervalSeconds: settings.LOCAL_DELAY_BETWEEN_SOURCES_FETCH,
       viewType: ViewTypeEnum.HORIZONTAL,
       colorType: ColorTypeEnum.NIGHT,
       sortType: sortService.sortsList[CountrySortTypeEnum.LAST_UPDATE_TIME],
