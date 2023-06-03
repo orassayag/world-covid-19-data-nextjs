@@ -55,21 +55,21 @@
     "lint": "next lint"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.21.3",
-    "eslint": "8.39.0",
+    "@babel/eslint-parser": "^7.21.8",
+    "eslint": "8.42.0",
     "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-next": "13.3.4",
+    "eslint-config-next": "13.4.4",
     "eslint-plugin-security": "^1.7.1",
     "eslint-plugin-no-inline-styles": "^1.0.5"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "axios": "^1.4.0",
-    "next": "13.3.4",
+    "next": "13.4.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-redux": "^8.0.5",
-    "react-router-dom": "^6.11.0",
+    "react-redux": "^8.0.7",
+    "react-router-dom": "^6.11.2",
     "sass": "^1.62.1"
   }
 }

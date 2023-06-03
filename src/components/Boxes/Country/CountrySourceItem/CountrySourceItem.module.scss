@@ -1,4 +1,4 @@
-@keyframes shake {
+/* @keyframes shake {
     0% {
         -webkit-transform: rotate(-12deg);
         -ms-transform: rotate(-12deg);
@@ -88,59 +88,58 @@
         -ms-transform: rotate(0deg);
         transform: rotate(0deg);
     }
-}
+} */
 
 .item {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
+  margin-right: 2px;
+  width: 70px;
+
+  .icon {
     margin-right: 2px;
-    width: 70px;
+  }
 
-    .icon {
-        margin-right: 2px;
+  .number {
+    width: 100%;
+    text-align: left;
+
+    &.no-data {
+      letter-spacing: 5px;
     }
+  }
 
+  &.case {
+    .icon,
     .number {
-        width: 100%;
-        text-align: left;
-
-        &.no-data {
-            letter-spacing: 5px;
-        }
+      color: #00b9ff;
     }
+  }
 
-    &.case {
-
-        .icon,
-        .number {
-            color: #00b9ff;
-        }
+  &.death {
+    .icon,
+    .number {
+      color: #d22c32;
     }
+  }
 
-    &.death {
-
-        .icon,
-        .number {
-            color: #d22c32;
-        }
+  &.recover {
+    .icon,
+    .number {
+      color: #4ed237;
     }
+  }
 
-    &.recover {
-
-        .icon,
-        .number {
-            color: #4ed237;
-        }
+  &.case,
+  &.death,
+  &.recover {
+    .icon {
+      &:global {
+        animation: shake 2s 0s infinite;
+        -moz-animation: shake 2s 0s infinite;
+        -webkit-animation: shake 2s 0s infinite;
+        -o-animation: shake 2s 0s infinite;
+      }
     }
-
-    &.case,
-    &.death,
-    &.recover {
-        .icon {
-            animation: shake 2s 0s infinite;
-            -moz-animation: shake 2s 0s infinite;
-            -webkit-animation: shake 2s 0s infinite;
-            -o-animation: shake 2s 0s infinite;
-        }
-    }
+  }
 }
