@@ -3,7 +3,6 @@
   "plugins": [
     "security",
     "react",
-    "import",
     "eslint-plugin-no-inline-styles"
   ],
   "extends": [

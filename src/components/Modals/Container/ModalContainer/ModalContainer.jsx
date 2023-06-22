@@ -28,7 +28,6 @@ export default function ModalContainer({ onActionClick, onActionChange }) {
     <div className={styles.modal}>
       {(() => {
         switch (activeModalName) {
-
           case ModalNameEnum.COUNTRIES: {
             return (
               <CountriesModal
@@ -82,7 +81,7 @@ export default function ModalContainer({ onActionClick, onActionChange }) {
               />
             );
           }
-
+          default: return null;
         }
       })()}
     </div>
