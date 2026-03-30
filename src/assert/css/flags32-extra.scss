@@ -1,0 +1,551 @@
+/* cSpell:disable */
+
+.f32-extra {
+    .flag-extra {
+        background: url('../images/flags32extra.png') no-repeat;
+
+        &._Abkhazia {
+            background-position: 0px 0px;
+        }
+
+        &._Abyei {
+            background-position: 0px -32px;
+        }
+
+        &._Aceh {
+            background-position: 0px -64px;
+        }
+
+        &._Adjara {
+            background-position: 0px -96px;
+        }
+
+        &._Adygea {
+            background-position: 0px -128px;
+        }
+
+        &._Akrotiri-and-Dhekelia {
+            background-position: 0px -160px;
+        }
+
+        &._Altai-Republic {
+            background-position: 0px -192px;
+        }
+
+        &._Aosta-Valley {
+            background-position: 0px -224px;
+        }
+
+        &._Artsakh {
+            background-position: 0px -256px;
+        }
+
+        &._Ascension-Island {
+            background-position: 0px -288px;
+        }
+
+        &._Ashanti {
+            background-position: 0px -320px;
+        }
+
+        &._Australian-Antarctic-Territory {
+            background-position: 0px -352px;
+        }
+
+        &._Azad-Kashmir {
+            background-position: 0px -384px;
+        }
+
+        &._Azores {
+            background-position: 0px -416px;
+        }
+
+        &._Bajo-Nuevo-Bank {
+            background-position: 0px -448px;
+        }
+
+        &._Baker-Island {
+            background-position: 0px -480px;
+        }
+
+        &._Balleny-Islands {
+            background-position: 0px -512px;
+        }
+
+        &._Bangsamoro {
+            background-position: 0px -544px;
+        }
+
+        &._Bashkortostan {
+            background-position: 0px -576px;
+        }
+
+        &._Basque {
+            background-position: 0px -608px;
+        }
+
+        &._Bougainville {
+            background-position: 0px -640px;
+        }
+
+        &._Br_ko-District {
+            background-position: 0px -672px;
+        }
+
+        &._British-Antarctic-Territory {
+            background-position: 0px -704px;
+        }
+
+        &._British-Indian-Ocean-Territory {
+            background-position: 0px -736px;
+        }
+
+        &._Buryatia {
+            background-position: 0px -768px;
+        }
+
+        &._Canary-Islands {
+            background-position: 0px -800px;
+        }
+
+        &._Catalonia {
+            background-position: 0px -832px;
+        }
+
+        &._Ceuta-and-Melilla {
+            background-position: 0px -864px;
+        }
+
+        &._Chechenya {
+            background-position: 0px -896px;
+        }
+
+        &._Chin-State {
+            background-position: 0px -928px;
+        }
+
+        &._Christmas-Island {
+            background-position: 0px -960px;
+        }
+
+        &._Chuvashia {
+            background-position: 0px -992px;
+        }
+
+        &._Cocos-_Keeling_-Islands {
+            background-position: 0px -1024px;
+        }
+
+        &._Coral-Sea-Islands {
+            background-position: 0px -1056px;
+        }
+
+        &._Corsica {
+            background-position: 0px -1088px;
+        }
+
+        &._Crimea {
+            background-position: 0px -1120px;
+        }
+
+        &._Dagestan {
+            background-position: 0px -1152px;
+        }
+
+        &._Diego-Garcia {
+            background-position: 0px -1184px;
+        }
+
+        &._Donetsk {
+            background-position: 0px -1216px;
+        }
+
+        &._Easter-Island {
+            background-position: 0px -1248px;
+        }
+
+        &._Falkland-Islands-_Malvinas_ {
+            background-position: 0px -1280px;
+        }
+
+        &._Flanders {
+            background-position: 0px -1312px;
+        }
+
+        &._French-Guiana {
+            background-position: 0px -1344px;
+        }
+
+        &._French-Southern-Territories {
+            background-position: 0px -1376px;
+        }
+
+        &._Friuli-Venezia-Giulia {
+            background-position: 0px -1408px;
+        }
+
+        &._Gagauzia {
+            background-position: 0px -1440px;
+        }
+
+        &._Galicia {
+            background-position: 0px -1472px;
+        }
+
+        &._Galmudug {
+            background-position: 0px -1504px;
+        }
+
+        &._Gaza-Strip {
+            background-position: 0px -1536px;
+        }
+
+        &._Gilgit-Baltistan {
+            background-position: 0px -1568px;
+        }
+
+        &._Gorno-Badakhshan {
+            background-position: 0px -1600px;
+        }
+
+        &._Guangxi {
+            background-position: 0px -1632px;
+        }
+
+        &._Heard-Island-and-McDonald-Islands {
+            background-position: 0px -1664px;
+        }
+
+        &._Hirshabelle-State {
+            background-position: 0px -1696px;
+        }
+
+        &._Howland-Island {
+            background-position: 0px -1728px;
+        }
+
+        &._Indian-Reservation {
+            background-position: 0px -1760px;
+        }
+
+        &._Ingushetia {
+            background-position: 0px -1792px;
+        }
+
+        &._Inner-Mongolia {
+            background-position: 0px -1824px;
+        }
+
+        &._Jammu-and-Kashmir {
+            background-position: 0px -1856px;
+        }
+
+        &._Jarvis-Island {
+            background-position: 0px -1888px;
+        }
+
+        &._Jeju-Island {
+            background-position: 0px -1920px;
+        }
+
+        &._Jewish-Autonomous-Oblast {
+            background-position: 0px -1952px;
+        }
+
+        &._Johnston-Atoll {
+            background-position: 0px -1984px;
+        }
+
+        &._Jubaland {
+            background-position: 0px -2016px;
+        }
+
+        &._Kabardino-Balkaria {
+            background-position: 0px -2048px;
+        }
+
+        &._Kachin-State {
+            background-position: 0px -2080px;
+        }
+
+        &._Kalmykia {
+            background-position: 0px -2112px;
+        }
+
+        &._Karachay-Cherkessia {
+            background-position: 0px -2144px;
+        }
+
+        &._Karakalpakstan {
+            background-position: 0px -2176px;
+        }
+
+        &._Karelia {
+            background-position: 0px -2208px;
+        }
+
+        &._Kayah-State {
+            background-position: 0px -2240px;
+        }
+
+        &._Kayin-State {
+            background-position: 0px -2272px;
+        }
+
+        &._Khakassia {
+            background-position: 0px -2304px;
+        }
+
+        &._Kingman-Reef {
+            background-position: 0px -2336px;
+        }
+
+        &._Komi {
+            background-position: 0px -2368px;
+        }
+
+        &._Koofur-Orsi {
+            background-position: 0px -2400px;
+        }
+
+        &._Kurdistan {
+            background-position: 0px -2432px;
+        }
+
+        &._Luhansk {
+            background-position: 0px -2464px;
+        }
+
+        &._Madeira {
+            background-position: 0px -2496px;
+        }
+
+        &._Mari-El {
+            background-position: 0px -2528px;
+        }
+
+        &._Marquesas-Islands {
+            background-position: 0px -2560px;
+        }
+
+        &._Midway-Atoll {
+            background-position: 0px -2592px;
+        }
+
+        &._Mon-State {
+            background-position: 0px -2624px;
+        }
+
+        &._Mordovia {
+            background-position: 0px -2656px;
+        }
+
+        &._Mount-Athos {
+            background-position: 0px -2688px;
+        }
+
+        &._Nakhchivan {
+            background-position: 0px -2720px;
+        }
+
+        &._Navassa-Island {
+            background-position: 0px -2752px;
+        }
+
+        &._Ningxia {
+            background-position: 0px -2784px;
+        }
+
+        &._Norfolk-Island {
+            background-position: 0px -2816px;
+        }
+
+        &._North-Caribbean {
+            background-position: 0px -2848px;
+        }
+
+        &._North-Ossetia_Alania {
+            background-position: 0px -2880px;
+        }
+
+        &._Northern-Mariana-Islands {
+            background-position: 0px -2912px;
+        }
+
+        &._Palmyra-Atoll {
+            background-position: 0px -2944px;
+        }
+
+        &._Papua {
+            background-position: 0px -2976px;
+        }
+
+        &._Peter-I-Island {
+            background-position: 0px -3008px;
+        }
+
+        &._Pitcairn-Islands {
+            background-position: 0px -3040px;
+        }
+
+        &._Puntland {
+            background-position: 0px -3072px;
+        }
+
+        &._Queen-Maud-Land {
+            background-position: 0px -3104px;
+        }
+
+        &._Republika-Srpska {
+            background-position: 0px -3136px;
+        }
+
+        &._Rodrigues {
+            background-position: 0px -3168px;
+        }
+
+        &._Rojava {
+            background-position: 0px -3200px;
+        }
+
+        &._Ross-Dependency {
+            background-position: 0px -3232px;
+        }
+
+        &._Rotuma {
+            background-position: 0px -3264px;
+        }
+
+        &._Saba {
+            background-position: 0px -3296px;
+        }
+
+        &._Sahrawi-Arab {
+            background-position: 0px -3328px;
+        }
+
+        &._Saint-Pierre-and-Miquelon {
+            background-position: 0px -3360px;
+        }
+
+        &._Sakha {
+            background-position: 0px -3392px;
+        }
+
+        &._Sardinia {
+            background-position: 0px -3424px;
+        }
+
+        &._Scott-Island {
+            background-position: 0px -3456px;
+        }
+
+        &._Serranilla-Bank {
+            background-position: 0px -3488px;
+        }
+
+        &._Shan-State {
+            background-position: 0px -3520px;
+        }
+
+        &._Sicily {
+            background-position: 0px -3552px;
+        }
+
+        &._Sint-Eustatius {
+            background-position: 0px -3584px;
+        }
+
+        &._South-Caribbean {
+            background-position: 0px -3616px;
+        }
+
+        &._South-Georgia {
+            background-position: 0px -3648px;
+        }
+
+        &._South-Orkney-Islands {
+            background-position: 0px -3680px;
+        }
+
+        &._South-Ossetia {
+            background-position: 0px -3712px;
+        }
+
+        &._South-Shetland-Islands {
+            background-position: 0px -3744px;
+        }
+
+        &._Tatarstan {
+            background-position: 0px -3776px;
+        }
+
+        &._Temotu {
+            background-position: 0px -3808px;
+        }
+
+        &._Tokelau {
+            background-position: 0px -3840px;
+        }
+
+        &._Transnistria {
+            background-position: 0px -3872px;
+        }
+
+        &._Trentino-Alto-Adige {
+            background-position: 0px -3904px;
+        }
+
+        &._Tuva {
+            background-position: 0px -3936px;
+        }
+
+        &._Udmurtia {
+            background-position: 0px -3968px;
+        }
+
+        &._United-States-Minor-Outlying {
+            background-position: 0px -4000px;
+        }
+
+        &._Vojvodina {
+            background-position: 0px -4032px;
+        }
+
+        &._Wa-State {
+            background-position: 0px -4064px;
+        }
+
+        &._Wake-Island {
+            background-position: 0px -4096px;
+        }
+
+        &._Wallis-_-Futuna {
+            background-position: 0px -4128px;
+        }
+
+        &._Wallonia {
+            background-position: 0px -4160px;
+        }
+
+        &._West-Papua {
+            background-position: 0px -4192px;
+        }
+
+        &._Xinjiang {
+            background-position: 0px -4224px;
+        }
+
+        &._Yogyakarta {
+            background-position: 0px -4256px;
+        }
+
+        &._Zanzibar {
+            background-position: 0px -4288px;
+        }
+
+        &._Zapatista-Municipalities {
+            background-position: 0px -4320px;
+        }
+    }
+}

@@ -1,0 +1,991 @@
+/* cSpell:disable */
+
+.f32 {
+    .flag {
+        background: url('../images/flags32.png') no-repeat;
+
+        &._Other {
+            background-position: 0px 0px;
+        }
+
+        &._England {
+            background-position: 0px -224px;
+        }
+
+        &._Kosovo {
+            background-position: 0px -320px;
+        }
+
+        &._NATO {
+            background-position: 0px -352px;
+        }
+
+        &._Northern_Cyprus {
+            background-position: 0px -384px;
+        }
+
+        &._Northern_Ireland {
+            background-position: 0px -416px;
+        }
+
+        &._Scotland {
+            background-position: 0px -544px;
+        }
+
+        &._Somaliland {
+            background-position: 0px -576px;
+        }
+
+        &._Tibet {
+            background-position: 0px -608px;
+        }
+
+        &._Wales {
+            background-position: 0px -672px;
+        }
+
+        &.ad {
+            background-position: 0px -704px;
+        }
+
+        &.ae {
+            background-position: 0px -736px;
+        }
+
+        &.af {
+            background-position: 0px -768px;
+        }
+
+        &.ag {
+            background-position: 0px -800px;
+        }
+
+        &.ai {
+            background-position: 0px -832px;
+        }
+
+        &.al {
+            background-position: 0px -864px;
+        }
+
+        &.am {
+            background-position: 0px -896px;
+        }
+
+        &.ao {
+            background-position: 0px -928px;
+        }
+
+        &.aq {
+            background-position: 0px -960px;
+        }
+
+        &.ar {
+            background-position: 0px -992px;
+        }
+
+        &.as {
+            background-position: 0px -1024px;
+        }
+
+        &.at {
+            background-position: 0px -1056px;
+        }
+
+        &.au {
+            background-position: 0px -1088px;
+        }
+
+        &.aw {
+            background-position: 0px -1120px;
+        }
+
+        &.ax {
+            background-position: 0px -1152px;
+        }
+
+        &.az {
+            background-position: 0px -1184px;
+        }
+
+        &.ba {
+            background-position: 0px -1216px;
+        }
+
+        &.bb {
+            background-position: 0px -1248px;
+        }
+
+        &.bd {
+            background-position: 0px -1280px;
+        }
+
+        &.be {
+            background-position: 0px -1312px;
+        }
+
+        &.bf {
+            background-position: 0px -1344px;
+        }
+
+        &.bg {
+            background-position: 0px -1376px;
+        }
+
+        &.bh {
+            background-position: 0px -1408px;
+        }
+
+        &.bi {
+            background-position: 0px -1440px;
+        }
+
+        &.bj {
+            background-position: 0px -1472px;
+        }
+
+        &.bm {
+            background-position: 0px -1504px;
+        }
+
+        &.bn {
+            background-position: 0px -1536px;
+        }
+
+        &.bo {
+            background-position: 0px -1568px;
+        }
+
+        &.br {
+            background-position: 0px -1600px;
+        }
+
+        &.bs {
+            background-position: 0px -1632px;
+        }
+
+        &.bt {
+            background-position: 0px -1664px;
+        }
+
+        &.bw {
+            background-position: 0px -1696px;
+        }
+
+        &.by {
+            background-position: 0px -1728px;
+        }
+
+        &.bz {
+            background-position: 0px -1760px;
+        }
+
+        &.ca {
+            background-position: 0px -1792px;
+        }
+
+        &.cd {
+            background-position: 0px -1824px;
+        }
+
+        &.cf {
+            background-position: 0px -1856px;
+        }
+
+        &.cg {
+            background-position: 0px -1888px;
+        }
+
+        &.ch {
+            background-position: 0px -1920px;
+        }
+
+        &.ci {
+            background-position: 0px -1952px;
+        }
+
+        &.ck {
+            background-position: 0px -1984px;
+        }
+
+        &.cl {
+            background-position: 0px -2016px;
+        }
+
+        &.cm {
+            background-position: 0px -2048px;
+        }
+
+        &.cn {
+            background-position: 0px -2080px;
+        }
+
+        &.co {
+            background-position: 0px -2112px;
+        }
+
+        &.cr {
+            background-position: 0px -2144px;
+        }
+
+        &.cu {
+            background-position: 0px -2176px;
+        }
+
+        &.cv {
+            background-position: 0px -2208px;
+        }
+
+        &.cy {
+            background-position: 0px -2240px;
+        }
+
+        &.cz {
+            background-position: 0px -2272px;
+        }
+
+        &.de {
+            background-position: 0px -2304px;
+        }
+
+        &.dj {
+            background-position: 0px -2336px;
+        }
+
+        &.dk {
+            background-position: 0px -2368px;
+        }
+
+        &.dm {
+            background-position: 0px -2400px;
+        }
+
+        &.do {
+            background-position: 0px -2432px;
+        }
+
+        &.dz {
+            background-position: 0px -2464px;
+        }
+
+        &.ec {
+            background-position: 0px -2496px;
+        }
+
+        &.ee {
+            background-position: 0px -2528px;
+        }
+
+        &.eg {
+            background-position: 0px -2560px;
+        }
+
+        &.eh {
+            background-position: 0px -2592px;
+        }
+
+        &.er {
+            background-position: 0px -2624px;
+        }
+
+        &.es {
+            background-position: 0px -2656px;
+        }
+
+        &.et {
+            background-position: 0px -2688px;
+        }
+
+        &.fi {
+            background-position: 0px -2720px;
+        }
+
+        &.fj {
+            background-position: 0px -2752px;
+        }
+
+        &.fm {
+            background-position: 0px -2784px;
+        }
+
+        &.fo {
+            background-position: 0px -2816px;
+        }
+
+        &.fr {
+            background-position: 0px -2848px;
+        }
+
+        &.bl {
+            background-position: 0px -2848px;
+        }
+
+        &.cp {
+            background-position: 0px -2848px;
+        }
+
+        &.mf {
+            background-position: 0px -2848px;
+        }
+
+        &.yt {
+            background-position: 0px -2848px;
+        }
+
+        &.ga {
+            background-position: 0px -2880px;
+        }
+
+        &.gb {
+            background-position: 0px -2912px;
+        }
+
+        &.sh {
+            background-position: 0px -2912px;
+        }
+
+        &.gd {
+            background-position: 0px -2944px;
+        }
+
+        &.ge {
+            background-position: 0px -2976px;
+        }
+
+        &.gg {
+            background-position: 0px -3008px;
+        }
+
+        &.gh {
+            background-position: 0px -3040px;
+        }
+
+        &.gi {
+            background-position: 0px -3072px;
+        }
+
+        &.gl {
+            background-position: 0px -3104px;
+        }
+
+        &.gm {
+            background-position: 0px -3136px;
+        }
+
+        &.gn {
+            background-position: 0px -3168px;
+        }
+
+        &.gp {
+            background-position: 0px -3200px;
+        }
+
+        &.gq {
+            background-position: 0px -3232px;
+        }
+
+        &.gr {
+            background-position: 0px -3264px;
+        }
+
+        &.gt {
+            background-position: 0px -3296px;
+        }
+
+        &.gu {
+            background-position: 0px -3328px;
+        }
+
+        &.gw {
+            background-position: 0px -3360px;
+        }
+
+        &.gy {
+            background-position: 0px -3392px;
+        }
+
+        &.hk {
+            background-position: 0px -3424px;
+        }
+
+        &.hn {
+            background-position: 0px -3456px;
+        }
+
+        &.hr {
+            background-position: 0px -3488px;
+        }
+
+        &.ht {
+            background-position: 0px -3520px;
+        }
+
+        &.hu {
+            background-position: 0px -3552px;
+        }
+
+        &.id {
+            background-position: 0px -3584px;
+        }
+
+        &.mc {
+            background-position: 0px -3584px;
+        }
+
+        &.ie {
+            background-position: 0px -3616px;
+        }
+
+        &.il {
+            background-position: 0px -3648px;
+        }
+
+        &.im {
+            background-position: 0px -3680px;
+        }
+
+        &.in {
+            background-position: 0px -3712px;
+        }
+
+        &.iq {
+            background-position: 0px -3744px;
+        }
+
+        &.ir {
+            background-position: 0px -3776px;
+        }
+
+        &.is {
+            background-position: 0px -3808px;
+        }
+
+        &.it {
+            background-position: 0px -3840px;
+        }
+
+        &.je {
+            background-position: 0px -3872px;
+        }
+
+        &.jm {
+            background-position: 0px -3904px;
+        }
+
+        &.jo {
+            background-position: 0px -3936px;
+        }
+
+        &.jp {
+            background-position: 0px -3968px;
+        }
+
+        &.ke {
+            background-position: 0px -4000px;
+        }
+
+        &.kg {
+            background-position: 0px -4032px;
+        }
+
+        &.kh {
+            background-position: 0px -4064px;
+        }
+
+        &.ki {
+            background-position: 0px -4096px;
+        }
+
+        &.km {
+            background-position: 0px -4128px;
+        }
+
+        &.kn {
+            background-position: 0px -4160px;
+        }
+
+        &.kp {
+            background-position: 0px -4192px;
+        }
+
+        &.kr {
+            background-position: 0px -4224px;
+        }
+
+        &.kw {
+            background-position: 0px -4256px;
+        }
+
+        &.ky {
+            background-position: 0px -4288px;
+        }
+
+        &.kz {
+            background-position: 0px -4320px;
+        }
+
+        &.la {
+            background-position: 0px -4352px;
+        }
+
+        &.lb {
+            background-position: 0px -4384px;
+        }
+
+        &.lc {
+            background-position: 0px -4416px;
+        }
+
+        &.li {
+            background-position: 0px -4448px;
+        }
+
+        &.lk {
+            background-position: 0px -4480px;
+        }
+
+        &.lr {
+            background-position: 0px -4512px;
+        }
+
+        &.ls {
+            background-position: 0px -4544px;
+        }
+
+        &.lt {
+            background-position: 0px -4576px;
+        }
+
+        &.lu {
+            background-position: 0px -4608px;
+        }
+
+        &.lv {
+            background-position: 0px -4640px;
+        }
+
+        &.ly {
+            background-position: 0px -4672px;
+        }
+
+        &.ma {
+            background-position: 0px -4704px;
+        }
+
+        &.md {
+            background-position: 0px -4736px;
+        }
+
+        &.me {
+            background-position: 0px -4768px;
+        }
+
+        &.mg {
+            background-position: 0px -4800px;
+        }
+
+        &.mh {
+            background-position: 0px -4832px;
+        }
+
+        &.mk {
+            background-position: 0px -4864px;
+        }
+
+        &.ml {
+            background-position: 0px -4896px;
+        }
+
+        &.mm {
+            background-position: 0px -4928px;
+        }
+
+        &.mn {
+            background-position: 0px -4960px;
+        }
+
+        &.mo {
+            background-position: 0px -4992px;
+        }
+
+        &.mq {
+            background-position: 0px -5024px;
+        }
+
+        &.mr {
+            background-position: 0px -5056px;
+        }
+
+        &.ms {
+            background-position: 0px -5088px;
+        }
+
+        &.mt {
+            background-position: 0px -5120px;
+        }
+
+        &.mu {
+            background-position: 0px -5152px;
+        }
+
+        &.mv {
+            background-position: 0px -5184px;
+        }
+
+        &.mw {
+            background-position: 0px -5216px;
+        }
+
+        &.mx {
+            background-position: 0px -5248px;
+        }
+
+        &.my {
+            background-position: 0px -5280px;
+        }
+
+        &.mz {
+            background-position: 0px -5312px;
+        }
+
+        &.na {
+            background-position: 0px -5344px;
+        }
+
+        &.nc {
+            background-position: 0px -5376px;
+        }
+
+        &.ne {
+            background-position: 0px -5408px;
+        }
+
+        &.ng {
+            background-position: 0px -5440px;
+        }
+
+        &.ni {
+            background-position: 0px -5472px;
+        }
+
+        &.nl {
+            background-position: 0px -5504px;
+        }
+
+        &.bq {
+            background-position: 0px -5504px;
+        }
+
+        &.no {
+            background-position: 0px -5536px;
+        }
+
+        &.bv {
+            background-position: 0px -5536px;
+        }
+
+        &.nq {
+            background-position: 0px -5536px;
+        }
+
+        &.sj {
+            background-position: 0px -5536px;
+        }
+
+        &.np {
+            background-position: 0px -5568px;
+        }
+
+        &.nr {
+            background-position: 0px -5600px;
+        }
+
+        &.nz {
+            background-position: 0px -5632px;
+        }
+
+        &.om {
+            background-position: 0px -5664px;
+        }
+
+        &.pa {
+            background-position: 0px -5696px;
+        }
+
+        &.pe {
+            background-position: 0px -5728px;
+        }
+
+        &.pf {
+            background-position: 0px -5760px;
+        }
+
+        &.pg {
+            background-position: 0px -5792px;
+        }
+
+        &.ph {
+            background-position: 0px -5824px;
+        }
+
+        &.pk {
+            background-position: 0px -5856px;
+        }
+
+        &.pl {
+            background-position: 0px -5888px;
+        }
+
+        &.pr {
+            background-position: 0px -5920px;
+        }
+
+        &.ps {
+            background-position: 0px -5952px;
+        }
+
+        &.pt {
+            background-position: 0px -5984px;
+        }
+
+        &.pw {
+            background-position: 0px -6016px;
+        }
+
+        &.py {
+            background-position: 0px -6048px;
+        }
+
+        &.qa {
+            background-position: 0px -6080px;
+        }
+
+        &.re {
+            background-position: 0px -6112px;
+        }
+
+        &.ro {
+            background-position: 0px -6144px;
+        }
+
+        &.rs {
+            background-position: 0px -6176px;
+        }
+
+        &.ru {
+            background-position: 0px -6208px;
+        }
+
+        &.rw {
+            background-position: 0px -6240px;
+        }
+
+        &.sa {
+            background-position: 0px -6272px;
+        }
+
+        &.sb {
+            background-position: 0px -6304px;
+        }
+
+        &.sc {
+            background-position: 0px -6336px;
+        }
+
+        &.sd {
+            background-position: 0px -6368px;
+        }
+
+        &.se {
+            background-position: 0px -6400px;
+        }
+
+        &.sg {
+            background-position: 0px -6432px;
+        }
+
+        &.si {
+            background-position: 0px -6464px;
+        }
+
+        &.sk {
+            background-position: 0px -6496px;
+        }
+
+        &.sl {
+            background-position: 0px -6528px;
+        }
+
+        &.sm {
+            background-position: 0px -6560px;
+        }
+
+        &.sn {
+            background-position: 0px -6592px;
+        }
+
+        &.so {
+            background-position: 0px -6624px;
+        }
+
+        &.sr {
+            background-position: 0px -6656px;
+        }
+
+        &.st {
+            background-position: 0px -6688px;
+        }
+
+        &.sv {
+            background-position: 0px -6720px;
+        }
+
+        &.sy {
+            background-position: 0px -6752px;
+        }
+
+        &.sz {
+            background-position: 0px -6784px;
+        }
+
+        &.tc {
+            background-position: 0px -6816px;
+        }
+
+        &.td {
+            background-position: 0px -6848px;
+        }
+
+        &.tg {
+            background-position: 0px -6880px;
+        }
+
+        &.th {
+            background-position: 0px -6912px;
+        }
+
+        &.tj {
+            background-position: 0px -6944px;
+        }
+
+        &.tl {
+            background-position: 0px -6976px;
+        }
+
+        &.tm {
+            background-position: 0px -7008px;
+        }
+
+        &.tn {
+            background-position: 0px -7040px;
+        }
+
+        &.to {
+            background-position: 0px -7072px;
+        }
+
+        &.tr {
+            background-position: 0px -7104px;
+        }
+
+        &.tt {
+            background-position: 0px -7136px;
+        }
+
+        &.tv {
+            background-position: 0px -7168px;
+        }
+
+        &.tw {
+            background-position: 0px -7200px;
+        }
+
+        &.tz {
+            background-position: 0px -7232px;
+        }
+
+        &.ua {
+            background-position: 0px -7264px;
+        }
+
+        &.ug {
+            background-position: 0px -7296px;
+        }
+
+        &.us {
+            background-position: 0px -7328px;
+        }
+
+        &.uy {
+            background-position: 0px -7360px;
+        }
+
+        &.uz {
+            background-position: 0px -7392px;
+        }
+
+        &.va {
+            background-position: 0px -7424px;
+        }
+
+        &.vc {
+            background-position: 0px -7456px;
+        }
+
+        &.ve {
+            background-position: 0px -7488px;
+        }
+
+        &.vg {
+            background-position: 0px -7520px;
+        }
+
+        &.vi {
+            background-position: 0px -7552px;
+        }
+
+        &.vn {
+            background-position: 0px -7584px;
+        }
+
+        &.vu {
+            background-position: 0px -7616px;
+        }
+
+        &.ws {
+            background-position: 0px -7648px;
+        }
+
+        &.ye {
+            background-position: 0px -7680px;
+        }
+
+        &.za {
+            background-position: 0px -7712px;
+        }
+
+        &.zm {
+            background-position: 0px -7744px;
+        }
+
+        &.zw {
+            background-position: 0px -7776px;
+        }
+
+        &.sx {
+            background-position: 0px -7808px;
+        }
+
+        &.cw {
+            background-position: 0px -7840px;
+        }
+
+        &.ss {
+            background-position: 0px -7872px;
+        }
+
+        &.nu {
+            background-position: 0px -7904px;
+        }
+    }
+}
