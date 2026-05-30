@@ -32,12 +32,7 @@ export default function Icons() {
   const iconsDOM = [];
   if (validationUtils.isExists(list)) {
     for (let i = 0; i < list.length; i += 1) {
-      iconsDOM.push(
-        (<IconBox
-          key={i}
-          icon={list[i]}
-        />),
-      );
+      iconsDOM.push(<IconBox key={i} icon={list[i]} />);
     }
   }
 

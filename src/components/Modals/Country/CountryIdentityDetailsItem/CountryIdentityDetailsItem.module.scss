@@ -40,30 +40,29 @@
     transform: translateX(-50%);
 } */
 
-
 .details_item {
-    margin-bottom: 3px;
-    margin-right: 3px;
+  margin-bottom: 3px;
+  margin-right: 3px;
 
+  .icon {
+    margin-right: 4px;
+
+    i {
+      margin-right: 4px;
+    }
+
+    a {
+      color: #ffffff;
+
+      &:hover {
+        color: #00b9ff;
+      }
+    }
+  }
+
+  &.icon_only {
     .icon {
-        margin-right: 4px;
-
-        i {
-            margin-right: 4px;
-        }
-
-        a {
-            color: #ffffff;
-
-            &:hover {
-                color: #00b9ff;
-            }
-        }
+      margin-right: 0px;
     }
-
-    &.icon_only {
-        .icon {
-            margin-right: 0px;
-        }
-    }
+  }
 }

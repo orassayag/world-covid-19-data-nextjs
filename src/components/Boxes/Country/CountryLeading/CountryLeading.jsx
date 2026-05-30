@@ -3,8 +3,12 @@ import CountryLeadingBox from '../CountryLeadingBox/CountryLeadingBox';
 import CountryLocation from '../CountryLocation/CountryLocation';
 
 export default function CountryLeading({
-  leadingClassName, innerLeadingClassName, leadingValueDisplay, leadingIconName,
-  locationClassName, googleMapsURL,
+  leadingClassName,
+  innerLeadingClassName,
+  leadingValueDisplay,
+  leadingIconName,
+  locationClassName,
+  googleMapsURL,
 }) {
   return (
     <div className={styles.leading}>

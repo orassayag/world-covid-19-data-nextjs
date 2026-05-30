@@ -3,17 +3,28 @@ import MasterView from '../MasterView/MasterView';
 import { enumService } from '../../../../services';
 
 export default function MasterViews({
-  viewType, colorType, sortDirection, onActionClick,
+  viewType,
+  colorType,
+  sortDirection,
+  onActionClick,
 }) {
   const viewsOptions = [viewType, colorType, sortDirection];
   const viewActions = ['view', 'color', 'direction'];
   const viewTypes = ['views', 'colors', 'directions'];
   const viewTitles = ['Views', 'Colors', 'Directions'];
-  const viewIconNames = [['grip-vertical', 'grip-horizontal'], ['moon', 'sun'], ['sort-amount-up-alt', 'sort-amount-down-alt']];
-  const viewIconTooltips = [['Vertical view', 'Horizontal view'], ['Night colors', 'Day colors'], ['Ascending direction', 'Descending direction']];
+  const viewIconNames = [
+    ['grip-vertical', 'grip-horizontal'],
+    ['moon', 'sun'],
+    ['sort-amount-up-alt', 'sort-amount-down-alt'],
+  ];
+  const viewIconTooltips = [
+    ['Vertical view', 'Horizontal view'],
+    ['Night colors', 'Day colors'],
+    ['Ascending direction', 'Descending direction'],
+  ];
   const viewsDOM = [];
   for (let i = 0; i < 3; i += 1) {
-    viewsDOM.push((
+    viewsDOM.push(
       <MasterView
         key={i}
         value={viewsOptions[i]}
@@ -25,12 +36,8 @@ export default function MasterViews({
         viewsIconAttributeNames={enumService.viewIconAttributeNames[i]}
         onClick={onActionClick}
       />
-    ));
+    );
   }
 
-  return (
-    <div className={styles.views}>
-      {viewsDOM}
-    </div>
-  );
+  return <div className={styles.views}>{viewsDOM}</div>;
 }

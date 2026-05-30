@@ -4,12 +4,28 @@ import validationUtils from './validation.utils';
 class TimeUtils {
   constructor() {
     this.timeElementNames = ['d', 'h', 'min', 'sec'];
-    this.monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    this.monthNames = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ];
   }
 
   getCurrentDate(value) {
-    return value ? validationUtils.isValidArray(value)
-      ? new Date(...value) : new Date(value) : new Date();
+    return value
+      ? validationUtils.isValidArray(value)
+        ? new Date(...value)
+        : new Date(value)
+      : new Date();
   }
 
   getTimeDisplay(date) {
@@ -21,15 +37,21 @@ class TimeUtils {
   }
 
   getSeconds(date, isUTC) {
-    return textUtils.addLeadingZero(isUTC ? date.getUTCSeconds() : date.getSeconds());
+    return textUtils.addLeadingZero(
+      isUTC ? date.getUTCSeconds() : date.getSeconds()
+    );
   }
 
   getMinutes(date, isUTC) {
-    return textUtils.addLeadingZero(isUTC ? date.getUTCMinutes() : date.getMinutes());
+    return textUtils.addLeadingZero(
+      isUTC ? date.getUTCMinutes() : date.getMinutes()
+    );
   }
 
   getHours(date, isUTC) {
-    return textUtils.addLeadingZero(isUTC ? date.getUTCHours() : date.getHours());
+    return textUtils.addLeadingZero(
+      isUTC ? date.getUTCHours() : date.getHours()
+    );
   }
 
   getDay(date, isUTC) {
@@ -37,7 +59,9 @@ class TimeUtils {
   }
 
   getMonth(date, isUTC) {
-    return textUtils.addLeadingZero((isUTC ? date.getUTCMonth() : date.getMonth()) + 1);
+    return textUtils.addLeadingZero(
+      (isUTC ? date.getUTCMonth() : date.getMonth()) + 1
+    );
   }
 
   getYear(date, isUTC) {
@@ -122,7 +146,7 @@ class TimeUtils {
   }
 
   subtractHours(date, hours) {
-    return this.getCurrentDate(date.getTime() - (hours * 60) * 60000);
+    return this.getCurrentDate(date.getTime() - hours * 60 * 60000);
   }
 
   getDisplayTextTime(displayTime) {

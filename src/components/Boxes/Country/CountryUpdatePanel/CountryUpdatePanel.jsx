@@ -8,20 +8,13 @@ export default function CountryUpdatePanel({ updateSourceData }) {
   const { sourceName, dataItems } = updateSourceData;
   const itemsDOM = [];
   for (let i = 0; i < dataItems.length; i += 1) {
-    itemsDOM.push((
-      <CountryUpdateNumber
-        key={i}
-        dataItem={dataItems[i]}
-      />
-    ));
+    itemsDOM.push(<CountryUpdateNumber key={i} dataItem={dataItems[i]} />);
   }
 
   return (
     <div className={`${styles.update_panel} ${styles[sourceName]}`}>
       <div className={styles.inner}>
-        <div className={styles.changes}>
-          {itemsDOM}
-        </div>
+        <div className={styles.changes}>{itemsDOM}</div>
       </div>
     </div>
   );

@@ -4,13 +4,22 @@ import { textUtils } from '../../utils';
 
 class CountryCommonLogicService {
   getNumberArray(number) {
-    return [number, number === null ? NaN : textUtils.getStringCommaFromNumber(number)];
+    return [
+      number,
+      number === null ? NaN : textUtils.getStringCommaFromNumber(number),
+    ];
   }
 
   setSourceData(country, data) {
     // Source Data.
     const {
-      lowerName, isCases, casesPair, isDeaths, deathsPair, isRecovers, recoversPair,
+      lowerName,
+      isCases,
+      casesPair,
+      isDeaths,
+      deathsPair,
+      isRecovers,
+      recoversPair,
     } = data;
     country.sourcesData[lowerName] = new SourceDataModel({
       cases: new SourceDataItemModel({

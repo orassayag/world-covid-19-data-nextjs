@@ -35,8 +35,8 @@ class TestService {
     }
     countriesList = this.finalizeData(countriesList);
     logUtils.log('Initiate end.');
-    let timer; let
-      i = 0;
+    let timer;
+    let i = 0;
     const maximum = sources.length;
     const transition = async () => {
       clearTimeout(timer);
@@ -51,8 +51,14 @@ class TestService {
       countriesList = data;
       const dateNow = timeUtils.getCurrentDate();
       logUtils.log(`${timeUtils.getTimeDisplay(dateNow)} | ${source}`);
-      logUtils.log(Object.values(countriesList).filter((c) => c.updateSourceData !== null)
-        .map((c) => ({ name: c.displayName, updateSourceData: c.updateSourceData })));
+      logUtils.log(
+        Object.values(countriesList)
+          .filter((c) => c.updateSourceData !== null)
+          .map((c) => ({
+            name: c.displayName,
+            updateSourceData: c.updateSourceData,
+          }))
+      );
       countriesList = this.clearCurrentUpdates(countriesList);
       i += 1;
       timer = setTimeout(transition, 30 * 1000);

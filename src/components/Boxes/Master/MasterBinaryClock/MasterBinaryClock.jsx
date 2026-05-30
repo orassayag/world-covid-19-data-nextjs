@@ -29,15 +29,15 @@ const numberAsBinaryArrayPair = (number) => {
 };
 
 function Pip({ isOn }) {
-  return (
-    <div className={`${styles.pip} ${isOn ? styles.pip__on : ''}`} />
-  );
+  return <div className={`${styles.pip} ${isOn ? styles.pip__on : ''}`} />;
 }
 
 function BinaryDigit({ base2NumberAsArray }) {
   return (
     <div className={styles.binary_digit}>
-      {base2NumberAsArray.map((pip, id) => <Pip key={id} isOn={pip === 1} />)}
+      {base2NumberAsArray.map((pip, id) => (
+        <Pip key={id} isOn={pip === 1} />
+      ))}
     </div>
   );
 }
@@ -45,7 +45,9 @@ function BinaryDigit({ base2NumberAsArray }) {
 function BinaryDigitGroup({ group }) {
   return (
     <div className={styles.binary_digit_group}>
-      {group.map((binaryDigit, id) => <BinaryDigit key={id} base2NumberAsArray={binaryDigit} />)}
+      {group.map((binaryDigit, id) => (
+        <BinaryDigit key={id} base2NumberAsArray={binaryDigit} />
+      ))}
     </div>
   );
 }
@@ -65,7 +67,9 @@ export default function MasterBinaryClock({ currentTime }) {
 
   return (
     <div className={styles.clock}>
-      {digits.map((digit, id) => <BinaryDigitGroup key={id} group={digit} />)}
+      {digits.map((digit, id) => (
+        <BinaryDigitGroup key={id} group={digit} />
+      ))}
     </div>
   );
 }

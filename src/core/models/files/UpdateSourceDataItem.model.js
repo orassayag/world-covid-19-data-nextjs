@@ -1,9 +1,7 @@
 import { textUtils } from '../../../utils';
 
 class UpdateSourceDataItemModel {
-  constructor({
-    type, iconName, updateType, valuesPair,
-  }) {
+  constructor({ type, iconName, updateType, valuesPair }) {
     this.type = type;
     this.iconName = iconName;
     this.updateType = null;

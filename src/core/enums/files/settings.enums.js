@@ -36,9 +36,7 @@ const CountrySortTypeEnum = textUtils.createEnum([
   ['LAST_UPDATE_TIME', 'lastUpdateTime'],
 ]);
 
-const CreditSortTypeEnum = textUtils.createEnum([
-  ['ORDER', 'order'],
-]);
+const CreditSortTypeEnum = textUtils.createEnum([['ORDER', 'order']]);
 
 const DataModeEnum = textUtils.createEnum([
   ['LIVE', 'live'],
@@ -76,7 +74,16 @@ const ViewTypeEnum = textUtils.createEnum([
 ]);
 
 export {
-  ColorTypeEnum, ComponentModeEnum, CountriesActionTypeEnum, CountrySortTypeEnum,
-  CreditSortTypeEnum, DataModeEnum, EnvironmentModeEnum, SortDirectionEnum,
-  SourceSortTypeEnum, StatisticsUpdatesSortTypeEnum, UpdateCountryTypeEnum, ViewTypeEnum,
+  ColorTypeEnum,
+  ComponentModeEnum,
+  CountriesActionTypeEnum,
+  CountrySortTypeEnum,
+  CreditSortTypeEnum,
+  DataModeEnum,
+  EnvironmentModeEnum,
+  SortDirectionEnum,
+  SourceSortTypeEnum,
+  StatisticsUpdatesSortTypeEnum,
+  UpdateCountryTypeEnum,
+  ViewTypeEnum,
 };

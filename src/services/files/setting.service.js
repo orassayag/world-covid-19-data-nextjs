@@ -1,7 +1,10 @@
 import settings from '../../settings/settings';
 import { LoadingListModel, SettingsListModel } from '../../core/models';
 import {
-  ColorTypeEnum, CountrySortTypeEnum, ComponentModeEnum, ViewTypeEnum,
+  ColorTypeEnum,
+  CountrySortTypeEnum,
+  ComponentModeEnum,
+  ViewTypeEnum,
 } from '../../core/enums';
 import quoteService from './quote.service';
 import sortService from './sort.service';
@@ -27,8 +30,12 @@ class SettingService {
       return {};
     }
     const {
-      isDisplayError, isDisplayModal, activeModalName, activeModalValue,
-      isReplaceModalMode, isActionLoader,
+      isDisplayError,
+      isDisplayModal,
+      activeModalName,
+      activeModalValue,
+      isReplaceModalMode,
+      isActionLoader,
     } = this.settingsList;
     return {
       isDisplayError,

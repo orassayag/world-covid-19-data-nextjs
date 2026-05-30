@@ -9,6 +9,7 @@ Everyone is welcome to contribute to this project. Contributing doesn't just mea
 ### Reporting Issues
 
 If you find a bug or have a feature request:
+
 1. Check if the issue already exists in the [GitHub Issues](https://github.com/orassayag/world-covid-19-data-nextjs/issues)
 2. If not, create a new issue with:
    - Clear title and description
@@ -32,6 +33,7 @@ If you find a bug or have a feature request:
 ### Code Style Guidelines
 
 This project uses:
+
 - **React 18** with functional components and hooks
 - **Next.js 13** for server-side rendering and routing
 - **Redux Toolkit** for state management
@@ -39,6 +41,7 @@ This project uses:
 - **SASS/SCSS** for styling
 
 Before submitting:
+
 ```bash
 # Check for linting errors
 npm run lint
@@ -64,6 +67,7 @@ npm run dev
 ### Project Structure
 
 When adding new features:
+
 1. **Components**: Place in `src/components/` with appropriate subfolder structure
 2. **Services**: Add business logic in `src/services/files/`
 3. **Redux Slices**: Create/update in `src/store/slices/flies/`
@@ -75,6 +79,7 @@ When adding new features:
 ### Adding New Data Sources
 
 When adding a new COVID-19 API source:
+
 1. Add the API URL to `src/settings/settings.js`
 2. Create a source enum in `src/core/enums/files/sources.enums.js`
 3. Add source metadata in `src/data/files/sources.data.js`
@@ -95,9 +100,9 @@ When adding a new COVID-19 API source:
 
 Please feel free to contact me with any question, comment, pull-request, issue, or any other thing you have in mind.
 
-* Or Assayag <orassayag@gmail.com>
-* GitHub: https://github.com/orassayag
-* StackOverflow: https://stackoverflow.com/users/4442606/or-assayag?tab=profile
-* LinkedIn: https://linkedin.com/in/orassayag
+- Or Assayag <orassayag@gmail.com>
+- GitHub: https://github.com/orassayag
+- StackOverflow: https://stackoverflow.com/users/4442606/or-assayag?tab=profile
+- LinkedIn: https://linkedin.com/in/orassayag
 
 Thank you for contributing! 🙏

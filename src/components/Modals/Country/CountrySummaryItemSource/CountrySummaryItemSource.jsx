@@ -6,11 +6,7 @@ export default function CountrySummaryItemSource({ dataItem }) {
 
   return (
     <div className={styles[`source_${type}`]}>
-      <Icon
-        name={iconName}
-      />
-      {' '}
-      {valueDisplay}
+      <Icon name={iconName} /> {valueDisplay}
     </div>
   );
 }

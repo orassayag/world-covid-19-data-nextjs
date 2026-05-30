@@ -7,5 +7,11 @@ import timeUtils from './files/time.utils';
 import validationUtils from './files/validation.utils';
 
 export {
-  coreUtils, logicUtils, logUtils, regexUtils, textUtils, timeUtils, validationUtils,
+  coreUtils,
+  logicUtils,
+  logUtils,
+  regexUtils,
+  textUtils,
+  timeUtils,
+  validationUtils,
 };

@@ -12,7 +12,9 @@
   -webkit-transition: -webkit-transform 100ms ease-out;
   transition: -webkit-transform 100ms ease-out;
   transition: transform 100ms ease-out;
-  transition: transform 100ms ease-out, -webkit-transform 100ms ease-out;
+  transition:
+    transform 100ms ease-out,
+    -webkit-transform 100ms ease-out;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
   -webkit-touch-callout: none;

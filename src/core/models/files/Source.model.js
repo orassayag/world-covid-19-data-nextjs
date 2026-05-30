@@ -1,7 +1,14 @@
 class SourceModel {
   constructor({
-    lowerName, upperName, officialName, apiURL, isJSON, expectedRowsCount, order,
-    isActive, isCovidData,
+    lowerName,
+    upperName,
+    officialName,
+    apiURL,
+    isJSON,
+    expectedRowsCount,
+    order,
+    isActive,
+    isCovidData,
   }) {
     this.lowerName = lowerName;
     this.upperName = upperName;

@@ -4,15 +4,16 @@ import MasterLastUpdate from '../MasterLastUpdate/MasterLastUpdate';
 import MasterUpdateLoader from '../MasterUpdateLoader/MasterUpdateLoader';
 
 export default function MasterTimes({
-  currentTime, isUpdateLoaderDisplay, lastUpdateDateDisplay, lastUpdateSourceName,
+  currentTime,
+  isUpdateLoaderDisplay,
+  lastUpdateDateDisplay,
+  lastUpdateSourceName,
   nextUpdateSourceName,
 }) {
   return (
     <div className={styles.times_container}>
       <div className={styles.times}>
-        <MasterCurrentTime
-          currentTime={currentTime}
-        />
+        <MasterCurrentTime currentTime={currentTime} />
         <MasterLastUpdate
           lastUpdateDateDisplay={lastUpdateDateDisplay}
           lastUpdateSourceName={lastUpdateSourceName}
@@ -20,9 +21,7 @@ export default function MasterTimes({
         />
       </div>
       <div className={styles.update_loader_container}>
-        <MasterUpdateLoader
-          isSpin={isUpdateLoaderDisplay}
-        />
+        <MasterUpdateLoader isSpin={isUpdateLoaderDisplay} />
       </div>
     </div>
   );

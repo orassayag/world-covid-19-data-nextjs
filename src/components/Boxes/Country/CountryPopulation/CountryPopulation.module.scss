@@ -1,23 +1,23 @@
 .population {
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    margin-top: 3px;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  margin-top: 3px;
 
-    .icon {
-        margin-right: 2px;
-    }
+  .icon {
+    margin-right: 2px;
+  }
 
-    .icon,
-    .number {
-        font-size: 11px;
-    }
+  .icon,
+  .number {
+    font-size: 11px;
+  }
 
-    .number {
-        &.no-data {
-            letter-spacing: 2px;
-            margin-left: 2px;
-            padding-top: 1px;
-        }
+  .number {
+    &.no-data {
+      letter-spacing: 2px;
+      margin-left: 2px;
+      padding-top: 1px;
     }
+  }
 }

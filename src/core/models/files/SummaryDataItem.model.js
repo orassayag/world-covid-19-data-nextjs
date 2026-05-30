@@ -1,7 +1,5 @@
 class SummaryDataItemModel {
-  constructor({
-    type, iconName, value, valueDisplay,
-  }) {
+  constructor({ type, iconName, value, valueDisplay }) {
     this.type = type;
     this.iconName = iconName;
     this.value = null;

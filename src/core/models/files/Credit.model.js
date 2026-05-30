@@ -1,6 +1,15 @@
 class CreditModel {
   constructor({
-    id, name, title, link, iconName, iconType, tooltip, iconTooltip, isMaster, order,
+    id,
+    name,
+    title,
+    link,
+    iconName,
+    iconType,
+    tooltip,
+    iconTooltip,
+    isMaster,
+    order,
   }) {
     this.id = id;
     this.name = name;

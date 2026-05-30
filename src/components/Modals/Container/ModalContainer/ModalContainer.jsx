@@ -11,15 +11,20 @@ import { engineService } from '../../../../services';
 export default function ModalContainer({ onActionClick, onActionChange }) {
   // State variables.
   const settingsList = useSelector((state) => state.settings.settingsList);
-  const statisticsUpdatesList = useSelector((state) => state
-    .statisticsUpdates.statisticsUpdatesList);
-  const statisticsUpdatesSettingsList = useSelector((state) => state
-    .statisticsUpdates.statisticsUpdatesSettingsList);
+  const statisticsUpdatesList = useSelector(
+    (state) => state.statisticsUpdates.statisticsUpdatesList
+  );
+  const statisticsUpdatesSettingsList = useSelector(
+    (state) => state.statisticsUpdates.statisticsUpdatesSettingsList
+  );
   const countriesList = useSelector((state) => state.data.countriesList);
-  const countriesNameIdList = useSelector((state) => state.data.countriesNameIdList);
+  const countriesNameIdList = useSelector(
+    (state) => state.data.countriesNameIdList
+  );
   const sourcesList = useSelector((state) => state.data.sourcesList);
   const { activeModalName, activeModalValue } = settingsList;
-  const { statisticsUpdatesHoursCount, statisticsUpdatesCountryId } = statisticsUpdatesSettingsList;
+  const { statisticsUpdatesHoursCount, statisticsUpdatesCountryId } =
+    statisticsUpdatesSettingsList;
   if (!activeModalName) {
     return null;
   }
@@ -30,10 +35,7 @@ export default function ModalContainer({ onActionClick, onActionChange }) {
         switch (activeModalName) {
           case ModalNameEnum.COUNTRIES: {
             return (
-              <CountriesModal
-                styles={styles}
-                onActionClick={onActionClick}
-              />
+              <CountriesModal styles={styles} onActionClick={onActionClick} />
             );
           }
           case ModalNameEnum.COUNTRY: {
@@ -54,18 +56,12 @@ export default function ModalContainer({ onActionClick, onActionChange }) {
           }
           case ModalNameEnum.CREDITS: {
             return (
-              <CreditsModal
-                styles={styles}
-                onActionClick={onActionClick}
-              />
+              <CreditsModal styles={styles} onActionClick={onActionClick} />
             );
           }
           case ModalNameEnum.SOURCES: {
             return (
-              <SourcesModal
-                styles={styles}
-                onActionClick={onActionClick}
-              />
+              <SourcesModal styles={styles} onActionClick={onActionClick} />
             );
           }
           case ModalNameEnum.STATISTICS: {
@@ -81,7 +77,8 @@ export default function ModalContainer({ onActionClick, onActionChange }) {
               />
             );
           }
-          default: return null;
+          default:
+            return null;
         }
       })()}
     </div>

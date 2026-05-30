@@ -4,16 +4,20 @@ import StatisticsSummary from '../StatisticsSummary/StatisticsSummary';
 import StatisticsUpdates from '../StatisticsUpdates/StatisticsUpdates';
 
 export default function StatisticsModal({
-  styles, countriesNameIdList, statisticsUpdatesList, statisticsUpdatesHoursCount,
-  statisticsUpdatesCountryId, onActionClick, onActionChange,
+  styles,
+  countriesNameIdList,
+  statisticsUpdatesList,
+  statisticsUpdatesHoursCount,
+  statisticsUpdatesCountryId,
+  onActionClick,
+  onActionChange,
 }) {
   return (
-    <div className={`${styles.modal_content} ${styles.statistics} f16 f16-extra`}>
+    <div
+      className={`${styles.modal_content} ${styles.statistics} f16 f16-extra`}
+    >
       <div className={styles.content}>
-        <StatisticsExitButton
-          styles={styles}
-          onActionClick={onActionClick}
-        />
+        <StatisticsExitButton styles={styles} onActionClick={onActionClick} />
         <StatisticsUpdates
           countriesNameIdList={countriesNameIdList}
           statisticsUpdatesList={statisticsUpdatesList}
@@ -23,9 +27,7 @@ export default function StatisticsModal({
           onActionChange={onActionChange}
         />
         <StatisticsSummary />
-        <StatisticsOkButton
-          onActionClick={onActionClick}
-        />
+        <StatisticsOkButton onActionClick={onActionClick} />
       </div>
     </div>
   );

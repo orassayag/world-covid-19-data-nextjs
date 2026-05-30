@@ -4,20 +4,19 @@ import CountryIdentityCoat from '../CountryIdentityCoat/CountryIdentityCoat';
 import CountryIdentityDetails from '../CountryIdentityDetails/CountryIdentityDetails';
 
 export default function CountryIdentity({
-  displayName, bigFlagClassName, coatClassName, countryDetailsList,
+  displayName,
+  bigFlagClassName,
+  coatClassName,
+  countryDetailsList,
 }) {
   return (
     <div className={styles.country_identity}>
-      <CountryIdentityFlag
-        bigFlagClassName={bigFlagClassName}
-      />
+      <CountryIdentityFlag bigFlagClassName={bigFlagClassName} />
       <CountryIdentityDetails
         displayName={displayName}
         countryDetailsList={countryDetailsList}
       />
-      <CountryIdentityCoat
-        coatClassName={coatClassName}
-      />
+      <CountryIdentityCoat coatClassName={coatClassName} />
     </div>
   );
 }

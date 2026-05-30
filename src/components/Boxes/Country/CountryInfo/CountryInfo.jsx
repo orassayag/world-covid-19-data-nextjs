@@ -3,7 +3,11 @@ import CountryName from '../CountryName/CountryName';
 import CountryPopulation from '../CountryPopulation/CountryPopulation';
 
 export default function CountryInfo({
-  displayName, upperCode2, titleClassName, populationCountDisplay, populationPercentageDisplay,
+  displayName,
+  upperCode2,
+  titleClassName,
+  populationCountDisplay,
+  populationPercentageDisplay,
 }) {
   return (
     <div className={styles.info}>

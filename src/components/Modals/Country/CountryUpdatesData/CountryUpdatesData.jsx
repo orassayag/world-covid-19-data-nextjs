@@ -6,16 +6,9 @@ export default function CountryUpdatesData({ updatesList }) {
   for (let i = 0; i < updatesList.length; i += 1) {
     const update = updatesList[i];
     itemsDOM.push(
-      (<CountryUpdateItem
-        key={update.id}
-        statisticUpdate={update}
-      />),
+      <CountryUpdateItem key={update.id} statisticUpdate={update} />
     );
   }
 
-  return (
-    <div className={styles.data}>
-      {itemsDOM}
-    </div>
-  );
+  return <div className={styles.data}>{itemsDOM}</div>;
 }

@@ -38,7 +38,7 @@ class TextUtils {
   }
 
   getPercentage(partialValue, totalValue) {
-    return ((100 * partialValue) / totalValue);
+    return (100 * partialValue) / totalValue;
   }
 
   getAbsolutePercentage(partialValue, totalValue) {

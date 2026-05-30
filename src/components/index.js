@@ -9,5 +9,13 @@ import MasterBox from './Boxes/Master/MasterBox/MasterBox';
 import ModalContainer from './Modals/Container/ModalContainer/ModalContainer';
 
 export {
-  ButtonIcon, CountryBox, Error, Footer, Icon, LinkIcon, ScreenLoader, MasterBox, ModalContainer,
+  ButtonIcon,
+  CountryBox,
+  Error,
+  Footer,
+  Icon,
+  LinkIcon,
+  ScreenLoader,
+  MasterBox,
+  ModalContainer,
 };

@@ -1,6 +1,11 @@
 class QuoteModel {
   constructor({
-    quote, quoteName, quoteNameURL, categoryName, categoryIconName, categoryIconType,
+    quote,
+    quoteName,
+    quoteNameURL,
+    categoryName,
+    categoryIconName,
+    categoryIconType,
   }) {
     this.quote = quote;
     this.quoteName = quoteName;

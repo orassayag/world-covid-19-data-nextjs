@@ -6,11 +6,18 @@ import { textUtils } from '../../utils';
 
 class QuoteService {
   getRandomQuote() {
-    const quote = quotes[textUtils.getRandomNumber(1, Object.keys(quotes).length).toString()];
+    const quote =
+      quotes[
+        textUtils.getRandomNumber(1, Object.keys(quotes).length).toString()
+      ];
     quote.quote = quote.quote.substring(0);
     const quoteCategory = quotesCategories[quote.categoryId.toString()];
-    const categoryIconName = quoteCategory.iconNames.length === 0 ? quoteCategory.iconNames[0]
-      : quoteCategory.iconNames[textUtils.getRandomNumber(1, quoteCategory.iconNames.length)];
+    const categoryIconName =
+      quoteCategory.iconNames.length === 0
+        ? quoteCategory.iconNames[0]
+        : quoteCategory.iconNames[
+            textUtils.getRandomNumber(1, quoteCategory.iconNames.length)
+          ];
     const iconTypeResults = this.getIconType(categoryIconName);
     return new QuoteModel({
       quote: quote.quote,
@@ -28,7 +35,9 @@ class QuoteService {
     for (let i = 0; i < iconValues.length; i += 1) {
       iconsArraysList.push(iconValues[i].iconNames);
     }
-    const icons = Array.from(new Set(iconsArraysList.reduce((acc, e) => acc.concat(e), []))).sort();
+    const icons = Array.from(
+      new Set(iconsArraysList.reduce((acc, e) => acc.concat(e), []))
+    ).sort();
     return icons;
   }
 

@@ -2,15 +2,21 @@ import styles from './MasterView.module.scss';
 import { ButtonIcon } from '../../../UI';
 
 export default function MasterView({
-  viewType, value, action, viewTitle, viewsIconNames, viewsIconTooltips, viewsIconAttributeNames,
+  viewType,
+  value,
+  action,
+  viewTitle,
+  viewsIconNames,
+  viewsIconTooltips,
+  viewsIconAttributeNames,
   onClick,
 }) {
   const iconsDOM = [];
   for (let i = 0; i < 2; i += 1) {
-    iconsDOM.push((
+    iconsDOM.push(
       <div className={styles.icon} key={i}>
         <ButtonIcon
-          className="views"
+          className='views'
           name={viewsIconNames[i]}
           value={viewsIconAttributeNames[i] === value ? 'on' : ''}
           action={action}
@@ -19,14 +25,12 @@ export default function MasterView({
           onClick={onClick}
         />
       </div>
-    ));
+    );
   }
 
   return (
     <div className={`${styles.view} ${styles[viewType]}`}>
-      <div className={styles.title}>
-        {viewTitle}
-      </div>
+      <div className={styles.title}>{viewTitle}</div>
       {iconsDOM}
     </div>
   );

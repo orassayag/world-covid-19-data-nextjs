@@ -5,16 +5,12 @@ export default function CountryIdentityDetailsList({ countryDetailsList }) {
   const itemsDOM = [];
   for (let i = 0; i < countryDetailsList.length; i += 1) {
     itemsDOM.push(
-      (<CountryIdentityDetailsItem
+      <CountryIdentityDetailsItem
         key={i}
         countryIdentityItem={countryDetailsList[i]}
-      />),
+      />
     );
   }
 
-  return (
-    <div className={styles.details_list}>
-      {itemsDOM}
-    </div>
-  );
+  return <div className={styles.details_list}>{itemsDOM}</div>;
 }

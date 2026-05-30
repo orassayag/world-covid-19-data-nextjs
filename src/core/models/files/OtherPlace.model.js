@@ -1,6 +1,10 @@
 class OtherPlaceModel {
   constructor({
-    id, lowerName, displayName, wikipediaURL, populationCountDisplay,
+    id,
+    lowerName,
+    displayName,
+    wikipediaURL,
+    populationCountDisplay,
   }) {
     this.id = id;
     this.lowerName = lowerName;

@@ -11,15 +11,20 @@ const settings = {
   IS_COUNTRIES_LOG: false, // true | false. Display console log for each country update.
   // ===API URL=== //
   POP1_API_URL: 'https://worldpopulationreview.com',
-  POP2_API_URL: 'https://en.wikipedia.org/w/api.php?origin=*&format=json&action=parse&page=List_of_countries_and_dependencies_by_population&prop=text&formatversion=2',
+  POP2_API_URL:
+    'https://en.wikipedia.org/w/api.php?origin=*&format=json&action=parse&page=List_of_countries_and_dependencies_by_population&prop=text&formatversion=2',
   CAC_API_URL: 'https://corona-api.com/countries',
   CLN_API_URL: 'https://corona.lmao.ninja/v2/countries?sort=country',
   COA_API_URL: 'https://api.covid19api.com/summary',
   CVA_API_URL: 'https://coronavirus-19-api.herokuapp.com/countries',
-  CVS_API_URL: 'https://corona-virus-stats.herokuapp.com/api/v1/cases/countries-search?limit=300',
-  GOO_API_URL: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQuDj0R6K85sdtI8I-Tc7RCx8CnIxKUQue0TCUdrFOKDw9G3JRtGhl64laDd3apApEvIJTdPFJ9fEUL/pubhtml?gid=0&single=true',
-  WIK_API_URL: 'https://en.wikipedia.org/w/api.php?origin=*&format=json&action=parse&page=Template:COVID-19_pandemic_data&prop=text&formatversion=2',
-  WOD_API_URL: 'https://docs.google.com/spreadsheets/d/1VqOo7mE8O9HTPAgzUOCoevgmAtQZuS_458GEhWX5UwA/edit#gid=449840684',
+  CVS_API_URL:
+    'https://corona-virus-stats.herokuapp.com/api/v1/cases/countries-search?limit=300',
+  GOO_API_URL:
+    'https://docs.google.com/spreadsheets/d/e/2PACX-1vQuDj0R6K85sdtI8I-Tc7RCx8CnIxKUQue0TCUdrFOKDw9G3JRtGhl64laDd3apApEvIJTdPFJ9fEUL/pubhtml?gid=0&single=true',
+  WIK_API_URL:
+    'https://en.wikipedia.org/w/api.php?origin=*&format=json&action=parse&page=Template:COVID-19_pandemic_data&prop=text&formatversion=2',
+  WOD_API_URL:
+    'https://docs.google.com/spreadsheets/d/1VqOo7mE8O9HTPAgzUOCoevgmAtQZuS_458GEhWX5UwA/edit#gid=449840684',
   // ===OTHER URL=== //
   GOOGLE_MAPS_BASE_URL: 'https://www.google.com/maps/place/',
   WIKIPEDIA_BASE_URL: 'https://en.wikipedia.org/wiki/',

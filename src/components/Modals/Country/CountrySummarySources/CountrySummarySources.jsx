@@ -10,11 +10,11 @@ export default function CountrySummarySources({ sourcesList, summaryData }) {
       continue;
     }
     summaryDataItemsDOM.push(
-      (<CountrySummaryItem
+      <CountrySummaryItem
         key={i}
         sourceName={source.upperName}
         sourceSummaryData={summaryData.summaryDataList[source.lowerName]}
-      />),
+      />
     );
   }
 

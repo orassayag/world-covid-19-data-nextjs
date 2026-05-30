@@ -1,7 +1,15 @@
 class StatisticUpdateModel {
   constructor({
-    id, sourceName, countryId, displayName, flagClassName, cases,
-    deaths, recovers, lastUpdateDate, updateClassName,
+    id,
+    sourceName,
+    countryId,
+    displayName,
+    flagClassName,
+    cases,
+    deaths,
+    recovers,
+    lastUpdateDate,
+    updateClassName,
   }) {
     this.id = id;
     this.sourceName = sourceName;

@@ -2,7 +2,12 @@ import { logicUtils, textUtils } from '../../../utils';
 
 class SourceDataItemModel {
   constructor({
-    type, iconName, itemClass, valuesPair, populationCount, perMillionIconName,
+    type,
+    iconName,
+    itemClass,
+    valuesPair,
+    populationCount,
+    perMillionIconName,
   }) {
     this.type = type;
     this.iconName = iconName;
@@ -34,10 +39,11 @@ class SourceDataItemModel {
         if (!textUtils.isInvalidNumber(populationCount)) {
           this.countLeadingValue = `${this.countDisplay} (${textUtils.getPercentageDisplay(this.count, populationCount)}%)`;
           if (populationCount > 0 && this.count > 0) {
-            const { perMillionNumber, perMillionNumberDisplay } = logicUtils.getPerMillionNumbers({
-              number: this.count,
-              populationCount,
-            });
+            const { perMillionNumber, perMillionNumberDisplay } =
+              logicUtils.getPerMillionNumbers({
+                number: this.count,
+                populationCount,
+              });
             this.countPerMillion = perMillionNumber;
             this.countPerMillionDisplay = perMillionNumberDisplay;
           }

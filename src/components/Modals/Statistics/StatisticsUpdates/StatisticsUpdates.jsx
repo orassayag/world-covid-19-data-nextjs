@@ -6,14 +6,20 @@ import { timeUtils } from '../../../../utils';
 import { statisticUpdateService } from '../../../../services';
 
 export default function StatisticsUpdates({
-  countriesNameIdList, statisticsUpdatesList, statisticsUpdatesHoursCount,
-  statisticsUpdatesCountryId, onActionClick, onActionChange,
+  countriesNameIdList,
+  statisticsUpdatesList,
+  statisticsUpdatesHoursCount,
+  statisticsUpdatesCountryId,
+  onActionClick,
+  onActionChange,
 }) {
   const dateNow = timeUtils.getCurrentDate();
-  const countryIdQuery = statisticsUpdatesCountryId === -1
-    ? {} : { countryId: [statisticsUpdatesCountryId] };
-  const displayStatisticsUpdatesList = statisticUpdateService
-    .getStatisticsUpdatesList(statisticsUpdatesList, {
+  const countryIdQuery =
+    statisticsUpdatesCountryId === -1
+      ? {}
+      : { countryId: [statisticsUpdatesCountryId] };
+  const displayStatisticsUpdatesList =
+    statisticUpdateService.getStatisticsUpdatesList(statisticsUpdatesList, {
       filterOptions: {
         ...countryIdQuery,
         isVisible: [true],
@@ -27,9 +33,7 @@ export default function StatisticsUpdates({
   return (
     <div className={styles.updates}>
       <div className={styles.latest_updates}>
-        <div className={styles.title}>
-          Latest Updates
-        </div>
+        <div className={styles.title}>Latest Updates</div>
         <StatisticsActionsPanel
           countriesNameIdList={countriesNameIdList}
           statisticsUpdatesHoursCount={statisticsUpdatesHoursCount}
