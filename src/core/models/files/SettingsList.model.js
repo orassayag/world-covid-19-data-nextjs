@@ -1,6 +1,11 @@
 class SettingsListModel {
   constructor({
-    isActive, isLiveMode, intervalSeconds, viewType, colorType, sortType,
+    isActive,
+    isLiveMode,
+    intervalSeconds,
+    viewType,
+    colorType,
+    sortType,
   }) {
     this.isActive = isActive;
     this.isLiveMode = isLiveMode;

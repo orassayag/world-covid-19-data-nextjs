@@ -2,7 +2,10 @@ import styles from './CountryDataSourceDisplayItem.module.scss';
 import { Icon } from '../../../UI';
 
 export default function CountryDataSourceDisplayItem({
-  itemClassName, iconName, number, percentage,
+  itemClassName,
+  iconName,
+  number,
+  percentage,
 }) {
   const getStyles = () => {
     let stylesTypes = '';
@@ -30,21 +33,16 @@ export default function CountryDataSourceDisplayItem({
     <div className={`${styles.item} ${getStyles()}`}>
       <div className={styles.icon}>
         <span>
-          <Icon
-            name={iconName}
-          />
+          <Icon name={iconName} />
         </span>
       </div>
       <div className={styles.number}>
         {number}
         {itemClassName === 'big' ? (
-          <span className={styles.percentage}>
-            {' '}
-            | $
-            {percentage}
-            %
-          </span>
-        ) : ''}
+          <span className={styles.percentage}> | ${percentage}%</span>
+        ) : (
+          ''
+        )}
       </div>
     </div>
   );

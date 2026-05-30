@@ -5,6 +5,4 @@ import Icon from './Icon/Icon';
 import LinkIcon from './LinkIcon/LinkIcon';
 import ScreenLoader from './ScreenLoader/ScreenLoader';
 
-export {
-  ButtonIcon, Error, Footer, Icon, LinkIcon, ScreenLoader,
-};
+export { ButtonIcon, Error, Footer, Icon, LinkIcon, ScreenLoader };

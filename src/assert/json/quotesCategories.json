@@ -34,19 +34,11 @@
   },
   "3": {
     "name": "Acting",
-    "iconNames": [
-      "theater-masks",
-      "mask",
-      "user-tie"
-    ]
+    "iconNames": ["theater-masks", "mask", "user-tie"]
   },
   "4": {
     "name": "Action",
-    "iconNames": [
-      "directions",
-      "map-signs",
-      "chess"
-    ]
+    "iconNames": ["directions", "map-signs", "chess"]
   },
   "5": {
     "name": "Addiction",
@@ -65,13 +57,7 @@
   },
   "6": {
     "name": "Adversity",
-    "iconNames": [
-      "sad-cry",
-      "sad-tear",
-      "frown",
-      "frown-open",
-      "tired"
-    ]
+    "iconNames": ["sad-cry", "sad-tear", "frown", "frown-open", "tired"]
   },
   "7": {
     "name": "Advertise",
@@ -111,29 +97,15 @@
   },
   "10": {
     "name": "Age",
-    "iconNames": [
-      "birthday-cake",
-      "blind",
-      "baby",
-      "male",
-      "female"
-    ]
+    "iconNames": ["birthday-cake", "blind", "baby", "male", "female"]
   },
   "11": {
     "name": "Agreement",
-    "iconNames": [
-      "handshake",
-      "hands-helping"
-    ]
+    "iconNames": ["handshake", "hands-helping"]
   },
   "12": {
     "name": "Alcohol",
-    "iconNames": [
-      "wine-bottle",
-      "wine-glass",
-      "wine-glass-alt",
-      "fab-untappd"
-    ]
+    "iconNames": ["wine-bottle", "wine-glass", "wine-glass-alt", "fab-untappd"]
   },
   "13": {
     "name": "Alone",
@@ -150,11 +122,7 @@
   },
   "14": {
     "name": "Amazing",
-    "iconNames": [
-      "grin-alt",
-      "grin-stars",
-      "grin-hearts"
-    ]
+    "iconNames": ["grin-alt", "grin-stars", "grin-hearts"]
   },
   "15": {
     "name": "Ambition",
@@ -174,11 +142,7 @@
   },
   "16": {
     "name": "American",
-    "iconNames": [
-      "flag-usa",
-      "republican",
-      "democrat"
-    ]
+    "iconNames": ["flag-usa", "republican", "democrat"]
   },
   "17": {
     "name": "Analysis",
@@ -195,11 +159,7 @@
   },
   "18": {
     "name": "Anger",
-    "iconNames": [
-      "angry",
-      "tired",
-      "grimace"
-    ]
+    "iconNames": ["angry", "tired", "grimace"]
   },
   "19": {
     "name": "Animals",
@@ -223,23 +183,11 @@
   },
   "20": {
     "name": "Anniversary",
-    "iconNames": [
-      "ring",
-      "birthday-cake",
-      "glass-cheers",
-      "gifts",
-      "gift"
-    ]
+    "iconNames": ["ring", "birthday-cake", "glass-cheers", "gifts", "gift"]
   },
   "21": {
     "name": "Anxiety",
-    "iconNames": [
-      "sad-cry",
-      "sad-tear",
-      "frown-open",
-      "frown",
-      "grimace"
-    ]
+    "iconNames": ["sad-cry", "sad-tear", "frown-open", "frown", "grimace"]
   },
   "22": {
     "name": "Architecture",
@@ -358,11 +306,7 @@
   },
   "29": {
     "name": "Beauty",
-    "iconNames": [
-      "female",
-      "grin-hearts",
-      "gem"
-    ]
+    "iconNames": ["female", "grin-hearts", "gem"]
   },
   "30": {
     "name": "Being",
@@ -461,29 +405,15 @@
   },
   "32": {
     "name": "Best",
-    "iconNames": [
-      "award",
-      "medal",
-      "crown",
-      "trophy"
-    ]
+    "iconNames": ["award", "medal", "crown", "trophy"]
   },
   "33": {
     "name": "Birthday",
-    "iconNames": [
-      "birthday-cake",
-      "glass-cheers",
-      "gifts",
-      "gift"
-    ]
+    "iconNames": ["birthday-cake", "glass-cheers", "gifts", "gift"]
   },
   "34": {
     "name": "Boldness",
-    "iconNames": [
-      "grin-tongue",
-      "grin-tongue-wink",
-      "grin-wink"
-    ]
+    "iconNames": ["grin-tongue", "grin-tongue-wink", "grin-wink"]
   },
   "35": {
     "name": "Books",
@@ -500,12 +430,7 @@
   },
   "36": {
     "name": "Bore",
-    "iconNames": [
-      "meh",
-      "meh-blank",
-      "meh-rolling-eyes",
-      "bed"
-    ]
+    "iconNames": ["meh", "meh-blank", "meh-rolling-eyes", "bed"]
   },
   "37": {
     "name": "Business",
@@ -551,17 +476,11 @@
   },
   "40": {
     "name": "Cats",
-    "iconNames": [
-      "cat"
-    ]
+    "iconNames": ["cat"]
   },
   "41": {
     "name": "Caution",
-    "iconNames": [
-      "exclamation",
-      "exclamation-triangle",
-      "exclamation-circle"
-    ]
+    "iconNames": ["exclamation", "exclamation-triangle", "exclamation-circle"]
   },
   "42": {
     "name": "Censorship",
@@ -592,19 +511,11 @@
   },
   "44": {
     "name": "Change",
-    "iconNames": [
-      "exchange-alt",
-      "sync-alt",
-      "sync"
-    ]
+    "iconNames": ["exchange-alt", "sync-alt", "sync"]
   },
   "45": {
     "name": "Character",
-    "iconNames": [
-      "mask",
-      "theater-masks",
-      "user-tie"
-    ]
+    "iconNames": ["mask", "theater-masks", "user-tie"]
   },
   "46": {
     "name": "Charity",
@@ -710,11 +621,7 @@
   },
   "51": {
     "name": "Communism",
-    "iconNames": [
-      "fist-raised",
-      "hammer",
-      "tools"
-    ]
+    "iconNames": ["fist-raised", "hammer", "tools"]
   },
   "52": {
     "name": "Computers",
@@ -751,11 +658,7 @@
   },
   "53": {
     "name": "Conflict",
-    "iconNames": [
-      "handshake-slash",
-      "handshake-alt-slash",
-      "chess"
-    ]
+    "iconNames": ["handshake-slash", "handshake-alt-slash", "chess"]
   },
   "54": {
     "name": "Conformity",
@@ -771,13 +674,7 @@
   },
   "55": {
     "name": "Confusion",
-    "iconNames": [
-      "dizzy",
-      "flushed",
-      "surprise",
-      "grimace",
-      "meh-rolling-eyes"
-    ]
+    "iconNames": ["dizzy", "flushed", "surprise", "grimace", "meh-rolling-eyes"]
   },
   "56": {
     "name": "Conquer",
@@ -793,10 +690,7 @@
   },
   "57": {
     "name": "Conscience",
-    "iconNames": [
-      "pray",
-      "praying-hands"
-    ]
+    "iconNames": ["pray", "praying-hands"]
   },
   "58": {
     "name": "Conservative-liberal",
@@ -821,12 +715,7 @@
   },
   "59": {
     "name": "Convention",
-    "iconNames": [
-      "file",
-      "dove",
-      "file-signature",
-      "book"
-    ]
+    "iconNames": ["file", "dove", "file-signature", "book"]
   },
   "60": {
     "name": "Cool",
@@ -858,12 +747,7 @@
   },
   "62": {
     "name": "Cowardice",
-    "iconNames": [
-      "dizzy",
-      "flushed",
-      "surprise",
-      "frown-open"
-    ]
+    "iconNames": ["dizzy", "flushed", "surprise", "frown-open"]
   },
   "63": {
     "name": "Creation",
@@ -933,11 +817,7 @@
   },
   "67": {
     "name": "Cunning",
-    "iconNames": [
-      "grin-squint",
-      "laugh-wink",
-      "smile-wink"
-    ]
+    "iconNames": ["grin-squint", "laugh-wink", "smile-wink"]
   },
   "68": {
     "name": "Cynicism",
@@ -1009,12 +889,7 @@
   },
   "73": {
     "name": "Death",
-    "iconNames": [
-      "skull",
-      "skull-crossbones",
-      "book-dead",
-      "bolt"
-    ]
+    "iconNames": ["skull", "skull-crossbones", "book-dead", "bolt"]
   },
   "74": {
     "name": "Deceit",
@@ -1053,9 +928,7 @@
   },
   "77": {
     "name": "Defilement",
-    "iconNames": [
-      "quidditch"
-    ]
+    "iconNames": ["quidditch"]
   },
   "78": {
     "name": "Design",
@@ -1110,30 +983,15 @@
   },
   "79": {
     "name": "Desire",
-    "iconNames": [
-      "gem",
-      "hamburger",
-      "pizza-slice",
-      "car",
-      "fab-font-awesome"
-    ]
+    "iconNames": ["gem", "hamburger", "pizza-slice", "car", "fab-font-awesome"]
   },
   "80": {
     "name": "Destiny",
-    "iconNames": [
-      "pray",
-      "praying-hands"
-    ]
+    "iconNames": ["pray", "praying-hands"]
   },
   "81": {
     "name": "Dictator",
-    "iconNames": [
-      "user",
-      "user-alt",
-      "crown",
-      "chess-king",
-      "chess"
-    ]
+    "iconNames": ["user", "user-alt", "crown", "chess-king", "chess"]
   },
   "82": {
     "name": "Diet",
@@ -1216,18 +1074,11 @@
   },
   "87": {
     "name": "Doubt",
-    "iconNames": [
-      "meh-rolling-eyes",
-      "meh"
-    ]
+    "iconNames": ["meh-rolling-eyes", "meh"]
   },
   "88": {
     "name": "Dreams",
-    "iconNames": [
-      "bed",
-      "procedures",
-      "ghost"
-    ]
+    "iconNames": ["bed", "procedures", "ghost"]
   },
   "89": {
     "name": "Duty",
@@ -1305,10 +1156,7 @@
   },
   "93": {
     "name": "Endurance",
-    "iconNames": [
-      "dumbbell",
-      "fist-raised"
-    ]
+    "iconNames": ["dumbbell", "fist-raised"]
   },
   "94": {
     "name": "Enemy",
@@ -1356,11 +1204,7 @@
   },
   "97": {
     "name": "Envy",
-    "iconNames": [
-      "meh-rolling-eyes",
-      "meh",
-      "grin-stars"
-    ]
+    "iconNames": ["meh-rolling-eyes", "meh", "grin-stars"]
   },
   "98": {
     "name": "Epithets",
@@ -1376,21 +1220,11 @@
   },
   "99": {
     "name": "Equality",
-    "iconNames": [
-      "users",
-      "user-friends",
-      "people-arrows"
-    ]
+    "iconNames": ["users", "user-friends", "people-arrows"]
   },
   "100": {
     "name": "Eternity",
-    "iconNames": [
-      "tree",
-      "leaf",
-      "seedling",
-      "baby",
-      "fab-pagelines"
-    ]
+    "iconNames": ["tree", "leaf", "seedling", "baby", "fab-pagelines"]
   },
   "101": {
     "name": "Ethics",
@@ -1403,10 +1237,7 @@
   },
   "102": {
     "name": "Evil",
-    "iconNames": [
-      "angry",
-      "tired"
-    ]
+    "iconNames": ["angry", "tired"]
   },
   "103": {
     "name": "Evolution",
@@ -1507,10 +1338,7 @@
   },
   "108": {
     "name": "Eye",
-    "iconNames": [
-      "eye",
-      "eye-slash"
-    ]
+    "iconNames": ["eye", "eye-slash"]
   },
   "109": {
     "name": "Failure",
@@ -1524,10 +1352,7 @@
   },
   "110": {
     "name": "Faith",
-    "iconNames": [
-      "pray",
-      "praying-hands"
-    ]
+    "iconNames": ["pray", "praying-hands"]
   },
   "111": {
     "name": "Fame",
@@ -1547,20 +1372,11 @@
   },
   "112": {
     "name": "Family",
-    "iconNames": [
-      "users",
-      "user-friends",
-      "people-arrows"
-    ]
+    "iconNames": ["users", "user-friends", "people-arrows"]
   },
   "113": {
     "name": "Famous",
-    "iconNames": [
-      "camera",
-      "camera-retro",
-      "video",
-      "photo-video"
-    ]
+    "iconNames": ["camera", "camera-retro", "video", "photo-video"]
   },
   "114": {
     "name": "Fashion",
@@ -1577,10 +1393,7 @@
   },
   "115": {
     "name": "Fate",
-    "iconNames": [
-      "pray",
-      "praying-hands"
-    ]
+    "iconNames": ["pray", "praying-hands"]
   },
   "116": {
     "name": "Father",
@@ -1596,14 +1409,7 @@
   },
   "117": {
     "name": "Fear",
-    "iconNames": [
-      "meh-blank",
-      "tired",
-      "surprise",
-      "meh",
-      "flushed",
-      "dizzy"
-    ]
+    "iconNames": ["meh-blank", "tired", "surprise", "meh", "flushed", "dizzy"]
   },
   "118": {
     "name": "Finance",
@@ -1693,10 +1499,7 @@
   },
   "122": {
     "name": "Fool",
-    "iconNames": [
-      "dizzy",
-      "surprise"
-    ]
+    "iconNames": ["dizzy", "surprise"]
   },
   "123": {
     "name": "Forethought",
@@ -1713,13 +1516,7 @@
   },
   "124": {
     "name": "Forgiveness",
-    "iconNames": [
-      "peace",
-      "hand-peace",
-      "dove",
-      "handshake",
-      "hands-helping"
-    ]
+    "iconNames": ["peace", "hand-peace", "dove", "handshake", "hands-helping"]
   },
   "125": {
     "name": "Fortune",
@@ -1756,11 +1553,7 @@
   },
   "127": {
     "name": "Friendship",
-    "iconNames": [
-      "users",
-      "user-friends",
-      "people-arrows"
-    ]
+    "iconNames": ["users", "user-friends", "people-arrows"]
   },
   "128": {
     "name": "Fun",
@@ -1997,22 +1790,11 @@
   },
   "142": {
     "name": "Grief",
-    "iconNames": [
-      "frown-open",
-      "frown",
-      "sad-cry",
-      "sad-tear"
-    ]
+    "iconNames": ["frown-open", "frown", "sad-cry", "sad-tear"]
   },
   "143": {
     "name": "Growth",
-    "iconNames": [
-      "tree",
-      "leaf",
-      "seedling",
-      "baby",
-      "fab-pagelines"
-    ]
+    "iconNames": ["tree", "leaf", "seedling", "baby", "fab-pagelines"]
   },
   "144": {
     "name": "Happiness",
@@ -2034,17 +1816,11 @@
   },
   "145": {
     "name": "Haste",
-    "iconNames": [
-      "tachometer-alt",
-      "shipping-fast"
-    ]
+    "iconNames": ["tachometer-alt", "shipping-fast"]
   },
   "146": {
     "name": "Hate",
-    "iconNames": [
-      "angry",
-      "tired"
-    ]
+    "iconNames": ["angry", "tired"]
   },
   "147": {
     "name": "Health",
@@ -2094,10 +1870,7 @@
   },
   "150": {
     "name": "Heresy",
-    "iconNames": [
-      "pray",
-      "praying-hands"
-    ]
+    "iconNames": ["pray", "praying-hands"]
   },
   "151": {
     "name": "Heroism",
@@ -2130,36 +1903,19 @@
   },
   "153": {
     "name": "Home",
-    "iconNames": [
-      "home",
-      "city",
-      "building",
-      "laptop-house"
-    ]
+    "iconNames": ["home", "city", "building", "laptop-house"]
   },
   "154": {
     "name": "Honesty",
-    "iconNames": [
-      "award",
-      "medal",
-      "crown",
-      "trophy"
-    ]
+    "iconNames": ["award", "medal", "crown", "trophy"]
   },
   "155": {
     "name": "Honor",
-    "iconNames": [
-      "pray",
-      "praying-hands"
-    ]
+    "iconNames": ["pray", "praying-hands"]
   },
   "156": {
     "name": "Hope",
-    "iconNames": [
-      "dove",
-      "pray",
-      "praying-hands"
-    ]
+    "iconNames": ["dove", "pray", "praying-hands"]
   },
   "157": {
     "name": "Human",
@@ -2175,10 +1931,7 @@
   },
   "158": {
     "name": "Humility",
-    "iconNames": [
-      "pray",
-      "praying-hands"
-    ]
+    "iconNames": ["pray", "praying-hands"]
   },
   "159": {
     "name": "Humor",
@@ -2200,11 +1953,7 @@
   },
   "160": {
     "name": "Husband",
-    "iconNames": [
-      "male",
-      "user",
-      "user-alt"
-    ]
+    "iconNames": ["male", "user", "user-alt"]
   },
   "161": {
     "name": "Hypocrisy",
@@ -2218,12 +1967,7 @@
   },
   "162": {
     "name": "Idea",
-    "iconNames": [
-      "lightbulb",
-      "comments",
-      "comment",
-      "comment-alt"
-    ]
+    "iconNames": ["lightbulb", "comments", "comment", "comment-alt"]
   },
   "163": {
     "name": "Ideals",
@@ -2252,20 +1996,11 @@
   },
   "165": {
     "name": "Idleness",
-    "iconNames": [
-      "bed",
-      "procedures",
-      "gamepad",
-      "hot-tub"
-    ]
+    "iconNames": ["bed", "procedures", "gamepad", "hot-tub"]
   },
   "166": {
     "name": "Ignorance",
-    "iconNames": [
-      "meh-rolling-eyes",
-      "meh-blank",
-      "meh"
-    ]
+    "iconNames": ["meh-rolling-eyes", "meh-blank", "meh"]
   },
   "167": {
     "name": "Illusions",
@@ -2292,13 +2027,7 @@
   },
   "169": {
     "name": "Immortality",
-    "iconNames": [
-      "male",
-      "female",
-      "baby",
-      "street-view",
-      "blind"
-    ]
+    "iconNames": ["male", "female", "baby", "street-view", "blind"]
   },
   "170": {
     "name": "Independence",
@@ -2320,12 +2049,7 @@
   },
   "171": {
     "name": "Indignation",
-    "iconNames": [
-      "frown",
-      "angry",
-      "grimace",
-      "tired"
-    ]
+    "iconNames": ["frown", "angry", "grimace", "tired"]
   },
   "172": {
     "name": "Individuality",
@@ -2471,12 +2195,7 @@
   },
   "182": {
     "name": "Journalism",
-    "iconNames": [
-      "bullhorn",
-      "broadcast-tower",
-      "newspaper",
-      "podcast"
-    ]
+    "iconNames": ["bullhorn", "broadcast-tower", "newspaper", "podcast"]
   },
   "183": {
     "name": "Journey",
@@ -2531,13 +2250,7 @@
   },
   "187": {
     "name": "Kindness",
-    "iconNames": [
-      "peace",
-      "hand-peace",
-      "dove",
-      "handshake",
-      "hands-helping"
-    ]
+    "iconNames": ["peace", "hand-peace", "dove", "handshake", "hands-helping"]
   },
   "188": {
     "name": "Knowledge",
@@ -2605,10 +2318,7 @@
   },
   "192": {
     "name": "Leadership",
-    "iconNames": [
-      "child",
-      "street-view"
-    ]
+    "iconNames": ["child", "street-view"]
   },
   "193": {
     "name": "Learning",
@@ -2636,11 +2346,7 @@
   },
   "195": {
     "name": "Legislation",
-    "iconNames": [
-      "edit",
-      "balance-scale",
-      "handshake"
-    ]
+    "iconNames": ["edit", "balance-scale", "handshake"]
   },
   "196": {
     "name": "Liberty",
@@ -2664,10 +2370,7 @@
   },
   "197": {
     "name": "Life",
-    "iconNames": [
-      "city",
-      "users"
-    ]
+    "iconNames": ["city", "users"]
   },
   "198": {
     "name": "Literature",
@@ -2758,11 +2461,7 @@
   },
   "202": {
     "name": "Luck",
-    "iconNames": [
-      "laugh-wink",
-      "star",
-      "gem"
-    ]
+    "iconNames": ["laugh-wink", "star", "gem"]
   },
   "203": {
     "name": "Marriage",
@@ -2820,10 +2519,7 @@
   },
   "206": {
     "name": "Meditation",
-    "iconNames": [
-      "pray",
-      "praying-hands"
-    ]
+    "iconNames": ["pray", "praying-hands"]
   },
   "207": {
     "name": "Memory",
@@ -2856,35 +2552,19 @@
   },
   "209": {
     "name": "Misery",
-    "iconNames": [
-      "sad-cry",
-      "sad-tear",
-      "frown",
-      "frown-open"
-    ]
+    "iconNames": ["sad-cry", "sad-tear", "frown", "frown-open"]
   },
   "210": {
     "name": "Misfortune",
-    "iconNames": [
-      "frown",
-      "frown-open",
-      "sad-cry",
-      "sad-tear"
-    ]
+    "iconNames": ["frown", "frown-open", "sad-cry", "sad-tear"]
   },
   "211": {
     "name": "Moderation",
-    "iconNames": [
-      "pray",
-      "praying-hands"
-    ]
+    "iconNames": ["pray", "praying-hands"]
   },
   "212": {
     "name": "Mom",
-    "iconNames": [
-      "female",
-      "venus"
-    ]
+    "iconNames": ["female", "venus"]
   },
   "213": {
     "name": "Money",
@@ -2921,27 +2601,15 @@
   },
   "214": {
     "name": "Morals",
-    "iconNames": [
-      "award",
-      "medal",
-      "crown",
-      "trophy"
-    ]
+    "iconNames": ["award", "medal", "crown", "trophy"]
   },
   "215": {
     "name": "Morning",
-    "iconNames": [
-      "sun",
-      "coffee",
-      "mug-hot"
-    ]
+    "iconNames": ["sun", "coffee", "mug-hot"]
   },
   "216": {
     "name": "Mother",
-    "iconNames": [
-      "female",
-      "venus"
-    ]
+    "iconNames": ["female", "venus"]
   },
   "217": {
     "name": "Motivational",
@@ -3015,11 +2683,7 @@
   },
   "222": {
     "name": "Neighbor",
-    "iconNames": [
-      "users",
-      "user-friends",
-      "city"
-    ]
+    "iconNames": ["users", "user-friends", "city"]
   },
   "223": {
     "name": "Nothing",
@@ -3102,40 +2766,19 @@
   },
   "228": {
     "name": "Pain",
-    "iconNames": [
-      "frown",
-      "tired",
-      "sad-cry",
-      "grimace",
-      "frown-open",
-      "dizzy"
-    ]
+    "iconNames": ["frown", "tired", "sad-cry", "grimace", "frown-open", "dizzy"]
   },
   "229": {
     "name": "Parting",
-    "iconNames": [
-      "users-slash",
-      "people-arrows"
-    ]
+    "iconNames": ["users-slash", "people-arrows"]
   },
   "230": {
     "name": "Passion",
-    "iconNames": [
-      "pizza-slice",
-      "hamburger",
-      "gem",
-      "car"
-    ]
+    "iconNames": ["pizza-slice", "hamburger", "gem", "car"]
   },
   "231": {
     "name": "Patience",
-    "iconNames": [
-      "peace",
-      "hand-peace",
-      "dove",
-      "handshake",
-      "hands-helping"
-    ]
+    "iconNames": ["peace", "hand-peace", "dove", "handshake", "hands-helping"]
   },
   "232": {
     "name": "Patriotism",
@@ -3155,37 +2798,19 @@
   },
   "233": {
     "name": "Peace",
-    "iconNames": [
-      "peace",
-      "hand-peace",
-      "dove",
-      "handshake",
-      "hands-helping"
-    ]
+    "iconNames": ["peace", "hand-peace", "dove", "handshake", "hands-helping"]
   },
   "234": {
     "name": "People",
-    "iconNames": [
-      "users",
-      "user-friends",
-      "people-arrows"
-    ]
+    "iconNames": ["users", "user-friends", "people-arrows"]
   },
   "235": {
     "name": "Perfection",
-    "iconNames": [
-      "gem",
-      "award",
-      "medal",
-      "crown",
-      "trophy"
-    ]
+    "iconNames": ["gem", "award", "medal", "crown", "trophy"]
   },
   "236": {
     "name": "Perseverance",
-    "iconNames": [
-      "fist-raised"
-    ]
+    "iconNames": ["fist-raised"]
   },
   "237": {
     "name": "Philosophy",
@@ -3298,19 +2923,11 @@
   },
   "243": {
     "name": "Prayer",
-    "iconNames": [
-      "pray",
-      "praying-hands"
-    ]
+    "iconNames": ["pray", "praying-hands"]
   },
   "244": {
     "name": "Press",
-    "iconNames": [
-      "bullhorn",
-      "broadcast-tower",
-      "newspaper",
-      "podcast"
-    ]
+    "iconNames": ["bullhorn", "broadcast-tower", "newspaper", "podcast"]
   },
   "245": {
     "name": "Pride",
@@ -3330,13 +2947,7 @@
   },
   "246": {
     "name": "Procrastination",
-    "iconNames": [
-      "road",
-      "procedures",
-      "hippo",
-      "route",
-      "bed"
-    ]
+    "iconNames": ["road", "procedures", "hippo", "route", "bed"]
   },
   "247": {
     "name": "Progress",
@@ -3351,35 +2962,19 @@
   },
   "248": {
     "name": "Promise",
-    "iconNames": [
-      "pray",
-      "praying-hands"
-    ]
+    "iconNames": ["pray", "praying-hands"]
   },
   "249": {
     "name": "Property",
-    "iconNames": [
-      "gem",
-      "car",
-      "dollar-sign",
-      "home",
-      "car-side"
-    ]
+    "iconNames": ["gem", "car", "dollar-sign", "home", "car-side"]
   },
   "250": {
     "name": "Prophet",
-    "iconNames": [
-      "pray",
-      "praying-hands"
-    ]
+    "iconNames": ["pray", "praying-hands"]
   },
   "251": {
     "name": "Prudence",
-    "iconNames": [
-      "exclamation",
-      "exclamation-triangle",
-      "exclamation-circle"
-    ]
+    "iconNames": ["exclamation", "exclamation-triangle", "exclamation-circle"]
   },
   "252": {
     "name": "Punishment",
@@ -3441,13 +3036,7 @@
   },
   "255": {
     "name": "Reason",
-    "iconNames": [
-      "directions",
-      "map-signs",
-      "street-view",
-      "sign",
-      "route"
-    ]
+    "iconNames": ["directions", "map-signs", "street-view", "sign", "route"]
   },
   "256": {
     "name": "Reflection",
@@ -3473,11 +3062,7 @@
   },
   "258": {
     "name": "Relationships",
-    "iconNames": [
-      "users",
-      "user-friends",
-      "venus-mars"
-    ]
+    "iconNames": ["users", "user-friends", "venus-mars"]
   },
   "259": {
     "name": "Religion",
@@ -3510,26 +3095,15 @@
   },
   "260": {
     "name": "Respect",
-    "iconNames": [
-      "pray",
-      "praying-hands"
-    ]
+    "iconNames": ["pray", "praying-hands"]
   },
   "261": {
     "name": "Rest",
-    "iconNames": [
-      "bed",
-      "procedures",
-      "hot-tub"
-    ]
+    "iconNames": ["bed", "procedures", "hot-tub"]
   },
   "262": {
     "name": "Revenge",
-    "iconNames": [
-      "grimace",
-      "angry",
-      "tired"
-    ]
+    "iconNames": ["grimace", "angry", "tired"]
   },
   "263": {
     "name": "Risk",
@@ -3592,23 +3166,15 @@
   },
   "266": {
     "name": "Seasons",
-    "iconNames": [
-      "laptop-house",
-      "chalkboard-teacher"
-    ]
+    "iconNames": ["laptop-house", "chalkboard-teacher"]
   },
   "267": {
     "name": "Secret",
-    "iconNames": [
-      "user-secret",
-      "comment-slash"
-    ]
+    "iconNames": ["user-secret", "comment-slash"]
   },
   "268": {
     "name": "Self-control",
-    "iconNames": [
-      "fist-raised"
-    ]
+    "iconNames": ["fist-raised"]
   },
   "269": {
     "name": "Selfishness",
@@ -3645,18 +3211,11 @@
   },
   "272": {
     "name": "Sleep",
-    "iconNames": [
-      "bed",
-      "procedures"
-    ]
+    "iconNames": ["bed", "procedures"]
   },
   "273": {
     "name": "Society",
-    "iconNames": [
-      "users",
-      "user-friends",
-      "people-arrows"
-    ]
+    "iconNames": ["users", "user-friends", "people-arrows"]
   },
   "274": {
     "name": "Solitude",
@@ -3672,20 +3231,11 @@
   },
   "275": {
     "name": "Sorrow",
-    "iconNames": [
-      "sad-cry",
-      "sad-tear",
-      "frown-open",
-      "frown",
-      "grimace"
-    ]
+    "iconNames": ["sad-cry", "sad-tear", "frown-open", "frown", "grimace"]
   },
   "276": {
     "name": "Soul",
-    "iconNames": [
-      "pray",
-      "praying-hands"
-    ]
+    "iconNames": ["pray", "praying-hands"]
   },
   "277": {
     "name": "Speech",
@@ -3703,10 +3253,7 @@
   },
   "278": {
     "name": "Spirituality",
-    "iconNames": [
-      "pray",
-      "praying-hands"
-    ]
+    "iconNames": ["pray", "praying-hands"]
   },
   "279": {
     "name": "Sports",
@@ -3731,23 +3278,15 @@
   },
   "280": {
     "name": "Spririt",
-    "iconNames": [
-      "pray",
-      "praying-hands"
-    ]
+    "iconNames": ["pray", "praying-hands"]
   },
   "281": {
     "name": "Strength",
-    "iconNames": [
-      "fist-raised",
-      "dumbbell"
-    ]
+    "iconNames": ["fist-raised", "dumbbell"]
   },
   "282": {
     "name": "Struggle",
-    "iconNames": [
-      "fist-raised"
-    ]
+    "iconNames": ["fist-raised"]
   },
   "283": {
     "name": "Study",
@@ -3776,13 +3315,7 @@
   },
   "285": {
     "name": "Suffer",
-    "iconNames": [
-      "sad-cry",
-      "sad-tear",
-      "frown-open",
-      "frown",
-      "grimace"
-    ]
+    "iconNames": ["sad-cry", "sad-tear", "frown-open", "frown", "grimace"]
   },
   "286": {
     "name": "Talk",
@@ -3798,9 +3331,7 @@
   },
   "287": {
     "name": "Taste",
-    "iconNames": [
-      "icons"
-    ]
+    "iconNames": ["icons"]
   },
   "288": {
     "name": "Taxes",
@@ -3922,11 +3453,7 @@
   },
   "293": {
     "name": "Tolerance",
-    "iconNames": [
-      "dove",
-      "hand-peace",
-      "peace"
-    ]
+    "iconNames": ["dove", "hand-peace", "peace"]
   },
   "294": {
     "name": "Travel",
@@ -3984,31 +3511,15 @@
   },
   "297": {
     "name": "Tyranny",
-    "iconNames": [
-      "user",
-      "user-alt",
-      "crown",
-      "chess-king",
-      "chess"
-    ]
+    "iconNames": ["user", "user-alt", "crown", "chess-king", "chess"]
   },
   "298": {
     "name": "Understanding",
-    "iconNames": [
-      "lightbulb",
-      "bolt",
-      "comments",
-      "comment",
-      "comment-alt"
-    ]
+    "iconNames": ["lightbulb", "bolt", "comments", "comment", "comment-alt"]
   },
   "299": {
     "name": "Unity",
-    "iconNames": [
-      "users",
-      "user-friends",
-      "people-arrows"
-    ]
+    "iconNames": ["users", "user-friends", "people-arrows"]
   },
   "300": {
     "name": "Universe",
@@ -4092,13 +3603,7 @@
   },
   "306": {
     "name": "Want",
-    "iconNames": [
-      "directions",
-      "map-signs",
-      "street-view",
-      "sign",
-      "route"
-    ]
+    "iconNames": ["directions", "map-signs", "street-view", "sign", "route"]
   },
   "307": {
     "name": "War",
@@ -4114,9 +3619,7 @@
   },
   "308": {
     "name": "Weakness",
-    "iconNames": [
-      "head-side-cough"
-    ]
+    "iconNames": ["head-side-cough"]
   },
   "309": {
     "name": "Wealth",
@@ -4135,27 +3638,15 @@
   },
   "310": {
     "name": "Wickedness",
-    "iconNames": [
-      "angry",
-      "tired"
-    ]
+    "iconNames": ["angry", "tired"]
   },
   "311": {
     "name": "Wife",
-    "iconNames": [
-      "female",
-      "venus"
-    ]
+    "iconNames": ["female", "venus"]
   },
   "312": {
     "name": "Will",
-    "iconNames": [
-      "directions",
-      "map-signs",
-      "street-view",
-      "sign",
-      "route"
-    ]
+    "iconNames": ["directions", "map-signs", "street-view", "sign", "route"]
   },
   "313": {
     "name": "Wisdom",
@@ -4190,10 +3681,7 @@
   },
   "315": {
     "name": "Women",
-    "iconNames": [
-      "female",
-      "venus"
-    ]
+    "iconNames": ["female", "venus"]
   },
   "316": {
     "name": "Words",

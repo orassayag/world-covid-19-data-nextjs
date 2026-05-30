@@ -8,10 +8,7 @@ export default function MasterUpdateLoader({ isSpin }) {
 
   return (
     <div className={styles.update_loader}>
-      <Icon
-        name="sync-alt"
-        isSpin
-      />
+      <Icon name='sync-alt' isSpin />
     </div>
   );
 }

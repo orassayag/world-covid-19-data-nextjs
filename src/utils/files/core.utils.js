@@ -5,8 +5,9 @@ class CoreUtils {
     if (!millisecondsCount) {
       return;
     }
-    return new Promise((resolve) => setTimeout(resolve, millisecondsCount))
-      .catch((e) => logUtils.log(e));
+    return new Promise((resolve) =>
+      setTimeout(resolve, millisecondsCount)
+    ).catch((e) => logUtils.log(e));
   }
 
   getValue(e) {
@@ -14,7 +15,10 @@ class CoreUtils {
   }
 
   getAttributeName(e, attributeName) {
-    return e.target.getAttribute(attributeName) || e.currentTarget.getAttribute(attributeName);
+    return (
+      e.target.getAttribute(attributeName) ||
+      e.currentTarget.getAttribute(attributeName)
+    );
   }
 }
 

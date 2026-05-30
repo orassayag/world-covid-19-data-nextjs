@@ -2,7 +2,9 @@ import styles from './CountryData.module.scss';
 import CountrySource from '../CountrySource/CountrySource';
 
 export default function CountryData({
-  sourcesData, sourcesList, updateSourceName,
+  sourcesData,
+  sourcesList,
+  updateSourceName,
 }) {
   const sources = [];
   for (let i = 0; i < sourcesList.length; i += 1) {
@@ -11,20 +13,18 @@ export default function CountryData({
       continue;
     }
     sources.push(
-      (<CountrySource
+      <CountrySource
         key={i}
         source={source}
         data={sourcesData[source.lowerName]}
         updateSourceName={updateSourceName}
-      />),
+      />
     );
   }
 
   return (
     <div className={styles.data}>
-      <div className={styles.sources}>
-        {sources}
-      </div>
+      <div className={styles.sources}>{sources}</div>
     </div>
   );
 }

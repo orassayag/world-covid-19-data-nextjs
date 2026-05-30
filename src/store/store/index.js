@@ -2,11 +2,16 @@ import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import settings from '../../settings/settings';
 import { EnvironmentModeEnum } from '../../core/enums';
 import {
-  dataSlices, settingsSlices, statisticsSlices, statisticsUpdatesSlices,
+  dataSlices,
+  settingsSlices,
+  statisticsSlices,
+  statisticsUpdatesSlices,
 } from '../slices';
 
 const { ENVIRONMENT_MODE } = settings;
-const isDevelopment = process.env.NODE_ENV === 'development' || ENVIRONMENT_MODE === EnvironmentModeEnum.DEVELOPMENT;
+const isDevelopment =
+  process.env.NODE_ENV === 'development' ||
+  ENVIRONMENT_MODE === EnvironmentModeEnum.DEVELOPMENT;
 
 const customizedMiddleware = getDefaultMiddleware({
   serializableCheck: false,

@@ -6,13 +6,26 @@ import { coreUtils } from '../../../../utils';
 import { engineService } from '../../../../services';
 
 export default function CountryModal({
-  styles, country, updatesList, sourcesList, onActionClick,
+  styles,
+  country,
+  updatesList,
+  sourcesList,
+  onActionClick,
 }) {
   const {
-    id, displayName, bigFlagClassName, coatClassName, populationCount,
-    isContainData, updatesHoursCount, updateSourceData, sourcesData, summaryData,
+    id,
+    displayName,
+    bigFlagClassName,
+    coatClassName,
+    populationCount,
+    isContainData,
+    updatesHoursCount,
+    updateSourceData,
+    sourcesData,
+    summaryData,
   } = country;
-  const countryDetailsList = engineService.getCountryIdentityDetailsList(country);
+  const countryDetailsList =
+    engineService.getCountryIdentityDetailsList(country);
   // Update action on the country modal click.
   const handleActionChange = useCallback((e) => {
     engineService.runModalActionUpdate({
@@ -24,12 +37,11 @@ export default function CountryModal({
   }, []);
 
   return (
-    <div className={`${styles.modal_content} ${styles.country} ${isContainData ? styles.no_data : ''} f16 f16-extra`}>
+    <div
+      className={`${styles.modal_content} ${styles.country} ${isContainData ? styles.no_data : ''} f16 f16-extra`}
+    >
       <div className={styles.content}>
-        <CountryExitButton
-          styles={styles}
-          onActionClick={onActionClick}
-        />
+        <CountryExitButton styles={styles} onActionClick={onActionClick} />
         <CountryIdentity
           displayName={displayName}
           bigFlagClassName={bigFlagClassName}

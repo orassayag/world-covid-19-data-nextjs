@@ -14,7 +14,18 @@ import statisticUpdateService from './files/statisticUpdate.service';
 import testService from './files/test.service';
 
 export {
-  apiService, countryService, countryCommonLogicService, creditService, engineService,
-  enumService, localService, quoteService, settingService, sortService, sourceService,
-  statisticService, statisticUpdateService, testService,
+  apiService,
+  countryService,
+  countryCommonLogicService,
+  creditService,
+  engineService,
+  enumService,
+  localService,
+  quoteService,
+  settingService,
+  sortService,
+  sourceService,
+  statisticService,
+  statisticUpdateService,
+  testService,
 };

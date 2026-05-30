@@ -20,15 +20,20 @@ class LocalDataService {
       return;
     }
     const {
-      SIMULATE_LOCAL_UPDATE_PERCENTAGE, SIMULATE_LOCAL_MAXIMUM_COUNTRIES_PER_ROUND,
-      SIMULATE_LOCAL_MAXIMUM_NUMBER_PER_VALUE, SIMULATE_LOCAL_MILLISECONDS_DELAY_PER_ROUND,
+      SIMULATE_LOCAL_UPDATE_PERCENTAGE,
+      SIMULATE_LOCAL_MAXIMUM_COUNTRIES_PER_ROUND,
+      SIMULATE_LOCAL_MAXIMUM_NUMBER_PER_VALUE,
+      SIMULATE_LOCAL_MILLISECONDS_DELAY_PER_ROUND,
     } = settings;
     this.maximumRandomRounds = 50;
     this.lastRoundNumbersList = new Set();
     this.simulateLocalUpdatePercentage = SIMULATE_LOCAL_UPDATE_PERCENTAGE;
-    this.simulateLocalMaximumCountriesPerRound = SIMULATE_LOCAL_MAXIMUM_COUNTRIES_PER_ROUND;
-    this.simulateLocalMaximumNumberPerValue = SIMULATE_LOCAL_MAXIMUM_NUMBER_PER_VALUE;
-    this.simulateLocalMillisecondsDelayPerRound = SIMULATE_LOCAL_MILLISECONDS_DELAY_PER_ROUND;
+    this.simulateLocalMaximumCountriesPerRound =
+      SIMULATE_LOCAL_MAXIMUM_COUNTRIES_PER_ROUND;
+    this.simulateLocalMaximumNumberPerValue =
+      SIMULATE_LOCAL_MAXIMUM_NUMBER_PER_VALUE;
+    this.simulateLocalMillisecondsDelayPerRound =
+      SIMULATE_LOCAL_MILLISECONDS_DELAY_PER_ROUND;
     this.worldCountryId = worldCountryId;
     localData.initiate();
     this.isInitiate = true;
@@ -37,7 +42,8 @@ class LocalDataService {
   initiateLocalData(data) {
     const { source, countriesList, countriesKeysList } = data;
     return new Promise((resolve, reject) => {
-      if (reject) { }
+      if (reject) {
+      }
       const { lowerName } = source;
       let totalNumberValues = [0, 0, 0];
       const world = localData.countriesList[this.worldCountryId];
@@ -52,26 +58,38 @@ class LocalDataService {
           continue;
         }
         if (country.populationCount === 0 && localCountry.populationCount > 0) {
-          const populationValuePair = countryCommonLogicService
-            .getNumberArray(localCountry.populationCount);
+          const populationValuePair = countryCommonLogicService.getNumberArray(
+            localCountry.populationCount
+          );
           country.populationCount = populationValuePair[0];
           country.populationCountDisplay = populationValuePair[1];
-          country.populationPercentageDisplay = textUtils
-            .getPercentageDisplay(country.populationCount, world.populationCount);
+          country.populationPercentageDisplay = textUtils.getPercentageDisplay(
+            country.populationCount,
+            world.populationCount
+          );
         }
         let localSourceData = localCountry.sourcesData[lowerName];
         if (!localSourceData) {
           localSourceData = [null, null, null];
         }
-        countriesList[countryId] = countryCommonLogicService.setSourceData(country, {
-          lowerName,
-          isCases: false,
-          casesPair: countryCommonLogicService.getNumberArray(localSourceData[0]),
-          isDeaths: false,
-          deathsPair: countryCommonLogicService.getNumberArray(localSourceData[1]),
-          isRecovers: false,
-          recoversPair: countryCommonLogicService.getNumberArray(localSourceData[2]),
-        });
+        countriesList[countryId] = countryCommonLogicService.setSourceData(
+          country,
+          {
+            lowerName,
+            isCases: false,
+            casesPair: countryCommonLogicService.getNumberArray(
+              localSourceData[0]
+            ),
+            isDeaths: false,
+            deathsPair: countryCommonLogicService.getNumberArray(
+              localSourceData[1]
+            ),
+            isRecovers: false,
+            recoversPair: countryCommonLogicService.getNumberArray(
+              localSourceData[2]
+            ),
+          }
+        );
         if (countryId === this.worldCountryId) {
           totalNumberValues = localSourceData;
         }
@@ -87,9 +105,18 @@ class LocalDataService {
     // Get random countries list to update (not include the world).
     let numbersList = new Set();
     let index = 0;
-    const countriesCount = textUtils.getRandomNumber(1, this.simulateLocalMaximumCountriesPerRound);
-    while (numbersList.size < countriesCount && index < this.maximumRandomRounds) {
-      const number = textUtils.getRandomNumber(0, localData.countriesKeysList.length);
+    const countriesCount = textUtils.getRandomNumber(
+      1,
+      this.simulateLocalMaximumCountriesPerRound
+    );
+    while (
+      numbersList.size < countriesCount &&
+      index < this.maximumRandomRounds
+    ) {
+      const number = textUtils.getRandomNumber(
+        0,
+        localData.countriesKeysList.length
+      );
       if (!this.lastRoundNumbersList.has(number)) {
         numbersList.add(number);
       }
@@ -116,7 +143,10 @@ class LocalDataService {
   }
 
   createRandomValue() {
-    return textUtils.getRandomNumber(1, this.simulateLocalMaximumNumberPerValue);
+    return textUtils.getRandomNumber(
+      1,
+      this.simulateLocalMaximumNumberPerValue
+    );
   }
 
   createRandomSource() {
@@ -182,9 +212,7 @@ class LocalDataService {
   }
 
   createRandomValuePairs(data) {
-    const {
-      country, randomCountry, totalNumberValues, lowerName,
-    } = data;
+    const { country, randomCountry, totalNumberValues, lowerName } = data;
     if (!country || !country.isContainData || !country.sourcesData) {
       return {
         randomCountry,
@@ -215,7 +243,10 @@ class LocalDataService {
 
   createRandomValues(data) {
     const {
-      lowerName, countriesList, randomCountriesList, randomCountriesListKeys,
+      lowerName,
+      countriesList,
+      randomCountriesList,
+      randomCountriesListKeys,
     } = data;
     let totalNumberValues = [0, 0, 0];
     for (let i = 0; i < randomCountriesListKeys.length; i += 1) {
@@ -227,7 +258,8 @@ class LocalDataService {
         lowerName,
       });
       totalNumberValues = [...createRandomValuePairsResult.totalNumberValues];
-      randomCountriesList[countryId] = createRandomValuePairsResult.randomCountry;
+      randomCountriesList[countryId] =
+        createRandomValuePairsResult.randomCountry;
     }
     const world = countriesList[this.worldCountryId];
     totalNumberValues = this.createCompareWorldValue({
@@ -244,7 +276,11 @@ class LocalDataService {
     if (!data.isInitiateComplete) {
       return this.getOriginalData(data);
     }
-    if (!textUtils.getRandomBooleanByPercentage(this.simulateLocalUpdatePercentage)) {
+    if (
+      !textUtils.getRandomBooleanByPercentage(
+        this.simulateLocalUpdatePercentage
+      )
+    ) {
       return null;
     }
     return this.getRandomData(data);
@@ -262,7 +298,8 @@ class LocalDataService {
 
   getRandomData(data) {
     const { countriesList, source } = data;
-    const { randomCountriesList, randomCountriesListKeys } = this.createRandomCountriesList();
+    const { randomCountriesList, randomCountriesListKeys } =
+      this.createRandomCountriesList();
     const randomDataValues = this.createRandomValues({
       lowerName: source.lowerName,
       countriesList,

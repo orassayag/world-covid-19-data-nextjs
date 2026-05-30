@@ -1,11 +1,20 @@
 import settings from '../../settings/settings';
 import { countriesData } from '../../data';
 import {
-  CountryIdentityItemModel, FetchDataResultsModel, StatisticsDataItemModel, SummaryDataModel,
-  SummaryDataItemModel, SummaryTimeItemModel, UpdateSourceDataModel, UpdateSourceDataItemModel,
+  CountryIdentityItemModel,
+  FetchDataResultsModel,
+  StatisticsDataItemModel,
+  SummaryDataModel,
+  SummaryDataItemModel,
+  SummaryTimeItemModel,
+  UpdateSourceDataModel,
+  UpdateSourceDataItemModel,
 } from '../../core/models';
 import {
-  CountrySortTypeEnum, CountriesActionTypeEnum, SourceNumberTypeEnum, SourceUpdateTypeEnum,
+  CountrySortTypeEnum,
+  CountriesActionTypeEnum,
+  SourceNumberTypeEnum,
+  SourceUpdateTypeEnum,
   UpdateCountryTypeEnum,
 } from '../../core/enums';
 import apiService from './api.service';
@@ -13,7 +22,12 @@ import countryCommonLogicService from './countryCommonLogic.service';
 import localService from './local.service';
 import sortService from './sort.service';
 import {
-  coreUtils, logicUtils, logUtils, textUtils, timeUtils, validationUtils,
+  coreUtils,
+  logicUtils,
+  logUtils,
+  textUtils,
+  timeUtils,
+  validationUtils,
 } from '../../utils';
 
 class CountryService {
@@ -39,9 +53,7 @@ class CountryService {
         isActive: [true],
         isContainData: [true],
       },
-      sortType: sortService.sortsList[
-        CountrySortTypeEnum.LAST_UPDATE_TIME
-      ], // Don't change this, it's initial value.
+      sortType: sortService.sortsList[CountrySortTypeEnum.LAST_UPDATE_TIME], // Don't change this, it's initial value.
       forceSortDirection: null,
       isReturnArray: false,
     });
@@ -56,7 +68,8 @@ class CountryService {
   updateCountriesNameIdList(countriesList) {
     const countriesNameIdList = [];
     for (let i = 0; i < this.countriesKeysList.length; i += 1) {
-      const { id, displayName, isVisible } = countriesList[this.countriesKeysList[i]];
+      const { id, displayName, isVisible } =
+        countriesList[this.countriesKeysList[i]];
       if (isVisible) {
         countriesNameIdList.push({
           id,
@@ -112,13 +125,18 @@ class CountryService {
     if (!options.sortType) {
       return countriesList;
     }
-    countriesList = logicUtils.sort(countriesList, [...options.sortType.fieldsList, 'lowerName']);
+    countriesList = logicUtils.sort(countriesList, [
+      ...options.sortType.fieldsList,
+      'lowerName',
+    ]);
     let dist = 1;
     let lastOrder = 0;
     for (let i = 0; i < countriesList.length; i += 1) {
       const country = countriesList[i];
-      if (country.lowerName === countriesData.otherCountryId
-        || country.id === countriesData.worldCountryId) {
+      if (
+        country.lowerName === countriesData.otherCountryId ||
+        country.id === countriesData.worldCountryId
+      ) {
         dist -= 1;
         continue;
       }
@@ -162,12 +180,18 @@ class CountryService {
 
   async getCountryData(data) {
     const {
-      source, settingsList, countriesList, countriesKeysList, isInitiateComplete,
+      source,
+      settingsList,
+      countriesList,
+      countriesKeysList,
+      isInitiateComplete,
     } = data;
     let fetchDataResults = null;
     if (this.isCountriesLog) {
       const dateNow = timeUtils.getCurrentDate();
-      logUtils.log(`${source.lowerName} | ${timeUtils.getTimeDisplay(dateNow)}`);
+      logUtils.log(
+        `${source.lowerName} | ${timeUtils.getTimeDisplay(dateNow)}`
+      );
     }
     if (!source.isActive) {
       fetchDataResults = new FetchDataResultsModel(source);
@@ -191,7 +215,9 @@ class CountryService {
         countriesKeysList,
         isInitiateComplete,
       });
-      await coreUtils.sleep(localService.simulateLocalMillisecondsDelayPerRound);
+      await coreUtils.sleep(
+        localService.simulateLocalMillisecondsDelayPerRound
+      );
     }
     return fetchDataResults;
   }
@@ -255,7 +281,9 @@ class CountryService {
   }
 
   getCountryPairValues(element, count) {
-    return countryCommonLogicService.getNumberArray(this.getCountryValue(element, count));
+    return countryCommonLogicService.getNumberArray(
+      this.getCountryValue(element, count)
+    );
   }
 
   getCountryCountValue(element, count) {
@@ -273,8 +301,11 @@ class CountryService {
   getPairsFromStrings(numbers) {
     const pairs = [];
     for (let i = 0; i < numbers.length; i += 1) {
-      pairs.push(countryCommonLogicService
-        .getNumberArray(textUtils.getNumberFromStringComma(numbers[i])));
+      pairs.push(
+        countryCommonLogicService.getNumberArray(
+          textUtils.getNumberFromStringComma(numbers[i])
+        )
+      );
     }
     return pairs;
   }
@@ -318,12 +349,19 @@ class CountryService {
     };
   }
 
-  finalizeCountryData(country, sourcesList, sourcesKeysList, worldPopulationCount) {
+  finalizeCountryData(
+    country,
+    sourcesList,
+    sourcesKeysList,
+    worldPopulationCount
+  ) {
     // Calculate the 'populationPercentageDisplay' to the countries which are missing.
     if (!country.populationPercentageDisplay) {
       country.populationCount = country.staticPopulationCount;
-      country.populationPercentageDisplay = textUtils
-        .getPercentageDisplay(country.populationCount, worldPopulationCount);
+      country.populationPercentageDisplay = textUtils.getPercentageDisplay(
+        country.populationCount,
+        worldPopulationCount
+      );
     }
     // Set the statistics data.
     country.statisticsData = [
@@ -345,7 +383,10 @@ class CountryService {
       }),
     ];
     // Set the summary data.
-    country.summaryData = this.initiateSummaryData(sourcesList, sourcesKeysList);
+    country.summaryData = this.initiateSummaryData(
+      sourcesList,
+      sourcesKeysList
+    );
     return country;
   }
 
@@ -361,18 +402,28 @@ class CountryService {
     return `${populationCountDisplay} (${populationPercentageDisplay}%)`;
   }
 
-  getOtherCountryDetailsList(populationCountDisplay, populationPercentageDisplay) {
+  getOtherCountryDetailsList(
+    populationCountDisplay,
+    populationPercentageDisplay
+  ) {
     const otherDetailsList = [];
-    otherDetailsList.push(new CountryIdentityItemModel({
-      iconName: 'users',
-      iconTooltip: 'Population count',
-      value: this.getDisplayPopulation(populationCountDisplay, populationPercentageDisplay),
-    }));
-    otherDetailsList.push(new CountryIdentityItemModel({
-      iconName: 'university',
-      iconTooltip: 'Places count',
-      value: countriesData.otherPlacesList.length,
-    }));
+    otherDetailsList.push(
+      new CountryIdentityItemModel({
+        iconName: 'users',
+        iconTooltip: 'Population count',
+        value: this.getDisplayPopulation(
+          populationCountDisplay,
+          populationPercentageDisplay
+        ),
+      })
+    );
+    otherDetailsList.push(
+      new CountryIdentityItemModel({
+        iconName: 'university',
+        iconTooltip: 'Places count',
+        value: countriesData.otherPlacesList.length,
+      })
+    );
     for (let i = 0; i < countriesData.otherPlacesList.length; i += 1) {
       const otherPlace = countriesData.otherPlacesList[i];
       const item = new CountryIdentityItemModel({
@@ -390,46 +441,73 @@ class CountryService {
 
   getCountryIdentityDetailsList(data) {
     const {
-      id, upperCode2, upperCode3, otherCodes, numericCode, phoneCodes, continents, areaSize,
-      capitalName, independentYears, googleMapsURL, wikipediaURL,
-      populationCountDisplay, populationPercentageDisplay,
+      id,
+      upperCode2,
+      upperCode3,
+      otherCodes,
+      numericCode,
+      phoneCodes,
+      continents,
+      areaSize,
+      capitalName,
+      independentYears,
+      googleMapsURL,
+      wikipediaURL,
+      populationCountDisplay,
+      populationPercentageDisplay,
     } = data;
     if (id === countriesData.otherCountryId) {
-      return this.getOtherCountryDetailsList(populationCountDisplay, populationPercentageDisplay);
+      return this.getOtherCountryDetailsList(
+        populationCountDisplay,
+        populationPercentageDisplay
+      );
     }
     const countryDetailsList = [];
-    countryDetailsList.push(new CountryIdentityItemModel({
-      iconName: 'users',
-      iconTooltip: 'Population count',
-      value: this.getDisplayPopulation(populationCountDisplay, populationPercentageDisplay),
-    }));
+    countryDetailsList.push(
+      new CountryIdentityItemModel({
+        iconName: 'users',
+        iconTooltip: 'Population count',
+        value: this.getDisplayPopulation(
+          populationCountDisplay,
+          populationPercentageDisplay
+        ),
+      })
+    );
     if (numericCode) {
-      countryDetailsList.push(new CountryIdentityItemModel({
-        iconName: 'passport',
-        iconTooltip: 'Country numeric code',
-        value: numericCode,
-      }));
+      countryDetailsList.push(
+        new CountryIdentityItemModel({
+          iconName: 'passport',
+          iconTooltip: 'Country numeric code',
+          value: numericCode,
+        })
+      );
     }
     if (validationUtils.isExists(continents)) {
-      countryDetailsList.push(new CountryIdentityItemModel({
-        iconName: 'images',
-        iconTooltip: 'Continents',
-        value: continents.join(', '),
-      }));
+      countryDetailsList.push(
+        new CountryIdentityItemModel({
+          iconName: 'images',
+          iconTooltip: 'Continents',
+          value: continents.join(', '),
+        })
+      );
     }
     if (areaSize) {
-      countryDetailsList.push(new CountryIdentityItemModel({
-        iconName: 'route',
-        iconTooltip: 'Total area size',
-        value: `${areaSize} km²`,
-      }));
+      countryDetailsList.push(
+        new CountryIdentityItemModel({
+          iconName: 'route',
+          iconTooltip: 'Total area size',
+          value: `${areaSize} km²`,
+        })
+      );
     }
     if (capitalName) {
-      countryDetailsList.push(new CountryIdentityItemModel({
-        iconName: 'university',
-        iconTooltip: 'Capital',
-        value: capitalName,
-      }));
+      countryDetailsList.push(
+        new CountryIdentityItemModel({
+          iconName: 'university',
+          iconTooltip: 'Capital',
+          value: capitalName,
+        })
+      );
     }
     if (validationUtils.isExists(independentYears)) {
       let independentText = '';
@@ -438,39 +516,49 @@ class CountryService {
         independentText += `${year} (${this.getCountryAge(year)} years ago), `;
       }
       independentText = textUtils.removeLastCharacters(independentText, 2);
-      countryDetailsList.push(new CountryIdentityItemModel({
-        iconName: 'book',
-        iconTooltip: 'Independent years',
-        value: independentText,
-      }));
+      countryDetailsList.push(
+        new CountryIdentityItemModel({
+          iconName: 'book',
+          iconTooltip: 'Independent years',
+          value: independentText,
+        })
+      );
     }
     if (upperCode2) {
-      countryDetailsList.push(new CountryIdentityItemModel({
-        iconName: 'trademark',
-        iconTooltip: 'ISO 3166-1 alpha-2 code',
-        value: upperCode2,
-      }));
+      countryDetailsList.push(
+        new CountryIdentityItemModel({
+          iconName: 'trademark',
+          iconTooltip: 'ISO 3166-1 alpha-2 code',
+          value: upperCode2,
+        })
+      );
     }
     if (upperCode3) {
-      countryDetailsList.push(new CountryIdentityItemModel({
-        iconName: 'trademark',
-        iconTooltip: 'ISO 3166-1 alpha-3 code',
-        value: upperCode3,
-      }));
+      countryDetailsList.push(
+        new CountryIdentityItemModel({
+          iconName: 'trademark',
+          iconTooltip: 'ISO 3166-1 alpha-3 code',
+          value: upperCode3,
+        })
+      );
     }
     if (otherCodes) {
-      countryDetailsList.push(new CountryIdentityItemModel({
-        iconName: 'trademark',
-        iconTooltip: 'Specific area/country codes',
-        value: otherCodes.join(', '),
-      }));
+      countryDetailsList.push(
+        new CountryIdentityItemModel({
+          iconName: 'trademark',
+          iconTooltip: 'Specific area/country codes',
+          value: otherCodes.join(', '),
+        })
+      );
     }
     if (phoneCodes) {
-      countryDetailsList.push(new CountryIdentityItemModel({
-        iconName: 'phone',
-        iconTooltip: 'Phone codes',
-        value: phoneCodes.join(', '),
-      }));
+      countryDetailsList.push(
+        new CountryIdentityItemModel({
+          iconName: 'phone',
+          iconTooltip: 'Phone codes',
+          value: phoneCodes.join(', '),
+        })
+      );
     }
     if (googleMapsURL) {
       const item = new CountryIdentityItemModel({
@@ -498,9 +586,15 @@ class CountryService {
     return countryDetailsList;
   }
 
-  updateCountryData(country, fetchDataResults, sourcesKeysList, settingsList, dateNow) {
-    let source; let
-      updateCountryType = null;
+  updateCountryData(
+    country,
+    fetchDataResults,
+    sourcesKeysList,
+    settingsList,
+    dateNow
+  ) {
+    let source;
+    let updateCountryType = null;
     if (fetchDataResults) {
       source = fetchDataResults.source;
       updateCountryType = fetchDataResults.updateCountryType;
@@ -537,10 +631,12 @@ class CountryService {
     // Clear the summary data.
     if (country.lastUpdateDate) {
       for (let i = 0; i < sourcesKeysList.length; i += 1) {
-        const sourceSummary = country.summaryData.summaryDataList[sourcesKeysList[i]];
+        const sourceSummary =
+          country.summaryData.summaryDataList[sourcesKeysList[i]];
         if (sourceSummary) {
           sourceSummary.itemClassName = '';
-          country.summaryData.summaryDataList[sourcesKeysList[i]] = sourceSummary;
+          country.summaryData.summaryDataList[sourcesKeysList[i]] =
+            sourceSummary;
         }
       }
     }
@@ -548,9 +644,8 @@ class CountryService {
   }
 
   updateCountryField(data) {
-    const {
-      countryId, fieldName, fieldValue, settingsList, isRefreshList,
-    } = data;
+    const { countryId, fieldName, fieldValue, settingsList, isRefreshList } =
+      data;
     let { countriesList } = data;
     countriesList[countryId][fieldName] = fieldValue;
     if (isRefreshList) {
@@ -568,15 +663,23 @@ class CountryService {
   }
 
   updateCountries({
-    countriesActionType, fetchDataResults, settingsList, countriesKeysList, sourcesList,
-    sourcesKeysList, countriesList,
+    countriesActionType,
+    fetchDataResults,
+    settingsList,
+    countriesKeysList,
+    sourcesList,
+    sourcesKeysList,
+    countriesList,
   }) {
     let worldPopulationCount = null;
-    const isRefreshList = countriesActionType === CountriesActionTypeEnum.FINALIZE
-     || CountriesActionTypeEnum.UPDATE;
+    const isRefreshList =
+      countriesActionType === CountriesActionTypeEnum.FINALIZE ||
+      CountriesActionTypeEnum.UPDATE;
     if (countriesActionType === CountriesActionTypeEnum.FINALIZE) {
-      worldPopulationCount = countriesList[countriesData.worldCountryId].dynamicPopulationCount;
-      countriesList[countriesData.worldCountryId].populationPercentageDisplay = '100';
+      worldPopulationCount =
+        countriesList[countriesData.worldCountryId].dynamicPopulationCount;
+      countriesList[countriesData.worldCountryId].populationPercentageDisplay =
+        '100';
     }
     const dateNow = timeUtils.getCurrentDate();
     for (let i = 0; i < countriesKeysList.length; i += 1) {
@@ -588,14 +691,14 @@ class CountryService {
             country,
             sourcesList,
             sourcesKeysList,
-            worldPopulationCount,
+            worldPopulationCount
           );
           country = this.updateCountryData(
             country,
             fetchDataResults,
             sourcesKeysList,
             settingsList,
-            dateNow,
+            dateNow
           );
           break;
         }
@@ -609,7 +712,7 @@ class CountryService {
             fetchDataResults,
             sourcesKeysList,
             settingsList,
-            dateNow,
+            dateNow
           );
           break;
         }
@@ -620,7 +723,7 @@ class CountryService {
             fetchDataResults,
             sourcesKeysList,
             settingsList,
-            dateNow,
+            dateNow
           );
           break;
         }
@@ -631,7 +734,7 @@ class CountryService {
             fetchDataResults,
             sourcesKeysList,
             settingsList,
-            dateNow,
+            dateNow
           );
           break;
         }
@@ -655,26 +758,33 @@ class CountryService {
   updateTimes(country, sourcesKeysList, dateNow) {
     // Last update time.
     if (country.lastUpdateDate) {
-      const { differenceTime, differenceTimeDisplay } = timeUtils.getDifferenceTimesDisplay({
-        startDateTime: country.lastUpdateDate,
-        endDateTime: dateNow,
-        maximumElementsCount: 3,
-      });
-      country.lastUpdateDateDisplay = timeUtils.getDisplayTextTime(differenceTimeDisplay);
+      const { differenceTime, differenceTimeDisplay } =
+        timeUtils.getDifferenceTimesDisplay({
+          startDateTime: country.lastUpdateDate,
+          endDateTime: dateNow,
+          maximumElementsCount: 3,
+        });
+      country.lastUpdateDateDisplay = timeUtils.getDisplayTextTime(
+        differenceTimeDisplay
+      );
       country.lastUpdateDateDifference = differenceTime;
       country.statisticsData[3].value = `${country.lastUpdateDateDisplay} (${country.lastUpdateSourceName})`;
       // Summary Data.
       for (let i = 0; i < sourcesKeysList.length; i += 1) {
-        const sourceSummaryData = country.summaryData.summaryDataList[sourcesKeysList[i]];
+        const sourceSummaryData =
+          country.summaryData.summaryDataList[sourcesKeysList[i]];
         if (sourceSummaryData && sourceSummaryData.dataItems[4].value) {
           const sourceUpdatedTime = timeUtils.getDifferenceTimesDisplay({
             startDateTime: sourceSummaryData.dataItems[4].value,
             endDateTime: dateNow,
             maximumElementsCount: 3,
           });
-          sourceSummaryData.dataItems[4].valueDisplay = timeUtils
-            .getDisplayTextTime(sourceUpdatedTime.differenceTimeDisplay);
-          country.summaryData.summaryDataList[sourcesKeysList[i]] = sourceSummaryData;
+          sourceSummaryData.dataItems[4].valueDisplay =
+            timeUtils.getDisplayTextTime(
+              sourceUpdatedTime.differenceTimeDisplay
+            );
+          country.summaryData.summaryDataList[sourcesKeysList[i]] =
+            sourceSummaryData;
         }
       }
       const { totalSummaryData } = country.summaryData;
@@ -684,8 +794,8 @@ class CountryService {
           endDateTime: dateNow,
           maximumElementsCount: 3,
         });
-        totalSummaryData.dataItems[4].valueDisplay = timeUtils
-          .getDisplayTextTime(totalUpdatedTime.differenceTimeDisplay);
+        totalSummaryData.dataItems[4].valueDisplay =
+          timeUtils.getDisplayTextTime(totalUpdatedTime.differenceTimeDisplay);
         country.summaryData.totalSummaryData = totalSummaryData;
       }
     }
@@ -695,13 +805,21 @@ class CountryService {
       endDateTime: dateNow,
       maximumElementsCount: 3,
     });
-    country.addedDateDisplay = timeUtils.getDisplayTextTime(differenceTimeDisplay);
+    country.addedDateDisplay = timeUtils.getDisplayTextTime(
+      differenceTimeDisplay
+    );
     return country;
   }
 
   setCovidLeadingData({
-    sortTypeName, country, source, leadingSourceName, leadingIconName, leadingIconNamePerMillion,
-    updateCountryType, index,
+    sortTypeName,
+    country,
+    source,
+    leadingSourceName,
+    leadingIconName,
+    leadingIconNamePerMillion,
+    updateCountryType,
+    index,
   }) {
     const isPerMillion = sortTypeName.indexOf('Million') > -1;
     let leadingValueDisplayFieldName = null;
@@ -720,7 +838,10 @@ class CountryService {
     let sortValue = null;
     if (country.sourcesData) {
       let sourceDataItems = country.sourcesData[leadingSourceName];
-      if (sourceDataItems && validationUtils.isExists(sourceDataItems.dataItems)) {
+      if (
+        sourceDataItems &&
+        validationUtils.isExists(sourceDataItems.dataItems)
+      ) {
         sourceDataItems = sourceDataItems.dataItems[index];
         leadingValueDisplay = sourceDataItems[leadingValueDisplayFieldName];
         sortValue = sourceDataItems[sourceDataItemsFieldName];
@@ -730,12 +851,17 @@ class CountryService {
     country.sortValue = sortValue;
     country.leadingIconName = iconName;
     if (source && updateCountryType && country.updateSourceData) {
-      const isRelevantUpdate = source.lowerName === leadingSourceName
-       && updateCountryType === UpdateCountryTypeEnum.DATA;
+      const isRelevantUpdate =
+        source.lowerName === leadingSourceName &&
+        updateCountryType === UpdateCountryTypeEnum.DATA;
       if (isRelevantUpdate) {
         const dataItem = country.updateSourceData.dataItems[index];
         if (dataItem) {
-          country.leadingClassName = validationUtils.isExists(dataItem[sourceDataItemsFieldName]) ? ` ${sortTypeName}` : '';
+          country.leadingClassName = validationUtils.isExists(
+            dataItem[sourceDataItemsFieldName]
+          )
+            ? ` ${sortTypeName}`
+            : '';
         }
       }
     }
@@ -743,20 +869,24 @@ class CountryService {
   }
 
   setOtherLeadingData({
-    country, isTakeFirst, defaultSortValue, leadingValueFieldName, sortValueFieldName,
-    leadingIconName, innerLeadingClassName,
+    country,
+    isTakeFirst,
+    defaultSortValue,
+    leadingValueFieldName,
+    sortValueFieldName,
+    leadingIconName,
+    innerLeadingClassName,
   }) {
     country.leadingValueDisplay = isTakeFirst
-      ? country[leadingValueFieldName][0] : country[leadingValueFieldName];
+      ? country[leadingValueFieldName][0]
+      : country[leadingValueFieldName];
     country.leadingIconName = leadingIconName;
     country.sortValue = country[sortValueFieldName] || defaultSortValue;
     country.innerLeadingClassName = innerLeadingClassName;
     return country;
   }
 
-  updateLeading({
-    country, settingsList, source, updateCountryType,
-  }) {
+  updateLeading({ country, settingsList, source, updateCountryType }) {
     const { sortTypeName } = settingsList.sortType;
     switch (sortTypeName) {
       case CountrySortTypeEnum.CASE:
@@ -894,26 +1024,35 @@ class CountryService {
 
   getBoxClassName(casesDiff, deathsDiff, recoversDiff) {
     let boxClassName = ' alert ';
-    const list = Array.from(new Set([
-      textUtils.getNumberIfEmpty(casesDiff),
-      textUtils.getNumberIfEmpty(deathsDiff),
-      textUtils.getNumberIfEmpty(recoversDiff),
-    ]));
+    const list = Array.from(
+      new Set([
+        textUtils.getNumberIfEmpty(casesDiff),
+        textUtils.getNumberIfEmpty(deathsDiff),
+        textUtils.getNumberIfEmpty(recoversDiff),
+      ])
+    );
     if (textUtils.isAllEqual(list)) {
       boxClassName += 'all';
     }
     switch (Math.max(...list)) {
-      case casesDiff: { boxClassName += ' case'; break; }
-      case deathsDiff: { boxClassName += ' death'; break; }
-      case recoversDiff: { boxClassName += ' recover'; break; }
+      case casesDiff: {
+        boxClassName += ' case';
+        break;
+      }
+      case deathsDiff: {
+        boxClassName += ' death';
+        break;
+      }
+      case recoversDiff: {
+        boxClassName += ' recover';
+        break;
+      }
     }
     return boxClassName;
   }
 
   setSummaryDataValues(dataItem, newValue, newValueDisplay) {
-    const {
-      type, iconName, value, valueDisplay,
-    } = dataItem;
+    const { type, iconName, value, valueDisplay } = dataItem;
     let currentValue = value;
     let currentValueDisplay = valueDisplay;
     switch (type) {
@@ -922,7 +1061,8 @@ class CountryService {
       case SourceNumberTypeEnum.RECOVER: {
         if (!textUtils.isInvalidNumber(newValue)) {
           currentValue += newValue;
-          currentValueDisplay = textUtils.getStringCommaFromNumber(currentValue);
+          currentValueDisplay =
+            textUtils.getStringCommaFromNumber(currentValue);
         }
         break;
       }
@@ -953,7 +1093,14 @@ class CountryService {
   setSummaryData(data) {
     // Summary Data.
     const {
-      country, lowerName, isCases, isDeaths, isRecovers, casesDiff, deathsDiff, recoversDiff,
+      country,
+      lowerName,
+      isCases,
+      isDeaths,
+      isRecovers,
+      casesDiff,
+      deathsDiff,
+      recoversDiff,
     } = data;
     const { summaryData, lastUpdateDate, lastUpdateDateDisplay } = country;
     const sourceSummaryData = summaryData.summaryDataList[lowerName];
@@ -963,57 +1110,57 @@ class CountryService {
       sourceSummaryData.dataItems[0] = this.setSummaryDataValues(
         sourceSummaryData.dataItems[0],
         casesDiff,
-        null,
+        null
       );
       totalSummaryData.dataItems[0] = this.setSummaryDataValues(
         totalSummaryData.dataItems[0],
         casesDiff,
-        null,
+        null
       );
     }
     if (isDeaths) {
       sourceSummaryData.dataItems[1] = this.setSummaryDataValues(
         sourceSummaryData.dataItems[1],
         deathsDiff,
-        null,
+        null
       );
       totalSummaryData.dataItems[1] = this.setSummaryDataValues(
         totalSummaryData.dataItems[1],
         deathsDiff,
-        null,
+        null
       );
     }
     if (isRecovers) {
       sourceSummaryData.dataItems[2] = this.setSummaryDataValues(
         sourceSummaryData.dataItems[2],
         recoversDiff,
-        null,
+        null
       );
       totalSummaryData.dataItems[2] = this.setSummaryDataValues(
         totalSummaryData.dataItems[2],
         recoversDiff,
-        null,
+        null
       );
     }
     sourceSummaryData.dataItems[3] = this.setSummaryDataValues(
       sourceSummaryData.dataItems[3],
       null,
-      null,
+      null
     );
     totalSummaryData.dataItems[3] = this.setSummaryDataValues(
       totalSummaryData.dataItems[3],
       null,
-      null,
+      null
     );
     sourceSummaryData.dataItems[4] = this.setSummaryDataValues(
       sourceSummaryData.dataItems[4],
       lastUpdateDate,
-      lastUpdateDateDisplay,
+      lastUpdateDateDisplay
     );
     totalSummaryData.dataItems[4] = this.setSummaryDataValues(
       totalSummaryData.dataItems[4],
       lastUpdateDate,
-      lastUpdateDateDisplay,
+      lastUpdateDateDisplay
     );
     summaryData.summaryDataList[lowerName] = sourceSummaryData;
     summaryData.totalSummaryData = totalSummaryData;
@@ -1022,9 +1169,7 @@ class CountryService {
   }
 
   updateData(data) {
-    const {
-      source, casesPair, deathsPair, recoversPair,
-    } = data;
+    const { source, casesPair, deathsPair, recoversPair } = data;
     let { country } = data;
     const { lowerName, upperName } = source;
     let isCases = false;
@@ -1034,15 +1179,15 @@ class CountryService {
     if (sourceData) {
       const [casesDiff, casesUpdateType] = this.getDifference(
         sourceData.dataItems[0].count,
-        casesPair[0],
+        casesPair[0]
       );
       const [deathsDiff, deathsUpdateType] = this.getDifference(
         sourceData.dataItems[1].count,
-        deathsPair[0],
+        deathsPair[0]
       );
       const [recoversDiff, recoversUpdateType] = this.getDifference(
         sourceData.dataItems[2].count,
-        recoversPair[0],
+        recoversPair[0]
       );
       isCases = casesDiff > 0;
       isDeaths = deathsDiff > 0;
@@ -1054,33 +1199,36 @@ class CountryService {
             type: SourceNumberTypeEnum.CASE,
             iconName: 'cases',
             updateType: casesUpdateType,
-            valuesPair: isCases ? [
-              casesDiff,
-              textUtils.getStringCommaFromNumber(casesDiff),
-            ] : null,
+            valuesPair: isCases
+              ? [casesDiff, textUtils.getStringCommaFromNumber(casesDiff)]
+              : null,
           }),
           deaths: new UpdateSourceDataItemModel({
             type: SourceNumberTypeEnum.DEATH,
             iconName: 'deaths',
             updateType: deathsUpdateType,
-            valuesPair: isDeaths ? [
-              deathsDiff,
-              textUtils.getStringCommaFromNumber(deathsDiff),
-            ] : null,
+            valuesPair: isDeaths
+              ? [deathsDiff, textUtils.getStringCommaFromNumber(deathsDiff)]
+              : null,
           }),
           recovers: new UpdateSourceDataItemModel({
             type: SourceNumberTypeEnum.RECOVER,
             iconName: 'recovers',
             updateType: recoversUpdateType,
-            valuesPair: isRecovers ? [
-              recoversDiff,
-              textUtils.getStringCommaFromNumber(recoversDiff),
-            ] : null,
+            valuesPair: isRecovers
+              ? [recoversDiff, textUtils.getStringCommaFromNumber(recoversDiff)]
+              : null,
           }),
         });
-        country.boxClassName = this.getBoxClassName(casesDiff, deathsDiff, recoversDiff);
+        country.boxClassName = this.getBoxClassName(
+          casesDiff,
+          deathsDiff,
+          recoversDiff
+        );
         country.updatesCount += 1;
-        country.updatesCountDisplay = textUtils.getStringCommaFromNumber(country.updatesCount);
+        country.updatesCountDisplay = textUtils.getStringCommaFromNumber(
+          country.updatesCount
+        );
         country.lastUpdateDate = timeUtils.getCurrentDate();
         country.lastUpdateSourceName = upperName;
         country.statisticsData[2].value = country.updatesCountDisplay;
@@ -1120,8 +1268,11 @@ class CountryService {
     let index = 0;
     // World.
     const worldElement = parsedHtml.getElementsByClassName(this.centerDOM)[0];
-    const worldPopulation = worldElement.children[0].textContent.split(' ')[3].trim();
-    const worldPopulationPair = [textUtils.getNumberFromStringComma(worldPopulation),
+    const worldPopulation = worldElement.children[0].textContent
+      .split(' ')[3]
+      .trim();
+    const worldPopulationPair = [
+      textUtils.getNumberFromStringComma(worldPopulation),
       worldPopulation,
     ];
     const world = countriesList[countriesData.worldCountryId];
@@ -1149,7 +1300,8 @@ class CountryService {
       if (countryName === 'Population') {
         break;
       }
-      const countryId = countriesData.sourcesCountriesList[source.lowerName][countryName];
+      const countryId =
+        countriesData.sourcesCountriesList[source.lowerName][countryName];
       const country = countriesList[countryId];
       if (!country) {
         continue;
@@ -1164,7 +1316,7 @@ class CountryService {
       }
       country.populationPercentageDisplay = textUtils.getPercentageDisplay(
         country.populationCount,
-        world.dynamicPopulationCount,
+        world.dynamicPopulationCount
       );
       countriesList[countryId] = country;
       index += 1;
@@ -1178,8 +1330,13 @@ class CountryService {
   pop2SyncData({ fetchDataResults, countriesList }) {
     const { source, resultData } = fetchDataResults;
     const parser = new DOMParser();
-    const parsedHtml = parser.parseFromString(resultData.parse.text, this.htmlDocTypeDOM);
-    const mainElement = parsedHtml.getElementsByClassName(this.pop2ContainerDOM);
+    const parsedHtml = parser.parseFromString(
+      resultData.parse.text,
+      this.htmlDocTypeDOM
+    );
+    const mainElement = parsedHtml.getElementsByClassName(
+      this.pop2ContainerDOM
+    );
     const elements = mainElement[0].getElementsByTagName(this.rowKeyDOM);
     const world = countriesList[countriesData.worldCountryId];
     // Countries + World.
@@ -1195,8 +1352,11 @@ class CountryService {
         continue;
       }
       index += 1;
-      countryName = (countryName.indexOf('[') > -1 ? countryName.split('[')[0] : countryName).trim();
-      const countryId = countriesData.sourcesCountriesList[source.lowerName][countryName];
+      countryName = (
+        countryName.indexOf('[') > -1 ? countryName.split('[')[0] : countryName
+      ).trim();
+      const countryId =
+        countriesData.sourcesCountriesList[source.lowerName][countryName];
       if (!countryId) {
         continue;
       }
@@ -1214,7 +1374,7 @@ class CountryService {
       }
       country.populationPercentageDisplay = textUtils.getPercentageDisplay(
         country.populationCount,
-        world.dynamicPopulationCount,
+        world.dynamicPopulationCount
       );
       countriesList[countryId] = country;
     }
@@ -1239,7 +1399,8 @@ class CountryService {
         break;
       }
       index += 1;
-      const countryId = countriesData.sourcesCountriesList[source.lowerName][item.name.trim()];
+      const countryId =
+        countriesData.sourcesCountriesList[source.lowerName][item.name.trim()];
       if (!countryId) {
         continue;
       }
@@ -1261,16 +1422,27 @@ class CountryService {
       });
       countriesList[countryId] = country;
       if (!updateCountryType) {
-        updateCountryType = country.updateSourceData !== null ? UpdateCountryTypeEnum.DATA : null;
+        updateCountryType =
+          country.updateSourceData !== null ? UpdateCountryTypeEnum.DATA : null;
       }
       const sourceData = country.sourcesData[source.lowerName];
-      totalCasesCount += textUtils.getNumberIfEmpty(sourceData.dataItems[0].count);
-      totalDeathsCount += textUtils.getNumberIfEmpty(sourceData.dataItems[1].count);
-      totalRecoversCount += textUtils.getNumberIfEmpty(sourceData.dataItems[2].count);
+      totalCasesCount += textUtils.getNumberIfEmpty(
+        sourceData.dataItems[0].count
+      );
+      totalDeathsCount += textUtils.getNumberIfEmpty(
+        sourceData.dataItems[1].count
+      );
+      totalRecoversCount += textUtils.getNumberIfEmpty(
+        sourceData.dataItems[2].count
+      );
     }
     // World.
     index += 1;
-    const pairs = this.getPairsFromNumbers([totalCasesCount, totalDeathsCount, totalRecoversCount]);
+    const pairs = this.getPairsFromNumbers([
+      totalCasesCount,
+      totalDeathsCount,
+      totalRecoversCount,
+    ]);
     countriesList[countriesData.worldCountryId] = this.updateData({
       country: countriesList[countriesData.worldCountryId],
       source,
@@ -1279,8 +1451,10 @@ class CountryService {
       recoversPair: pairs[2],
     });
     if (!updateCountryType) {
-      updateCountryType = countriesList[countriesData.worldCountryId].updateSourceData
-      !== null ? UpdateCountryTypeEnum.DATA : null;
+      updateCountryType =
+        countriesList[countriesData.worldCountryId].updateSourceData !== null
+          ? UpdateCountryTypeEnum.DATA
+          : null;
     }
     fetchDataResults.resultData = countriesList;
     fetchDataResults.updateCountryType = updateCountryType;
@@ -1305,7 +1479,8 @@ class CountryService {
         break;
       }
       index += 1;
-      const countryId = countriesData.sourcesCountriesList[source.lowerName][item.country];
+      const countryId =
+        countriesData.sourcesCountriesList[source.lowerName][item.country];
       if (!countryId) {
         continue;
       }
@@ -1313,12 +1488,17 @@ class CountryService {
       if (!country) {
         break;
       }
-      if (countryId === countriesData.otherCountryId) { // Other.
+      if (countryId === countriesData.otherCountryId) {
+        // Other.
         totalOtherCasesCount += textUtils.getNumberIfEmpty(item.cases);
         totalOtherDeathsCount += textUtils.getNumberIfEmpty(item.deaths);
         totalOtherRecoversCount += textUtils.getNumberIfEmpty(item.recovered);
       } else {
-        const pairs = this.getPairsFromNumbers([item.cases, item.deaths, item.recovered]);
+        const pairs = this.getPairsFromNumbers([
+          item.cases,
+          item.deaths,
+          item.recovered,
+        ]);
         country = this.updateData({
           country,
           source,
@@ -1328,12 +1508,21 @@ class CountryService {
         });
         countriesList[countryId] = country;
         if (!updateCountryType) {
-          updateCountryType = country.updateSourceData !== null ? UpdateCountryTypeEnum.DATA : null;
+          updateCountryType =
+            country.updateSourceData !== null
+              ? UpdateCountryTypeEnum.DATA
+              : null;
         }
         const sourceData = country.sourcesData[source.lowerName];
-        totalCasesCount += textUtils.getNumberIfEmpty(sourceData.dataItems[0].count);
-        totalDeathsCount += textUtils.getNumberIfEmpty(sourceData.dataItems[1].count);
-        totalRecoversCount += textUtils.getNumberIfEmpty(sourceData.dataItems[2].count);
+        totalCasesCount += textUtils.getNumberIfEmpty(
+          sourceData.dataItems[0].count
+        );
+        totalDeathsCount += textUtils.getNumberIfEmpty(
+          sourceData.dataItems[1].count
+        );
+        totalRecoversCount += textUtils.getNumberIfEmpty(
+          sourceData.dataItems[2].count
+        );
       }
     }
     // Other.
@@ -1350,8 +1539,10 @@ class CountryService {
       recoversPair: otherPairs[2],
     });
     if (!updateCountryType) {
-      updateCountryType = countriesList[countriesData.otherCountryId].updateSourceData
-       !== null ? UpdateCountryTypeEnum.DATA : null;
+      updateCountryType =
+        countriesList[countriesData.otherCountryId].updateSourceData !== null
+          ? UpdateCountryTypeEnum.DATA
+          : null;
     }
     // World.
     index += 1;
@@ -1368,8 +1559,10 @@ class CountryService {
       recoversPair: worldPairs[2],
     });
     if (!updateCountryType) {
-      updateCountryType = countriesList[countriesData.worldCountryId].updateSourceData
-      !== null ? UpdateCountryTypeEnum.DATA : null;
+      updateCountryType =
+        countriesList[countriesData.worldCountryId].updateSourceData !== null
+          ? UpdateCountryTypeEnum.DATA
+          : null;
     }
     fetchDataResults.resultData = countriesList;
     fetchDataResults.updateCountryType = updateCountryType;
@@ -1393,7 +1586,8 @@ class CountryService {
         break;
       }
       index += 1;
-      const countryId = countriesData.sourcesCountriesList[source.lowerName][item.Country];
+      const countryId =
+        countriesData.sourcesCountriesList[source.lowerName][item.Country];
       if (!countryId) {
         continue;
       }
@@ -1415,7 +1609,8 @@ class CountryService {
       });
       countriesList[countryId] = country;
       if (!updateCountryType) {
-        updateCountryType = country.updateSourceData !== null ? UpdateCountryTypeEnum.DATA : null;
+        updateCountryType =
+          country.updateSourceData !== null ? UpdateCountryTypeEnum.DATA : null;
       }
     }
     // World.
@@ -1433,8 +1628,10 @@ class CountryService {
       recoversPair: pairs[2],
     });
     if (!updateCountryType) {
-      updateCountryType = countriesList[countriesData.worldCountryId].updateSourceData
-      !== null ? UpdateCountryTypeEnum.DATA : null;
+      updateCountryType =
+        countriesList[countriesData.worldCountryId].updateSourceData !== null
+          ? UpdateCountryTypeEnum.DATA
+          : null;
     }
     fetchDataResults.resultData = countriesList;
     fetchDataResults.updateCountryType = updateCountryType;
@@ -1456,7 +1653,8 @@ class CountryService {
         break;
       }
       index += 1;
-      const countryId = countriesData.sourcesCountriesList[source.lowerName][item.country];
+      const countryId =
+        countriesData.sourcesCountriesList[source.lowerName][item.country];
       if (!countryId) {
         continue;
       }
@@ -1464,12 +1662,17 @@ class CountryService {
       if (!country) {
         break;
       }
-      if (countryId === countriesData.otherCountryId) { // Other.
+      if (countryId === countriesData.otherCountryId) {
+        // Other.
         totalOtherCasesCount += textUtils.getNumberIfEmpty(item.cases);
         totalOtherDeathsCount += textUtils.getNumberIfEmpty(item.deaths);
         totalOtherRecoversCount += textUtils.getNumberIfEmpty(item.recovered);
       } else {
-        const pairs = this.getPairsFromNumbers([item.cases, item.deaths, item.recovered]);
+        const pairs = this.getPairsFromNumbers([
+          item.cases,
+          item.deaths,
+          item.recovered,
+        ]);
         country = this.updateData({
           country,
           source,
@@ -1479,7 +1682,10 @@ class CountryService {
         });
         countriesList[countryId] = country;
         if (!updateCountryType) {
-          updateCountryType = country.updateSourceData !== null ? UpdateCountryTypeEnum.DATA : null;
+          updateCountryType =
+            country.updateSourceData !== null
+              ? UpdateCountryTypeEnum.DATA
+              : null;
         }
       }
     }
@@ -1497,8 +1703,10 @@ class CountryService {
       recoversPair: pairs[2],
     });
     if (!updateCountryType) {
-      updateCountryType = countriesList[countriesData.otherCountryId].updateSourceData
-       !== null ? UpdateCountryTypeEnum.DATA : null;
+      updateCountryType =
+        countriesList[countriesData.otherCountryId].updateSourceData !== null
+          ? UpdateCountryTypeEnum.DATA
+          : null;
     }
     fetchDataResults.resultData = countriesList;
     fetchDataResults.updateCountryType = updateCountryType;
@@ -1518,7 +1726,8 @@ class CountryService {
         break;
       }
       index += 1;
-      const countryId = countriesData.sourcesCountriesList[source.lowerName][item.country];
+      const countryId =
+        countriesData.sourcesCountriesList[source.lowerName][item.country];
       if (!countryId) {
         continue;
       }
@@ -1540,7 +1749,8 @@ class CountryService {
       });
       countriesList[countryId] = country;
       if (!updateCountryType) {
-        updateCountryType = country.updateSourceData !== null ? UpdateCountryTypeEnum.DATA : null;
+        updateCountryType =
+          country.updateSourceData !== null ? UpdateCountryTypeEnum.DATA : null;
       }
     }
     fetchDataResults.resultData = countriesList;
@@ -1560,13 +1770,16 @@ class CountryService {
     // Countries.
     let index = 0;
     for (let i = 0; i < 1000; i += 1) {
-      const element = parsedHtml.getElementById(`${this.gooCountryRow}${i + 1}`);
+      const element = parsedHtml.getElementById(
+        `${this.gooCountryRow}${i + 1}`
+      );
       const countryName = this.getCountryName(element, 2);
       if (!countryName || countryName === 'Noname1') {
         break;
       }
       index += 1;
-      const countryId = countriesData.sourcesCountriesList[source.lowerName][countryName];
+      const countryId =
+        countriesData.sourcesCountriesList[source.lowerName][countryName];
       if (!countryId) {
         continue;
       }
@@ -1583,19 +1796,33 @@ class CountryService {
       });
       countriesList[countryId] = country;
       if (!updateCountryType) {
-        updateCountryType = country.updateSourceData !== null ? UpdateCountryTypeEnum.DATA : null;
+        updateCountryType =
+          country.updateSourceData !== null ? UpdateCountryTypeEnum.DATA : null;
       }
       const sourceData = country.sourcesData[source.lowerName];
-      totalCasesCount += textUtils.getNumberIfEmpty(sourceData.dataItems[0].count)
-        ? sourceData.dataItems[0].count : 0;
-      totalDeathsCount += textUtils.getNumberIfEmpty(sourceData.dataItems[1].count)
-        ? sourceData.dataItems[1].count : 0;
-      totalRecoversCount += textUtils.getNumberIfEmpty(sourceData.dataItems[2].count)
-        ? sourceData.dataItems[2].count : 0;
+      totalCasesCount += textUtils.getNumberIfEmpty(
+        sourceData.dataItems[0].count
+      )
+        ? sourceData.dataItems[0].count
+        : 0;
+      totalDeathsCount += textUtils.getNumberIfEmpty(
+        sourceData.dataItems[1].count
+      )
+        ? sourceData.dataItems[1].count
+        : 0;
+      totalRecoversCount += textUtils.getNumberIfEmpty(
+        sourceData.dataItems[2].count
+      )
+        ? sourceData.dataItems[2].count
+        : 0;
     }
     // World.
     index += 1;
-    const pairs = this.getPairsFromNumbers([totalCasesCount, totalDeathsCount, totalRecoversCount]);
+    const pairs = this.getPairsFromNumbers([
+      totalCasesCount,
+      totalDeathsCount,
+      totalRecoversCount,
+    ]);
     countriesList[countriesData.worldCountryId] = this.updateData({
       country: countriesList[countriesData.worldCountryId],
       source,
@@ -1604,8 +1831,10 @@ class CountryService {
       recoversPair: pairs[2],
     });
     if (!updateCountryType) {
-      updateCountryType = countriesList[countriesData.worldCountryId].updateSourceData
-       !== null ? UpdateCountryTypeEnum.DATA : null;
+      updateCountryType =
+        countriesList[countriesData.worldCountryId].updateSourceData !== null
+          ? UpdateCountryTypeEnum.DATA
+          : null;
     }
     fetchDataResults.resultData = countriesList;
     fetchDataResults.updateCountryType = updateCountryType;
@@ -1617,7 +1846,10 @@ class CountryService {
     const { source, resultData } = fetchDataResults;
     let updateCountryType = null;
     const parser = new DOMParser();
-    const parsedHtml = parser.parseFromString(resultData.parse.text, this.htmlDocTypeDOM);
+    const parsedHtml = parser.parseFromString(
+      resultData.parse.text,
+      this.htmlDocTypeDOM
+    );
     const mainElement = parsedHtml.getElementById(this.wikContainerDOM);
     const rows = mainElement.getElementsByTagName(this.rowKeyDOM);
     let totalOtherCasesCount = 0;
@@ -1637,7 +1869,10 @@ class CountryService {
       if (!nameElement.children[0]) {
         break;
       }
-      const countryId = countriesData.sourcesCountriesList[source.lowerName][i === 1 ? 'World' : nameElement.children[0].textContent];
+      const countryId =
+        countriesData.sourcesCountriesList[source.lowerName][
+          i === 1 ? 'World' : nameElement.children[0].textContent
+        ];
       if (!countryId) {
         continue;
       }
@@ -1645,15 +1880,16 @@ class CountryService {
       if (!country) {
         break;
       }
-      if (countryId === countriesData.otherCountryId) { // Other.
+      if (countryId === countriesData.otherCountryId) {
+        // Other.
         totalOtherCasesCount += textUtils.getNumberIfEmpty(
-          this.getCountryCountValue(nameElement, 1),
+          this.getCountryCountValue(nameElement, 1)
         );
         totalOtherDeathsCount += textUtils.getNumberIfEmpty(
-          this.getCountryCountValue(nameElement, 2),
+          this.getCountryCountValue(nameElement, 2)
         );
         totalOtherRecoversCount += textUtils.getNumberIfEmpty(
-          this.getCountryCountValue(nameElement, 3),
+          this.getCountryCountValue(nameElement, 3)
         );
       } else {
         country = this.updateData({
@@ -1665,7 +1901,10 @@ class CountryService {
         });
         countriesList[countryId] = country;
         if (!updateCountryType) {
-          updateCountryType = country.updateSourceData !== null ? UpdateCountryTypeEnum.DATA : null;
+          updateCountryType =
+            country.updateSourceData !== null
+              ? UpdateCountryTypeEnum.DATA
+              : null;
         }
       }
     }
@@ -1683,8 +1922,10 @@ class CountryService {
       recoversPair: pairs[2],
     });
     if (!updateCountryType) {
-      updateCountryType = countriesList[countriesData.otherCountryId].updateSourceData
-      !== null ? UpdateCountryTypeEnum.DATA : null;
+      updateCountryType =
+        countriesList[countriesData.otherCountryId].updateSourceData !== null
+          ? UpdateCountryTypeEnum.DATA
+          : null;
     }
     fetchDataResults.resultData = countriesList;
     fetchDataResults.updateCountryType = updateCountryType;
@@ -1703,13 +1944,16 @@ class CountryService {
     // Countries.
     let index = 0;
     for (let i = 1; i < 1000; i += 1) {
-      const element = parsedHtml.getElementById(`${this.wodCountryRow}${i + 1}`);
+      const element = parsedHtml.getElementById(
+        `${this.wodCountryRow}${i + 1}`
+      );
       const countryName = this.getCountryName(element, 28);
       if (!countryName) {
         break;
       }
       index += 1;
-      const countryId = countriesData.sourcesCountriesList[source.lowerName][countryName];
+      const countryId =
+        countriesData.sourcesCountriesList[source.lowerName][countryName];
       if (!countryId) {
         continue;
       }
@@ -1726,19 +1970,33 @@ class CountryService {
       });
       countriesList[countryId] = country;
       if (!updateCountryType) {
-        updateCountryType = country.updateSourceData !== null ? UpdateCountryTypeEnum.DATA : null;
+        updateCountryType =
+          country.updateSourceData !== null ? UpdateCountryTypeEnum.DATA : null;
       }
       const sourceData = country.sourcesData[source.lowerName];
-      totalCasesCount += textUtils.getNumberIfEmpty(sourceData.dataItems[0].count)
-        ? sourceData.dataItems[0].count : 0;
-      totalDeathsCount += textUtils.getNumberIfEmpty(sourceData.dataItems[1].count)
-        ? sourceData.dataItems[1].count : 0;
-      totalRecoversCount += textUtils.getNumberIfEmpty(sourceData.dataItems[2].count)
-        ? sourceData.dataItems[2].count : 0;
+      totalCasesCount += textUtils.getNumberIfEmpty(
+        sourceData.dataItems[0].count
+      )
+        ? sourceData.dataItems[0].count
+        : 0;
+      totalDeathsCount += textUtils.getNumberIfEmpty(
+        sourceData.dataItems[1].count
+      )
+        ? sourceData.dataItems[1].count
+        : 0;
+      totalRecoversCount += textUtils.getNumberIfEmpty(
+        sourceData.dataItems[2].count
+      )
+        ? sourceData.dataItems[2].count
+        : 0;
     }
     // World.
     index += 1;
-    const pairs = this.getPairsFromNumbers([totalCasesCount, totalDeathsCount, totalRecoversCount]);
+    const pairs = this.getPairsFromNumbers([
+      totalCasesCount,
+      totalDeathsCount,
+      totalRecoversCount,
+    ]);
     countriesList[countriesData.worldCountryId] = this.updateData({
       country: countriesList[countriesData.worldCountryId],
       source,
@@ -1747,8 +2005,10 @@ class CountryService {
       recoversPair: pairs[2],
     });
     if (!updateCountryType) {
-      updateCountryType = countriesList[countriesData.worldCountryId].updateSourceData
-      !== null ? UpdateCountryTypeEnum.DATA : null;
+      updateCountryType =
+        countriesList[countriesData.worldCountryId].updateSourceData !== null
+          ? UpdateCountryTypeEnum.DATA
+          : null;
     }
     fetchDataResults.resultData = countriesList;
     fetchDataResults.updateCountryType = updateCountryType;
@@ -1764,9 +2024,13 @@ class CountryService {
 
   getLocalData(data) {
     return new Promise(async (resolve, reject) => {
-      if (reject) { }
+      if (reject) {
+      }
       const {
-        fetchDataResults, countriesList, countriesKeysList, isInitiateComplete,
+        fetchDataResults,
+        countriesList,
+        countriesKeysList,
+        isInitiateComplete,
       } = data;
       const { source } = fetchDataResults;
       fetchDataResults.resultData = data.countriesList;
@@ -1793,7 +2057,11 @@ class CountryService {
           continue;
         }
         let country = countriesList[localCountry.id];
-        if (!country || country.id === countriesData.worldCountryId || !country.isContainData) {
+        if (
+          !country ||
+          country.id === countriesData.worldCountryId ||
+          !country.isContainData
+        ) {
           continue;
         }
         const sourceData = localCountry.source;
@@ -1803,7 +2071,9 @@ class CountryService {
             source,
             casesPair: countryCommonLogicService.getNumberArray(sourceData[0]),
             deathsPair: countryCommonLogicService.getNumberArray(sourceData[1]),
-            recoversPair: countryCommonLogicService.getNumberArray(sourceData[2]),
+            recoversPair: countryCommonLogicService.getNumberArray(
+              sourceData[2]
+            ),
           });
           countriesList[country.id] = country;
         }
@@ -1823,7 +2093,10 @@ class CountryService {
   }
 
   async localSyncData(data) {
-    localService.initiate(countriesData.worldCountryId, data.isInitiateComplete);
+    localService.initiate(
+      countriesData.worldCountryId,
+      data.isInitiateComplete
+    );
     return await this.getLocalData(data);
   }
 }

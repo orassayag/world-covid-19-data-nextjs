@@ -3,11 +3,23 @@ import { Icon } from '../../../UI';
 
 export default function CountryIdentityDetailsItem({ countryIdentityItem }) {
   const {
-    itemClassName, iconName, iconTooltip, iconType, value, isLastItem, isIconOnly, isURL, urlText,
+    itemClassName,
+    iconName,
+    iconTooltip,
+    iconType,
+    value,
+    isLastItem,
+    isIconOnly,
+    isURL,
+    urlText,
   } = countryIdentityItem;
   let valueContainerDOM = null;
   if (isURL) {
-    valueContainerDOM = (<a href={value} rel="noopener noreferrer" target="_blank">{urlText}</a>);
+    valueContainerDOM = (
+      <a href={value} rel='noopener noreferrer' target='_blank'>
+        {urlText}
+      </a>
+    );
   } else {
     const iconDOM = (
       <Icon
@@ -17,17 +29,24 @@ export default function CountryIdentityDetailsItem({ countryIdentityItem }) {
         tooltipDirection={null}
       />
     );
-    valueContainerDOM = isIconOnly ? (<a href={value} rel="noopener noreferrer" target="_blank">{iconDOM}</a>) : iconDOM;
+    valueContainerDOM = isIconOnly ? (
+      <a href={value} rel='noopener noreferrer' target='_blank'>
+        {iconDOM}
+      </a>
+    ) : (
+      iconDOM
+    );
   }
 
   return (
-    <div className={`${styles.details_item} ${itemClassName ? styles[itemClassName.trim()] : ''}`}>
+    <div
+      className={`${styles.details_item} ${itemClassName ? styles[itemClassName.trim()] : ''}`}
+    >
       <span className={styles.icon} data-tip-country={iconTooltip}>
         {valueContainerDOM}
         {isIconOnly || isURL ? '' : value}
       </span>
-      {!isLastItem
-        && <span>|</span>}
+      {!isLastItem && <span>|</span>}
     </div>
   );
 }

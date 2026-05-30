@@ -1,7 +1,5 @@
 class CountryIdentityItemModel {
-  constructor({
-    iconName, iconTooltip, value,
-  }) {
+  constructor({ iconName, iconTooltip, value }) {
     this.itemClassName = null;
     this.iconName = iconName;
     this.iconTooltip = iconTooltip;

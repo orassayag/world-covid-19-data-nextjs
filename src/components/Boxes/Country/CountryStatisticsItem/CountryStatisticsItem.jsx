@@ -7,13 +7,9 @@ export default function CountryStatisticsItem({ statisticsDataItem }) {
   return (
     <div className={styles.item}>
       <div className={styles.icon}>
-        <Icon
-          name={iconName}
-        />
+        <Icon name={iconName} />
       </div>
-      <div className={styles.number}>
-        {value}
-      </div>
+      <div className={styles.number}>{value}</div>
     </div>
   );
 }

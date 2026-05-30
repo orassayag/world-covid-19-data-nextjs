@@ -6,19 +6,15 @@ export default function MasterButtons({ onActionClick }) {
   const buttonNames = ['countries', 'sources'];
   const buttonsDOM = [];
   for (let i = 0; i < 2; i += 1) {
-    buttonsDOM.push((
+    buttonsDOM.push(
       <MasterButton
         key={i}
         buttonText={buttonTexts[i]}
         buttonName={buttonNames[i]}
         onActionClick={onActionClick}
       />
-    ));
+    );
   }
 
-  return (
-    <div className={styles.buttons}>
-      {buttonsDOM}
-    </div>
-  );
+  return <div className={styles.buttons}>{buttonsDOM}</div>;
 }

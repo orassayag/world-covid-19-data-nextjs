@@ -4,5 +4,8 @@ import statisticsSlices from './flies/statistics.slices';
 import statisticsUpdatesSlices from './flies/statisticsUpdates.slices';
 
 export {
-  dataSlices, settingsSlices, statisticsSlices, statisticsUpdatesSlices,
+  dataSlices,
+  settingsSlices,
+  statisticsSlices,
+  statisticsUpdatesSlices,
 };

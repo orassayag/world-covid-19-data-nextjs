@@ -5,5 +5,9 @@ import SourcesModal from './Sources/SourcesModal/SourcesModal';
 import StatisticsModal from './Statistics/StatisticsModal/StatisticsModal';
 
 export {
-  ModalContainer, CountriesModal, CreditsModal, SourcesModal, StatisticsModal,
+  ModalContainer,
+  CountriesModal,
+  CreditsModal,
+  SourcesModal,
+  StatisticsModal,
 };

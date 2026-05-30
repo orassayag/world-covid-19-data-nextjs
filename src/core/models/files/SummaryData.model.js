@@ -1,7 +1,5 @@
 class SummaryDataModel {
-  constructor({
-    cases, deaths, recovers, updates, lastUpdateTime,
-  }) {
+  constructor({ cases, deaths, recovers, updates, lastUpdateTime }) {
     this.itemClassName = null;
     this.dataItems = [cases, deaths, recovers, updates, lastUpdateTime];
     // Set default values.

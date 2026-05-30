@@ -1,6 +1,10 @@
 import settings from '../../settings/settings';
 import {
-  CountryActionNameEnum, CountriesActionTypeEnum, DataModeEnum, ModalNameEnum, SortDirectionEnum,
+  CountryActionNameEnum,
+  CountriesActionTypeEnum,
+  DataModeEnum,
+  ModalNameEnum,
+  SortDirectionEnum,
   UpdateCountryTypeEnum,
 } from '../../core/enums';
 import countryService from './country.service';
@@ -74,7 +78,11 @@ class EngineService {
     // Interval.
     if (interval) {
       let int = +interval;
-      if (isNaN(int) || int < settings.LOCAL_DELAY_BETWEEN_SOURCES_FETCH || int > 99) {
+      if (
+        isNaN(int) ||
+        int < settings.LOCAL_DELAY_BETWEEN_SOURCES_FETCH ||
+        int > 99
+      ) {
         int = settings.LOCAL_DELAY_BETWEEN_SOURCES_FETCH;
       }
       // Local delay time after finish loading.
@@ -84,21 +92,33 @@ class EngineService {
   }
 
   initiateSources({
-    mode, interval, onSetStateCurrentTime, onSetStateSettingsList, onSetStateStatisticsField,
-    onSetStateStatisticsList, onSetStateStatisticsUpdatesSettingsList, onSetStateInitiateSettings,
-    onSetStateInitiateSources, onSetStateUpdateRound, onSetStateDataCollection,
-    onSetStateActionUpdate, onSetStateActionRefresh, onSetStateUpdateCountryVisibility,
+    mode,
+    interval,
+    onSetStateCurrentTime,
+    onSetStateSettingsList,
+    onSetStateStatisticsField,
+    onSetStateStatisticsList,
+    onSetStateStatisticsUpdatesSettingsList,
+    onSetStateInitiateSettings,
+    onSetStateInitiateSources,
+    onSetStateUpdateRound,
+    onSetStateDataCollection,
+    onSetStateActionUpdate,
+    onSetStateActionRefresh,
+    onSetStateUpdateCountryVisibility,
   }) {
     this.settingsList = settingService.initiateSettingsList();
     this.initiateParameters(mode, interval);
     this.loadingList = settingService.initiateStateLoadingList();
     this.singlesList = statisticService.initiateSinglesList();
     this.statisticsList = statisticService.initiateStatisticsList();
-    this.statisticsUpdatesList = statisticUpdateService.initiateStatisticsUpdatesList();
-    this.statisticsUpdatesSettingsList = statisticUpdateService
-      .initiateStatisticsUpdatesSettingsList();
+    this.statisticsUpdatesList =
+      statisticUpdateService.initiateStatisticsUpdatesList();
+    this.statisticsUpdatesSettingsList =
+      statisticUpdateService.initiateStatisticsUpdatesSettingsList();
     this.sourcesList = sourceService.initiateSourcesList();
-    const { countriesList, countriesNameIdList } = countryService.initiateCountriesList();
+    const { countriesList, countriesNameIdList } =
+      countryService.initiateCountriesList();
     this.countriesList = countriesList;
     this.countriesNameIdList = countriesNameIdList;
     this.sourcesKeysList = sourceService.sourcesKeysList;
@@ -107,7 +127,8 @@ class EngineService {
     this.onSetStateSettingsList = onSetStateSettingsList;
     this.onSetStateStatisticsField = onSetStateStatisticsField;
     this.onSetStateStatisticsList = onSetStateStatisticsList;
-    this.onSetStateStatisticsUpdatesSettingsList = onSetStateStatisticsUpdatesSettingsList;
+    this.onSetStateStatisticsUpdatesSettingsList =
+      onSetStateStatisticsUpdatesSettingsList;
     this.onSetStateInitiateSettings = onSetStateInitiateSettings;
     this.onSetStateInitiateSources = onSetStateInitiateSources;
     this.onSetStateUpdateRound = onSetStateUpdateRound;
@@ -137,10 +158,8 @@ class EngineService {
   }
 
   updateLocalStatisticsUpdatesList(updateStatisticsUpdatesListResults) {
-    const {
-      statisticsUpdatesList,
-      statisticsUpdatesSettingsList,
-    } = updateStatisticsUpdatesListResults;
+    const { statisticsUpdatesList, statisticsUpdatesSettingsList } =
+      updateStatisticsUpdatesListResults;
     if (validationUtils.isExists(statisticsUpdatesList)) {
       this.statisticsUpdatesList = [...statisticsUpdatesList];
     }
@@ -194,7 +213,8 @@ class EngineService {
       maximumElementsCount: 2,
     });
     this.singlesList.lastUpdateDateDisplay = lastUpdateResult
-      ? lastUpdateResult.differenceTimeDisplay : null;
+      ? lastUpdateResult.differenceTimeDisplay
+      : null;
     this.onSetStateCurrentTime({
       currentTime: this.singlesList.currentTime,
       lastUpdateDateDisplay: this.singlesList.lastUpdateDateDisplay,
@@ -241,13 +261,18 @@ class EngineService {
 
   updateInactiveData() {
     const indexResult = this.getSourceAndIndex(false);
-    this.countriesList = this.updateCountries(CountriesActionTypeEnum.INACTIVE, null);
+    this.countriesList = this.updateCountries(
+      CountriesActionTypeEnum.INACTIVE,
+      null
+    );
     const updatedStatisticsList = {
       nextUpdateSourceName: indexResult.source.upperName,
     };
     // Update the statistics updates times.
-    this.statisticsUpdatesList = statisticUpdateService
-      .updateStatisticsUpdatesListTimes(this.statisticsUpdatesList);
+    this.statisticsUpdatesList =
+      statisticUpdateService.updateStatisticsUpdatesListTimes(
+        this.statisticsUpdatesList
+      );
     this.onSetStateUpdateRound({
       countriesList: this.countriesList,
       statisticsList: updatedStatisticsList,
@@ -272,10 +297,15 @@ class EngineService {
       const source = this.getSource(this.sourcesIndex);
       if (this.isInitiateComplete && !this.settingsList.isRefreshMode) {
         // Cleanup the previous countries updates.
-        this.countriesList = this.updateCountries(CountriesActionTypeEnum.CLEANUP, null);
+        this.countriesList = this.updateCountries(
+          CountriesActionTypeEnum.CLEANUP,
+          null
+        );
         // Cleanup the previous statistics updates.
-        this.statisticsUpdatesList = statisticUpdateService
-          .cleanStatisticsUpdatesList(this.statisticsUpdatesList);
+        this.statisticsUpdatesList =
+          statisticUpdateService.cleanStatisticsUpdatesList(
+            this.statisticsUpdatesList
+          );
       }
       // Fetch the data.
       this.setUpdatesLoader(true);
@@ -294,10 +324,13 @@ class EngineService {
       this.setUpdatesLoader(false);
       if (this.isInitiateComplete && !this.settingsList.isRefreshMode) {
         // Update new countries data.
-        this.countriesList = this.updateCountries(CountriesActionTypeEnum.UPDATE, fetchDataResults);
+        this.countriesList = this.updateCountries(
+          CountriesActionTypeEnum.UPDATE,
+          fetchDataResults
+        );
         // Update new statistics updates data.
-        const updateStatisticsUpdatesListResults = statisticUpdateService
-          .updateStatisticsUpdatesList({
+        const updateStatisticsUpdatesListResults =
+          statisticUpdateService.updateStatisticsUpdatesList({
             statisticsUpdatesList: this.statisticsUpdatesList,
             statisticsUpdatesSettingsList: this.statisticsUpdatesSettingsList,
             countriesList: this.countriesList,
@@ -309,12 +342,13 @@ class EngineService {
           lastUpdateDate: timeUtils.getCurrentDate(),
           lastUpdateSourceName: source.upperName,
           nextUpdateSourceName: indexResult.source.upperName,
-          isLastUpdateChanges: fetchDataResults.updateCountryType === UpdateCountryTypeEnum.DATA,
+          isLastUpdateChanges:
+            fetchDataResults.updateCountryType === UpdateCountryTypeEnum.DATA,
           totalUpdatesCount: this.statisticsList.totalUpdatesCount + 1,
-          totalUpdateCyclesCount: this.sourcesIndex === 0
-            && this.statisticsList.totalUpdatesCount > 1
-            ? this.statisticsList.totalUpdateCyclesCount + 1
-            : this.statisticsList.totalUpdateCyclesCount,
+          totalUpdateCyclesCount:
+            this.sourcesIndex === 0 && this.statisticsList.totalUpdatesCount > 1
+              ? this.statisticsList.totalUpdateCyclesCount + 1
+              : this.statisticsList.totalUpdateCyclesCount,
         };
         this.onSetStateUpdateRound({
           countriesList: this.countriesList,
@@ -322,7 +356,9 @@ class EngineService {
           updateStatisticsUpdatesListResults,
         });
         this.updateLocalStatisticsList(updatedStatisticsList);
-        this.updateLocalStatisticsUpdatesList(updateStatisticsUpdatesListResults);
+        this.updateLocalStatisticsUpdatesList(
+          updateStatisticsUpdatesListResults
+        );
       }
       if (this.isContinueToNextRound()) {
         // Continue to the next round.
@@ -342,7 +378,10 @@ class EngineService {
         refreshSourceName: refreshSource.upperName,
       });
     }
-    if (refreshSource && !this.sourcesRefreshIndex < this.sourcesKeysList.length) {
+    if (
+      refreshSource &&
+      !this.sourcesRefreshIndex < this.sourcesKeysList.length
+    ) {
       this.sourcesRefreshIndex += 1;
     } else {
       this.finalizeRefreshData();
@@ -370,9 +409,13 @@ class EngineService {
   checkPoint() {
     // Set the loader percentage for the first load.
     if (!this.isInitiateComplete && !this.settingsList.isRefreshMode) {
-      const currentPercentage = textUtils
-        .getAbsolutePercentage(this.sourcesIndex + 1, this.sourcesKeysList.length);
-      const { apiURL, upperName, officialName } = this.getSource(this.sourcesIndex);
+      const currentPercentage = textUtils.getAbsolutePercentage(
+        this.sourcesIndex + 1,
+        this.sourcesKeysList.length
+      );
+      const { apiURL, upperName, officialName } = this.getSource(
+        this.sourcesIndex
+      );
       this.updateSettingsListField('loadingList', {
         loadingPercentage: currentPercentage,
         loadingSourceName: upperName,
@@ -397,12 +440,17 @@ class EngineService {
       return this.liveStandardDelayTime;
     }
     return this.loadingList.isScreenLoaderComplete
-      ? this.localDelayTimeAfterFinishLoading : this.localStandardDelayTime;
+      ? this.localDelayTimeAfterFinishLoading
+      : this.localStandardDelayTime;
   }
 
   checkRecoverMode() {
     const { totalUpdatesCount } = this.statisticsList;
-    if (!this.isInitiateComplete || this.settingsList.isRefreshMode || totalUpdatesCount === 0) {
+    if (
+      !this.isInitiateComplete ||
+      this.settingsList.isRefreshMode ||
+      totalUpdatesCount === 0
+    ) {
       return;
     }
     if (this.tryRecoverRounds === 0) {
@@ -432,7 +480,11 @@ class EngineService {
   getSourceAndIndex(isRoundProcess) {
     let updatedIndex = this.sourcesIndex;
     updatedIndex = this.updateIndex(updatedIndex);
-    if (!this.isInitiateComplete && !this.settingsList.isRefreshMode && updatedIndex === 0) {
+    if (
+      !this.isInitiateComplete &&
+      !this.settingsList.isRefreshMode &&
+      updatedIndex === 0
+    ) {
       this.finalizeStandardData();
     }
     if (isRoundProcess && this.mode === DataModeEnum.LIVE) {
@@ -453,9 +505,12 @@ class EngineService {
     if (!source || !source.isActive) {
       return false;
     }
-    if (source.isError
-      && (this.isInitiateComplete
-        && !this.settingsList.isRefreshMode && this.tryRecoverRounds === 0)) {
+    if (
+      source.isError &&
+      this.isInitiateComplete &&
+      !this.settingsList.isRefreshMode &&
+      this.tryRecoverRounds === 0
+    ) {
       return false;
     }
     return true;
@@ -464,16 +519,25 @@ class EngineService {
   finalizeStandardData() {
     this.isInitiateComplete = true;
     this.liveStandardDelayTime = settings.LIVE_DELAY_BETWEEN_SOURCES_FETCH;
-    this.localStandardDelayTime = settings.LOCAL_DELAY_BETWEEN_SOURCES_FETCH * 1000;
+    this.localStandardDelayTime =
+      settings.LOCAL_DELAY_BETWEEN_SOURCES_FETCH * 1000;
     // Random a leading source if not exists.
     if (!this.settingsList.leadingSource) {
-      this.settingsList.leadingSource = sourceService.getRandomSource(this.sourcesList);
+      this.settingsList.leadingSource = sourceService.getRandomSource(
+        this.sourcesList
+      );
     }
     // Set sort fields list.
-    const { updatedSortType } = this.setSortValues(this.settingsList.sortType.sortTypeName, null);
+    const { updatedSortType } = this.setSortValues(
+      this.settingsList.sortType.sortTypeName,
+      null
+    );
     this.settingsList.sortType = updatedSortType;
     // Last round to first time fetch data.
-    this.countriesList = this.updateCountries(CountriesActionTypeEnum.FINALIZE, null);
+    this.countriesList = this.updateCountries(
+      CountriesActionTypeEnum.FINALIZE,
+      null
+    );
     // Update the countries count displayed in the master box.
     const updatedStatisticsList = {
       totalVisibleCountriesCount: this.countriesNameIdList.length,
@@ -495,14 +559,18 @@ class EngineService {
       refreshSourceName: null,
     });
     // Last round in refresh mode fetch data.
-    this.countriesList = this.updateCountries(CountriesActionTypeEnum.UPDATE, null);
+    this.countriesList = this.updateCountries(
+      CountriesActionTypeEnum.UPDATE,
+      null
+    );
     // Update new statistics updates data.
-    const updateStatisticsUpdatesListResults = statisticUpdateService.updateStatisticsUpdatesList({
-      statisticsUpdatesList: this.statisticsUpdatesList,
-      statisticsUpdatesSettingsList: this.statisticsUpdatesSettingsList,
-      countriesList: this.countriesList,
-      countriesKeysList: this.countriesKeysList,
-    });
+    const updateStatisticsUpdatesListResults =
+      statisticUpdateService.updateStatisticsUpdatesList({
+        statisticsUpdatesList: this.statisticsUpdatesList,
+        statisticsUpdatesSettingsList: this.statisticsUpdatesSettingsList,
+        countriesList: this.countriesList,
+        countriesKeysList: this.countriesKeysList,
+      });
     // Set the countries, the settings and the statistics in refresh mode.
     this.updateLocalSettingsList({
       isActive: this.previousObject.isActive,
@@ -514,8 +582,10 @@ class EngineService {
     this.updateLocalStatisticsList({
       lastUpdateDate: timeUtils.getCurrentDate(),
       lastUpdateSourceName: refreshSource
-        ? refreshSource.upperName : this.statisticsList.lastUpdateSourceName,
-      totalUpdatesCount: this.statisticsList.totalUpdatesCount + this.sourcesKeysList.length,
+        ? refreshSource.upperName
+        : this.statisticsList.lastUpdateSourceName,
+      totalUpdatesCount:
+        this.statisticsList.totalUpdatesCount + this.sourcesKeysList.length,
       totalUpdateCyclesCount: this.statisticsList.totalUpdateCyclesCount + 1,
     });
     this.onSetStateActionRefresh({
@@ -558,9 +628,18 @@ class EngineService {
     sortType = { ...sortType };
     let symbol = null;
     switch (forceSortDirection) {
-      case SortDirectionEnum.DESCENDING: { symbol = '-'; break; }
-      case SortDirectionEnum.ASCENDING: { symbol = ''; break; }
-      default: { symbol = sortType.directionSymbol; break; }
+      case SortDirectionEnum.DESCENDING: {
+        symbol = '-';
+        break;
+      }
+      case SortDirectionEnum.ASCENDING: {
+        symbol = '';
+        break;
+      }
+      default: {
+        symbol = sortType.directionSymbol;
+        break;
+      }
     }
     const fieldsList = [...sortType.fieldsList];
     fieldsList[0] = textUtils.insertAtIndex(fieldsList[0], 0, symbol);
@@ -590,14 +669,17 @@ class EngineService {
       isRefreshList: false,
     });
     // Update the countries names (for statistics modal).
-    this.countriesNameIdList = countryService.updateCountriesNameIdList(this.countriesList);
+    this.countriesNameIdList = countryService.updateCountriesNameIdList(
+      this.countriesList
+    );
     // Update all update statistics items.
     if (validationUtils.isExists(this.statisticsUpdatesList)) {
-      this.statisticsUpdatesList = statisticUpdateService.updateStatisticsVisibility({
-        statisticsUpdatesList: this.statisticsUpdatesList,
-        countryId,
-        isVisible,
-      });
+      this.statisticsUpdatesList =
+        statisticUpdateService.updateStatisticsVisibility({
+          statisticsUpdatesList: this.statisticsUpdatesList,
+          countryId,
+          isVisible,
+        });
     }
     // Update the number of the countries on the master box.
     const updatedStatisticsList = {
@@ -622,8 +704,8 @@ class EngineService {
     let fieldName = null;
     let fieldValue = value;
     let isChangeSettingsOnly = true;
-    let isActionLoader; let
-      isNoActionNeeded = false;
+    let isActionLoader;
+    let isNoActionNeeded = false;
     let additionalSettings = {};
     switch (action) {
       case 'modal': {
@@ -655,7 +737,11 @@ class EngineService {
         }
         break;
       }
-      case 'active': { fieldName = 'isActive'; fieldValue = !this.settingsList.isActive; break; }
+      case 'active': {
+        fieldName = 'isActive';
+        fieldValue = !this.settingsList.isActive;
+        break;
+      }
       case 'refresh': {
         if (this.settingsList.isRefreshMode) {
           return;
@@ -669,10 +755,24 @@ class EngineService {
         this.previousObject = { ...this.settingsList };
         break;
       }
-      case 'local': { fieldName = 'isLiveMode'; fieldValue = false; break; }
-      case 'live': { fieldName = 'isLiveMode'; fieldValue = true; break; }
-      case 'view': { fieldName = 'viewType'; break; }
-      case 'color': { fieldName = 'colorType'; break; }
+      case 'local': {
+        fieldName = 'isLiveMode';
+        fieldValue = false;
+        break;
+      }
+      case 'live': {
+        fieldName = 'isLiveMode';
+        fieldValue = true;
+        break;
+      }
+      case 'view': {
+        fieldName = 'viewType';
+        break;
+      }
+      case 'color': {
+        fieldName = 'colorType';
+        break;
+      }
       case 'sort': {
         if (this.settingsList.sortType.sortTypeName === fieldValue) {
           return;
@@ -680,7 +780,8 @@ class EngineService {
         fieldName = 'sortType';
         isChangeSettingsOnly = false;
         isActionLoader = true;
-        const { updatedSortType, updatedAdditionalSettings } = this.setSortValues(fieldValue, null);
+        const { updatedSortType, updatedAdditionalSettings } =
+          this.setSortValues(fieldValue, null);
         fieldValue = updatedSortType;
         additionalSettings = updatedAdditionalSettings;
         break;
@@ -693,10 +794,11 @@ class EngineService {
         fieldName = 'sortType';
         isChangeSettingsOnly = false;
         isActionLoader = true;
-        const {
-          updatedSortType,
-          updatedAdditionalSettings,
-        } = this.setSortValues(this.settingsList.sortType.sortTypeName, fieldValue);
+        const { updatedSortType, updatedAdditionalSettings } =
+          this.setSortValues(
+            this.settingsList.sortType.sortTypeName,
+            fieldValue
+          );
         fieldValue = updatedSortType;
         additionalSettings = updatedAdditionalSettings;
         break;
@@ -712,7 +814,8 @@ class EngineService {
     if (isNoActionNeeded) {
       return;
     }
-    setTimeout(() => { // For the master loader effect.
+    setTimeout(() => {
+      // For the master loader effect.
       if (isChangeSettingsOnly) {
         // Update the settings only.
         this.updateSettingsListField('settingsList', updatedSettingsList);
@@ -723,7 +826,10 @@ class EngineService {
       } else {
         this.updateLocalSettingsList(updatedSettingsList);
         // Update the data according to the settings update.
-        this.countriesList = this.updateCountries(CountriesActionTypeEnum.REFRESH, null);
+        this.countriesList = this.updateCountries(
+          CountriesActionTypeEnum.REFRESH,
+          null
+        );
         this.onSetStateActionUpdate({
           countriesList: this.countriesList,
           settingsList: this.settingsList,
@@ -755,9 +861,7 @@ class EngineService {
   }
 
   updateCountrySpecificField(data) {
-    const {
-      countryId, fieldName, fieldValue, isRefreshList,
-    } = data;
+    const { countryId, fieldName, fieldValue, isRefreshList } = data;
     this.countriesList = countryService.updateCountryField({
       countriesList: this.countriesList,
       settingsList: this.settingsList,
@@ -786,7 +890,9 @@ class EngineService {
           statisticsUpdatesList: null,
           statisticsUpdatesSettingsList: updatedStatisticsUpdatesSettingsList,
         });
-        this.onSetStateStatisticsUpdatesSettingsList(updatedStatisticsUpdatesSettingsList);
+        this.onSetStateStatisticsUpdatesSettingsList(
+          updatedStatisticsUpdatesSettingsList
+        );
         break;
       }
       case CountryActionNameEnum.SELECT_COUNTRY: {
@@ -797,7 +903,9 @@ class EngineService {
           statisticsUpdatesList: null,
           statisticsUpdatesSettingsList: updatedStatisticsUpdatesSettingsList,
         });
-        this.onSetStateStatisticsUpdatesSettingsList(updatedStatisticsUpdatesSettingsList);
+        this.onSetStateStatisticsUpdatesSettingsList(
+          updatedStatisticsUpdatesSettingsList
+        );
         break;
       }
     }

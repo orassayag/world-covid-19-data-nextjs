@@ -1,28 +1,28 @@
 .times_container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
 
-    .times {
-        margin-top: 4px;
-        width: 200px;
-    }
+  .times {
+    margin-top: 4px;
+    width: 200px;
+  }
 
-    .update-loader-container {
-        width: 30px;
-    }
+  .update-loader-container {
+    width: 30px;
+  }
 }
 
 @media (min-width: 319px) and (max-width: 499px) {
-    .times_container {
-        width: 64%;
+  .times_container {
+    width: 64%;
 
-        .times {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
+    .times {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
     }
+  }
 }

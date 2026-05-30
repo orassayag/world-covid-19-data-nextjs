@@ -1,4 +1,53 @@
-# Instructions
+# Setup and Usage Instructions
+
+## Table of Contents
+
+1. [Prerequisites](#prerequisites)
+2. [Initial Setup](#initial-setup)
+3. [Available Commands](#available-commands)
+4. [Configuration](#configuration)
+5. [Running the Application](#running-the-application)
+6. [Features & Usage](#features--usage)
+7. [Troubleshooting](#troubleshooting)
+8. [Best Practices](#best-practices)
+9. [Documentation](#documentation)
+
+## Prerequisites
+
+### System Requirements
+
+- **Node.js**: Version 14 or higher
+- **Package Manager**: npm, yarn, or pnpm
+- **Operating System**: Windows, macOS, or Linux
+- **Browser**: Modern web browser (Chrome, Firefox, Safari, Edge)
+
+### Knowledge Prerequisites
+
+- Basic understanding of React and Next.js
+- Familiarity with Redux state management
+- Understanding of REST APIs and JSON data
+
+## Initial Setup
+
+### 1. Install Dependencies
+
+**Using npm:**
+
+```bash
+npm install
+```
+
+**Using yarn:**
+
+```bash
+yarn install
+```
+
+**Using pnpm:**
+
+```bash
+pnpm install
+```
 
 ## Setup Instructions
 
@@ -39,6 +88,7 @@ Open `src/settings/settings.js` and configure the following settings:
 ### API Configuration
 
 The application fetches data from 8 different sources:
+
 - **POP1_API_URL**: World Population Review
 - **POP2_API_URL**: Wikipedia population data
 - **CAC_API_URL**: Corona API
@@ -91,6 +141,28 @@ Configure the simulation behavior when `ENVIRONMENT_MODE` is `DEVELOPMENT`:
 4. **SIMULATE_LOCAL_MILLISECONDS_DELAY_PER_ROUND**: Delay to simulate API calls
    - Default: `1000` milliseconds
 
+## Available Commands
+
+### Development Commands
+
+```bash
+# Start development server with hot-reload
+npm run dev
+
+# Run ESLint for code quality and style
+npm run lint
+```
+
+### Running Scripts
+
+```bash
+# Build the production bundle
+npm run build
+
+# Start the production server
+npm start
+```
+
 ## Running the Application
 
 ### Development Mode
@@ -100,6 +172,7 @@ npm run dev
 ```
 
 This command:
+
 - Starts the Next.js development server
 - Automatically opens `http://localhost:3000` in your browser
 - Enables hot-reload for instant updates
@@ -121,6 +194,7 @@ npm run lint
 ```
 
 Checks for:
+
 - ESLint errors and warnings
 - Airbnb style guide violations
 - Security issues
@@ -131,6 +205,7 @@ Checks for:
 ### Main Dashboard
 
 The main dashboard displays:
+
 - **Country Cards**: Show cases, deaths, recoveries for each country
 - **Master Card**: Global statistics and controls
 - **Color Coding**: Visual indicators for data freshness and updates
@@ -138,12 +213,14 @@ The main dashboard displays:
 ### Viewing Modes
 
 Click the view mode button to toggle between:
+
 - **Grid View**: Compact grid of country cards
 - **List View**: Detailed list with more information
 
 ### Sorting Countries
 
 Sort countries by:
+
 - **Name**: Alphabetical order
 - **Cases**: Total confirmed cases
 - **Deaths**: Total deaths
@@ -159,6 +236,7 @@ Sort countries by:
 ### Statistics Modal
 
 View detailed statistics:
+
 - **Summary**: Aggregated data from all sources
 - **Source Details**: Individual source data with timestamps
 - **Update History**: Timeline of recent updates
@@ -173,6 +251,7 @@ View detailed statistics:
 ### Credits Modal
 
 View:
+
 - Data source attributions
 - API provider information
 - Project credits and acknowledgments
@@ -182,6 +261,7 @@ View:
 ### API Connection Issues
 
 If data doesn't load:
+
 1. Check your internet connection
 2. Verify API URLs in settings are accessible
 3. Check browser console for CORS errors
@@ -190,6 +270,7 @@ If data doesn't load:
 ### Performance Issues
 
 If the app is slow:
+
 1. Reduce `MAXIMUM_STATISTICS_ITEMS` in settings
 2. Hide countries you don't need
 3. Increase `LIVE_DELAY_BETWEEN_SOURCES_FETCH`
@@ -198,6 +279,7 @@ If the app is slow:
 ### Development Mode Not Working
 
 If local simulation doesn't work:
+
 1. Verify `ENVIRONMENT_MODE` is set to `DEVELOPMENT`
 2. Check `COMPONENT_MODE` is set to `APP`
 3. Review simulation settings
@@ -235,10 +317,51 @@ world-covid-19-data-nextjs/
 - Statistics history is stored in memory and resets on page refresh
 - All timestamps are displayed in local timezone
 
+## Best Practices
+
+### Before Running in Production
+
+1. **Test in Development Mode**: Set `ENVIRONMENT_MODE` to `DEVELOPMENT` to verify UI behavior without hitting real API limits.
+2. **Review Settings**: Ensure all API URLs and timing parameters are correctly configured in `src/settings/settings.js`.
+3. **Check Connectivity**: Verify that the 8 data sources are accessible from your deployment environment.
+
+### Operational Best Practices
+
+1. **Monitor API Limits**: If you encounter 429 errors, increase `LIVE_DELAY_BETWEEN_SOURCES_FETCH` in settings.
+2. **Data Accuracy**: Use the statistics modal to cross-reference data across different sources.
+3. **Performance**: Keep `MAXIMUM_STATISTICS_ITEMS` at a reasonable level (default 1000) to maintain browser performance.
+
+## Extending the Application
+
+### Adding New Data Sources
+
+1. **Settings**: Add the new API URL to `src/settings/settings.js`.
+2. **Enums**: Register the source in `src/core/enums/files/sources.enums.js`.
+3. **Data**: Add source metadata in `src/data/files/sources.data.js`.
+4. **Service**: Implement the specific parser in `src/services/files/source.service.js`.
+5. **Logic**: Update `src/services/files/country.service.js` to handle the new data mapping.
+
+## Documentation
+
+- [README.md](README.md) - Project overview and architecture
+- [CONTRIBUTING.md](CONTRIBUTING.md) - Guidelines for contributors
+- [CHANGELOG.md](CHANGELOG.md) - Version history and updates
+
+## External Resources
+
+- [Next.js Documentation](https://nextjs.org/docs) - Learn about Next.js features and API.
+- [Redux Toolkit](https://redux-toolkit.js.org/) - Official documentation for state management.
+- [Axios](https://axios-http.com/) - Promise based HTTP client for the browser and node.js.
+
 ## Author
 
-* **Or Assayag** - *Initial work* - [orassayag](https://github.com/orassayag)
-* Or Assayag <orassayag@gmail.com>
-* GitHub: https://github.com/orassayag
-* StackOverflow: https://stackoverflow.com/users/4442606/or-assayag?tab=profile
-* LinkedIn: https://linkedin.com/in/orassayag
+- **Or Assayag** - _Initial work_ - [orassayag](https://github.com/orassayag)
+- Or Assayag <orassayag@gmail.com>
+- GitHub: https://github.com/orassayag
+- StackOverflow: https://stackoverflow.com/users/4442606/or-assayag?tab=profile
+- LinkedIn: [orassayag](https://linkedin.com/in/orassayag)
+
+---
+
+**Last Updated**: May 2026
+**Version**: 1.0.0

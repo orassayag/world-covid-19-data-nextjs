@@ -5,9 +5,7 @@ import StatisticsSummaryTop from '../StatisticsSummaryTop/StatisticsSummaryTop';
 export default function StatisticsSummary() {
   return (
     <div className={styles.summary}>
-      <div className={styles.title}>
-        Statistics
-      </div>
+      <div className={styles.title}>Statistics</div>
       <div className={styles.data}>
         <StatisticsSummaryTop />
       </div>

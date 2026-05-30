@@ -1,5 +1,7 @@
 export default function HoursSelect({
-  dataModelName, updatesHoursCount, onActionChange,
+  dataModelName,
+  updatesHoursCount,
+  onActionChange,
 }) {
   const hours = [1, 2, 3, 5].map((hour) => (
     <option key={hour} value={hour}>
@@ -9,7 +11,12 @@ export default function HoursSelect({
   ));
 
   return (
-    <select data-action="select-time" data-modal-name={dataModelName || null} value={updatesHoursCount} onChange={onActionChange}>
+    <select
+      data-action='select-time'
+      data-modal-name={dataModelName || null}
+      value={updatesHoursCount}
+      onChange={onActionChange}
+    >
       {hours}
     </select>
   );

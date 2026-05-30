@@ -2,39 +2,47 @@
   "name": "world-covid-19-data-nextjs",
   "version": "0.1.0",
   "private": false,
-  "description": "A comprehensive Next.js dashboard that aggregates real-time COVID-19 statistics from 8 data sources, displaying cases, deaths, and recoveries for 190+ countries worldwide with automatic updates, statistics tracking, and an intuitive interface.",
+  "description": "A comprehensive Next.js application built with React 18, Next.js 13, and Redux Toolkit, shows updates, statistics, and an interface for monitoring data that displays real-time COVID-19 statistics from 8 different APIs, providing a unified view of cases, deaths, and recoveries for countries worldwide",
+  "keywords": [
+    "covid-19-dashboard",
+    "nextjs",
+    "react",
+    "redux-toolkit",
+    "real-time-data",
+    "api-integration",
+    "data-aggregation",
+    "global-statistics",
+    "country-data",
+    "pandemic-tracking",
+    "data-visualization",
+    "responsive-design",
+    "dashboard-ui",
+    "axios",
+    "sass-scss",
+    "eslint",
+    "nodejs",
+    "google-sheets-api",
+    "wikipedia-api",
+    "multi-source-data"
+  ],
+  "homepage": "https://github.com/orassayag/world-covid-19-data-nextjs#readme",
+  "bugs": {
+    "url": "https://github.com/orassayag/world-covid-19-data-nextjs/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/orassayag/world-covid-19-data-nextjs.git"
   },
-  "keywords": [
-    "covid-19",
-    "covid19",
-    "coronavirus",
-    "pandemic",
-    "covid-statistics",
-    "covid-dashboard",
-    "covid-tracker",
-    "nextjs",
-    "react",
-    "redux",
-    "redux-toolkit",
-    "real-time-data",
-    "data-aggregation",
-    "multi-source",
-    "global-statistics",
-    "world-data",
-    "cases",
-    "deaths",
-    "recoveries",
-    "api-integration",
-    "statistics-tracking",
-    "country-data",
-    "health-data",
-    "epidemiology"
-  ],
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/orassayag"
+  },
   "license": "MIT",
-  "author": "Or Assayag <orassayag@gmail.com>",
+  "author": {
+    "name": "Or Assayag",
+    "email": "orassayag@gmail.com",
+    "url": "https://github.com/orassayag"
+  },
   "contributors": [
     {
       "name": "Or Assayag",
@@ -42,35 +50,37 @@
       "url": "https://github.com/orassayag"
     }
   ],
+  "type": "commonjs",
   "main": "src/pages/_app.js",
   "files": [
-    ".next",
+    ".github",
+    ".vercel",
     ".vscode",
     "public",
     "src",
-    "eslintrc.json",
+    ".eslintrc.json",
     ".gitignore",
+    ".prettierrc",
+    "CHANGELOG.md",
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md",
+    "download.png",
     "INSTRUCTIONS.md",
     "jsconfig.json",
+    "knip.json",
+    "LICENSE",
     "next.config.js",
     "package-lock.json",
     "package.json",
-    "README.md"
+    "README.md",
+    "SECURITY.md"
   ],
   "scripts": {
-    "dev": "npm run open-browser && next dev",
-    "open-browser": "start http://localhost:3000",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "devDependencies": {
-    "@babel/eslint-parser": "^7.21.8",
-    "eslint": "8.43.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-next": "13.4.7",
-    "eslint-plugin-security": "^1.7.1",
-    "eslint-plugin-no-inline-styles": "^1.0.5"
+    "dev": "npm run open-browser && next dev",
+    "lint": "next lint",
+    "open-browser": "start http://localhost:3000",
+    "start": "next start"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
@@ -81,5 +91,13 @@
     "react-redux": "^8.0.7",
     "react-router-dom": "^6.11.2",
     "sass": "^1.62.1"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.21.8",
+    "eslint": "8.43.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-next": "13.4.7",
+    "eslint-plugin-no-inline-styles": "^1.0.5",
+    "eslint-plugin-security": "^1.7.1"
   }
 }

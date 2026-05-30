@@ -3,13 +3,20 @@ import validationUtils from './validation.utils';
 
 class LogicUtils {
   sort(list, fields) {
-    return list.sort((a, b) => fields.map((o) => {
-      let dir = 1;
-      if (o[0] === '-') { dir = -1; o = o.substring(1); }
-      if (!a[o] && b[o]) return 1;
-      if (a[o] && !b[o]) return -1;
-      return a[o] > b[o] ? dir : a[o] < b[o] ? -(dir) : 0;
-    }).reduce((p, n) => (p || n), 0));
+    return list.sort((a, b) =>
+      fields
+        .map((o) => {
+          let dir = 1;
+          if (o[0] === '-') {
+            dir = -1;
+            o = o.substring(1);
+          }
+          if (!a[o] && b[o]) return 1;
+          if (a[o] && !b[o]) return -1;
+          return a[o] > b[o] ? dir : a[o] < b[o] ? -dir : 0;
+        })
+        .reduce((p, n) => p || n, 0)
+    );
   }
 
   filter(array, filter) {
@@ -24,7 +31,10 @@ class LogicUtils {
   buildFilter(filter) {
     const query = {};
     for (const keys in filter) {
-      if (filter[keys].constructor === Array && validationUtils.isExists(filter[keys])) {
+      if (
+        filter[keys].constructor === Array &&
+        validationUtils.isExists(filter[keys])
+      ) {
         query[keys] = filter[keys];
       }
     }
@@ -45,8 +55,11 @@ class LogicUtils {
 
   filterDates(array, filter) {
     const { dateFieldName, fromDate, toDate } = filter;
-    return array.filter((item) => item[dateFieldName].getTime() >= fromDate.getTime()
-      && item[dateFieldName].getTime() <= toDate.getTime());
+    return array.filter(
+      (item) =>
+        item[dateFieldName].getTime() >= fromDate.getTime() &&
+        item[dateFieldName].getTime() <= toDate.getTime()
+    );
   }
 
   getPerMillionNumbers(data) {

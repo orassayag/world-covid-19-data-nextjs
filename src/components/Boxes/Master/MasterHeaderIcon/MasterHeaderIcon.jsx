@@ -2,7 +2,10 @@ import styles from './MasterHeaderIcon.module.scss';
 import { Icon } from '../../../UI';
 
 export default function MasterHeaderIcon({
-  iconName, iconTooltip, value, valueClass,
+  iconName,
+  iconTooltip,
+  value,
+  valueClass,
 }) {
   const getStyles = () => {
     let stylesTypes = '';
@@ -20,15 +23,9 @@ export default function MasterHeaderIcon({
   return (
     <div className={styles.item}>
       <div className={styles.icon}>
-        <Icon
-          name={iconName}
-          tooltip={iconTooltip}
-          tooltipDirection="bottom"
-        />
+        <Icon name={iconName} tooltip={iconTooltip} tooltipDirection='bottom' />
       </div>
-      <div className={`${styles.value} ${getStyles()}`}>
-        {value}
-      </div>
+      <div className={`${styles.value} ${getStyles()}`}>{value}</div>
     </div>
   );
 }

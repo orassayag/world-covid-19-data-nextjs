@@ -13,8 +13,10 @@ class DataSlices {
       reducers: {
         setStateDataCollection(state, action) {
           const { collectionName, collectionValue } = action.payload;
-          state[collectionName] = collectionValue instanceof Array
-            ? collectionValue : Object.values(collectionValue);
+          state[collectionName] =
+            collectionValue instanceof Array
+              ? collectionValue
+              : Object.values(collectionValue);
         },
       },
     });

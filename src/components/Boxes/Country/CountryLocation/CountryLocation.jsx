@@ -13,22 +13,10 @@ export default function CountryLocation({ locationClassName, googleMapsURL }) {
       />
     );
   } else if (!locationClassName && googleMapsURL) {
-    locationDOM = (
-      <CountryLocationUnknown
-        styles={styles}
-      />
-    );
+    locationDOM = <CountryLocationUnknown styles={styles} />;
   } else {
-    locationDOM = (
-      <CountryLocationEmpty
-        styles={styles}
-      />
-    );
+    locationDOM = <CountryLocationEmpty styles={styles} />;
   }
 
-  return (
-    <div className={styles.location_container}>
-      {locationDOM}
-    </div>
-  );
+  return <div className={styles.location_container}>{locationDOM}</div>;
 }

@@ -4,14 +4,16 @@ import CountryInfo from '../CountryInfo/CountryInfo';
 import CountryRemove from '../CountryRemove/CountryRemove';
 
 export default function CountryIdentity({
-  displayName, upperCode2, titleClassName, flagClassName, populationCountDisplay,
+  displayName,
+  upperCode2,
+  titleClassName,
+  flagClassName,
+  populationCountDisplay,
   populationPercentageDisplay,
 }) {
   return (
     <div className={styles.identity}>
-      <CountryImage
-        flagClassName={flagClassName}
-      />
+      <CountryImage flagClassName={flagClassName} />
       <CountryInfo
         displayName={displayName}
         upperCode2={upperCode2}

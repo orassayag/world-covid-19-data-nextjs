@@ -1,5 +1,9 @@
 import settings from '../../settings/settings';
-import { StatisticUpdateModel, StatisticUpdateDataItemModel, StatisticsUpdatesSettingsListModel } from '../../core/models';
+import {
+  StatisticUpdateModel,
+  StatisticUpdateDataItemModel,
+  StatisticsUpdatesSettingsListModel,
+} from '../../core/models';
 import { StatisticsUpdatesSortTypeEnum } from '../../core/enums';
 import { logicUtils, timeUtils } from '../../utils';
 
@@ -35,7 +39,10 @@ class StatisticUpdateService {
       return statisticsUpdatesList;
     }
     if (options.filterOptions.fromDate && options.filterOptions.toDate) {
-      statisticsUpdatesList = logicUtils.filterDates(statisticsUpdatesList, options.filterOptions);
+      statisticsUpdatesList = logicUtils.filterDates(
+        statisticsUpdatesList,
+        options.filterOptions
+      );
       delete options.filterOptions.dateFieldName;
       delete options.filterOptions.toDate;
       delete options.filterOptions.fromDate;
@@ -56,12 +63,16 @@ class StatisticUpdateService {
 
   addStatisticsUpdate(statisticsUpdatesList, statisticUpdate) {
     if (statisticsUpdatesList.length >= this.maximumStatisticsItems) {
-      statisticsUpdatesList = this.getStatisticsUpdatesList(statisticsUpdatesList, {
-        filterOptions: null,
-        sortType: StatisticsUpdatesSortTypeEnum.LAST_UPDATE_TIME,
-      });
+      statisticsUpdatesList = this.getStatisticsUpdatesList(
+        statisticsUpdatesList,
+        {
+          filterOptions: null,
+          sortType: StatisticsUpdatesSortTypeEnum.LAST_UPDATE_TIME,
+        }
+      );
       statisticsUpdatesList = [
-        statisticUpdate, ...statisticsUpdatesList.slice(0, this.maximumStatisticsItems - 1),
+        statisticUpdate,
+        ...statisticsUpdatesList.slice(0, this.maximumStatisticsItems - 1),
       ];
     } else {
       statisticsUpdatesList.push(statisticUpdate);
@@ -73,13 +84,17 @@ class StatisticUpdateService {
     // Update the times.
     const dateNow = timeUtils.getCurrentDate();
     for (let i = 0; i < statisticsUpdatesList.length; i += 1) {
-      statisticsUpdatesList[i] = this.updateTimes(statisticsUpdatesList[i], dateNow);
+      statisticsUpdatesList[i] = this.updateTimes(
+        statisticsUpdatesList[i],
+        dateNow
+      );
     }
     return statisticsUpdatesList;
   }
 
   updateStatisticsUpdatesList(data) {
-    const { countriesList, countriesKeysList, statisticsUpdatesSettingsList } = data;
+    const { countriesList, countriesKeysList, statisticsUpdatesSettingsList } =
+      data;
     let { lastStatisticsUpdateId } = statisticsUpdatesSettingsList;
     let { statisticsUpdatesList } = data;
     // Get new statistics updates.
@@ -87,16 +102,22 @@ class StatisticUpdateService {
       const countryId = countriesKeysList[i];
       const statisticUpdate = this.getStatisticsUpdate(
         countriesList[countryId],
-        lastStatisticsUpdateId,
+        lastStatisticsUpdateId
       );
       if (statisticUpdate) {
-        statisticsUpdatesList = this.addStatisticsUpdate(statisticsUpdatesList, statisticUpdate);
+        statisticsUpdatesList = this.addStatisticsUpdate(
+          statisticsUpdatesList,
+          statisticUpdate
+        );
         lastStatisticsUpdateId = statisticUpdate.id;
         lastStatisticsUpdateId += 1;
       }
     }
-    statisticsUpdatesSettingsList.lastStatisticsUpdateId = lastStatisticsUpdateId;
-    statisticsUpdatesList = this.updateStatisticsUpdatesListTimes(statisticsUpdatesList);
+    statisticsUpdatesSettingsList.lastStatisticsUpdateId =
+      lastStatisticsUpdateId;
+    statisticsUpdatesList = this.updateStatisticsUpdatesListTimes(
+      statisticsUpdatesList
+    );
     return {
       statisticsUpdatesList,
       statisticsUpdatesSettingsList,
@@ -109,7 +130,9 @@ class StatisticUpdateService {
       endDateTime: dateNow,
       maximumElementsCount: 2,
     });
-    statisticUpdate.lastUpdateDateDisplay = timeUtils.getDisplayTextTime(differenceTimeDisplay);
+    statisticUpdate.lastUpdateDateDisplay = timeUtils.getDisplayTextTime(
+      differenceTimeDisplay
+    );
     return statisticUpdate;
   }
 
@@ -118,7 +141,12 @@ class StatisticUpdateService {
       return null;
     }
     const {
-      id, displayName, flagClassName, boxClassName, lastUpdateDate, lastUpdateSourceName,
+      id,
+      displayName,
+      flagClassName,
+      boxClassName,
+      lastUpdateDate,
+      lastUpdateSourceName,
     } = country;
     const [cases, deaths, recovers] = country.updateSourceData.dataItems;
     return new StatisticUpdateModel({

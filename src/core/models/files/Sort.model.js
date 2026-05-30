@@ -1,7 +1,5 @@
 class SortModel {
-  constructor({
-    sortTypeName, fieldsList, direction, directionSymbol,
-  }) {
+  constructor({ sortTypeName, fieldsList, direction, directionSymbol }) {
     this.sortTypeName = sortTypeName;
     this.fieldsList = fieldsList;
     this.direction = direction;
